@@ -5,4 +5,11 @@
     <string name="settings">Կարգավորումներ</string>
     <string name="trucks">Բեռնատարներ</string>
     <string name="construction_works">Շինարարական աշխատանքներ</string>
+    <string name="if_you_have_an_account_please_sign_in">Եթե ​​ունեք հաշիվ, խնդրում ենք մուտք գործել</string>
+    <string name="name">Անուն</string>
+    <string name="email_address">էլեկտրոնային հասցե</string>
+    <string name="password">Գաղտնաբառ</string>
+    <string name="forgot_password">Մոռացել եք գաղտնաբառը</string>
+    <string name="sign_in">Մուտք գործել</string>
+
 </resources>

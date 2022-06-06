@@ -7,10 +7,13 @@
     <dimen name="size_16">16dp</dimen>
     <dimen name="size_24">24dp</dimen>
     <dimen name="size_25">25dp</dimen>
+    <dimen name="size_30">30dp</dimen>
+    <dimen name="size_32">32dp</dimen>
     <dimen name="size_48">48dp</dimen>
     <dimen name="size_50">50dp</dimen>
     <dimen name="size_56">56dp</dimen>
     <dimen name="size_70">70dp</dimen>
+
 
 
     //text size

@@ -5,4 +5,11 @@
     <string name="app_name">Грузоперевозки и строительные работы</string>
     <string name="trucks">Грузовые автомобили</string>
     <string name="construction_works">Строительные работы</string>
+    <string name="if_you_have_an_account_please_sign_in">Если у вас есть учетная запись, пожалуйста, войдите</string>
+    <string name="name">Имя</string>
+    <string name="email_address">Адрес электронной почты</string>
+    <string name="password">Пароль</string>
+    <string name="forgot_password">Забыл пароль</string>
+    <string name="sign_in">Войти</string>
+
 </resources>

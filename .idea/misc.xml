@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.169" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_input_edit_text.xml" value="0.169" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_rounded_button_light_blue.xml" value="0.169" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_arrow_back_black.xml" value="0.1835" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_construction_work_selector.xml" value="0.169" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_home_selected.xml" value="0.1" />

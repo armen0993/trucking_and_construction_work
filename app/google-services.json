@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "614998945093",
+    "project_id": "trucking-and-construction-work",
+    "storage_bucket": "trucking-and-construction-work.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614998945093:android:707cd6889f981b8ae5222c",
+        "android_client_info": {
+          "package_name": "com.ml.truckingandconstructionwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614998945093-9ntlkldc29jauqcl1ob5euhicktmvmei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ml.truckingandconstructionwork",
+            "certificate_hash": "8153e87272de398d516dd8867e62532289689dcc"
+          }
+        },
+        {
+          "client_id": "614998945093-7s944o27i0ppukk47qm15ht7v5v6p20t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiDbDY73vt7OYUCFJ99kCP3AALtx8jIQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "614998945093-7s944o27i0ppukk47qm15ht7v5v6p20t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
