@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Trucking and Construction Work</string>
+    <string name="main">Main</string>
+    <string name="settings">Settings</string>
+    <string name="trucks">Trucks</string>
+    <string name="construction_works">Construction Works</string>
+
+
+    <string-array name="base_fragments">
+        <item>HomeFragment</item>
+        <item>BarcodeFragment</item>
+        <item>RecognizeTextFragment</item>
+        <item>SettingsFragment</item>
+    </string-array>
+
+
+</resources>

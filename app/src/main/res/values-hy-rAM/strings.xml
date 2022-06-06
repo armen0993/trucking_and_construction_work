@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Բեռնափոխադրումներ և շինարարական աշխատանքներ</string>
+    <string name="main">Հիմնական</string>
+    <string name="settings">Կարգավորումներ</string>
+    <string name="trucks">Բեռնատարներ</string>
+    <string name="construction_works">Շինարարական աշխատանքներ</string>
+</resources>

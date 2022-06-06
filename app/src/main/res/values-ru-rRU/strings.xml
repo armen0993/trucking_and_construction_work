@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings">Настройки</string>
+    <string name="main">Главный</string>
+    <string name="app_name">Грузоперевозки и строительные работы</string>
+    <string name="trucks">Грузовые автомобили</string>
+    <string name="construction_works">Строительные работы</string>
+</resources>

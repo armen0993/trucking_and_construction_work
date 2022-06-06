@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Your Scanner</string>
+    <string name="home">Home</string>
+    <string name="passport_detector">Passport Detector</string>
+    <string name="your_scanner">Your Scanner</string>
+
+    <string-array name="base_fragments">
+        <item>HomeFragment</item>
+        <item>BarcodeFragment</item>
+        <item>RecognizeTextFragment</item>
+        <item>SettingsFragment</item>
+    </string-array>
+
+    <string name="qr">Place the QR code in the area of the square</string>
+    <string name="passport_photo">Passport photo</string>
+    <string name="barcode_scanner">Barcode Scanner</string>
+    <string name="recognize_text">Recognize Text</string>
+    <string name="settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
