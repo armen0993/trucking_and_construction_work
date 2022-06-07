@@ -11,5 +11,18 @@
     <string name="password">Գաղտնաբառ</string>
     <string name="forgot_password">Մոռացել եք գաղտնաբառը</string>
     <string name="sign_in">Մուտք գործել</string>
+    <string name="name_surname">Անուն ազգանուն</string>
+    <string name="about_us">Մեր մասին</string>
+    <string name="language">Լեզու</string>
+    <string name="faq">ՀՏՀ</string>
+    <string name="contact_us">Կապվեք մեզ հետ</string>
+    <string name="log_out">Դուրս գալ</string>
+    <string name="notifications">Ծանուցումներ</string>
+    <string name="_2021_all_rights_reserved">© 2022 Բոլոր իրավունքները պաշտպանված են</string>
+    <string name="privacy_policy">Գաղտնիության քաղաքականություն</string>
+    <string name="terms_of_use">Օգտվելու կանոններ</string>
+    <string name="or_register">Նոր օգտատեր? Գրանցվիր հիմա</string>
+    <string name="registration">Գրանցում</string>
+    <string name="use_other_methods">Օգտագործեք այլ մեթոդներ</string>
 
 </resources>

@@ -39,6 +39,7 @@ abstract class CustomToolbar @JvmOverloads constructor(
     protected var customRightItemColor: Int = -1
     protected var customRightItemText: String? = null
     protected var customRightItemEnabled: Boolean = true
+    protected var customLeftItemEnabled: Boolean = false
 
     protected var leftItemClick: () -> Unit = { (context as Activity).onBackPressed() }
 
@@ -60,7 +61,7 @@ abstract class CustomToolbar @JvmOverloads constructor(
         customSubtitleColor = attr.getColor(R.styleable.CustomToolbar_subtitleColor, -1)
 
         customLeftItem = attr.getDrawable(R.styleable.CustomToolbar_leftItem)
-            ?: AppCompatResources.getDrawable(context, R.drawable.ic_arrow_back_black)
+//            ?: AppCompatResources.getDrawable(context, R.drawable.ic_arrow_back_black)
 
         customRightItem = attr.getDrawable(R.styleable.CustomToolbar_rightItem)
 

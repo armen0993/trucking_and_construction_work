@@ -36,8 +36,9 @@ class ToolbarStandard @JvmOverloads constructor(
 
             //*** left element ***
             customLeftItem?.let {
-                leftItem.visible(false)
+                leftItem.visible(true)
                 leftItem.setImageDrawable(it)
+                enableLeftItem(customLeftItemEnabled)
             }
 
             leftItem.setOnClickListener {

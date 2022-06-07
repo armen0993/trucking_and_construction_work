@@ -2,9 +2,11 @@
 <resources>
     <dimen name="size_0">0dp</dimen>
     <dimen name="size_1">1dp</dimen>
+    <dimen name="size_5">5dp</dimen>
     <dimen name="size_8">8dp</dimen>
     <dimen name="size_12">12dp</dimen>
     <dimen name="size_16">16dp</dimen>
+    <dimen name="size_18">18dp</dimen>
     <dimen name="size_24">24dp</dimen>
     <dimen name="size_25">25dp</dimen>
     <dimen name="size_30">30dp</dimen>
@@ -22,6 +24,7 @@
     <dimen name="t_size_8">8sp</dimen>
     <dimen name="t_size_12">12sp</dimen>
     <dimen name="t_size_16">16sp</dimen>
+    <dimen name="t_size_18">18sp</dimen>
     <dimen name="t_size_24">24sp</dimen>
     <dimen name="t_size_25">25sp</dimen>
 

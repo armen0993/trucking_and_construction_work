@@ -11,5 +11,18 @@
     <string name="password">Пароль</string>
     <string name="forgot_password">Забыл пароль</string>
     <string name="sign_in">Войти</string>
+    <string name="name_surname">Имя Фамилия</string>
+    <string name="about_us">О нас</string>
+    <string name="language">Язык</string>
+    <string name="faq">Часто задаваемые вопросы</string>
+    <string name="contact_us">Свяжитесь с нами</string>
+    <string name="log_out">Выйти</string>
+    <string name="notifications">Уведомления</string>
+    <string name="_2021_all_rights_reserved">© 2022 Все права защищены</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="terms_of_use">Условия эксплуатации</string>
+    <string name="or_register">Новый пользователь? Зарегистрируйтесь сейчас</string>
+    <string name="registration">Регистрация</string>
+    <string name="use_other_methods">Используйте другие методы:</string>
 
 </resources>
