@@ -111,13 +111,15 @@ class ToolbarStandard @JvmOverloads constructor(
         setTextViewColorRes(binding.subtitle, colorId)
     }
 
-    override fun setLeftItem(@DrawableRes drawableId: Int) {
-        setDrawableDrawableInt(binding.leftItem, drawableId)
-    }
+
 
     override fun setRightItem(@DrawableRes drawableId: Int) {
         setDrawableDrawableInt(binding.rightItem, drawableId)
         binding.rightItem.visible(true)
+    }
+    override fun setLeftItem(@DrawableRes drawableId: Int) {
+        setDrawableDrawableInt(binding.leftItem, drawableId)
+        binding.leftItem.visible(true)
     }
 
     override fun enableLeftItem(value: Boolean) {
