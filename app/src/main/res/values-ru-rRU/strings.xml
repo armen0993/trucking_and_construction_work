@@ -24,5 +24,7 @@
     <string name="or_register">Новый пользователь? Зарегистрируйтесь сейчас</string>
     <string name="registration">Регистрация</string>
     <string name="use_other_methods">Используйте другие методы:</string>
+    <string name="description_forgot_password">Не волнуйтесь! такое бывает.Пожалуйста, введите адрес, связанный с вашей учетной записью</string>
+    <string name="title_forgot_password">Забыли пароль?</string>
 
 </resources>

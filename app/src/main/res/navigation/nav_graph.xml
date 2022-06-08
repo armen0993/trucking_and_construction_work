@@ -8,7 +8,15 @@
         android:id="@+id/mainFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.splash.SplashFragment"
@@ -34,4 +42,9 @@
         android:name="com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.forgot_password.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment" />
 </navigation>
