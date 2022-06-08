@@ -10,8 +10,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
+            android:id="@+id/action_mainFragment_to_checkerFragment"
+            app:destination="@id/checkerFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -39,8 +39,26 @@
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
-        android:id="@+id/registrationFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.RegistrationFragment"
-        android:label="fragment_registration"
-        tools:layout="@layout/fragment_registration" />
+        android:id="@+id/personalDetailsFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.PersonalDetailsFragment"
+        android:label="fragment_personal_details"
+        tools:layout="@layout/fragment_personal_details" >
+        <action
+            android:id="@+id/action_personalDetailsFragment_to_createLoginPasswordFragment"
+            app:destination="@id/createLoginPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkerFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.main.checker_client_or_driver.CheckerFragment"
+        android:label="fragment_checker"
+        tools:layout="@layout/fragment_checker" >
+        <action
+            android:id="@+id/action_checkerFragment_to_registrationFragment"
+            app:destination="@id/personalDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createLoginPasswordFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.CreateLoginPasswordFragment"
+        android:label="fragment_create_login_password"
+        tools:layout="@layout/fragment_create_login_password" />
 </navigation>

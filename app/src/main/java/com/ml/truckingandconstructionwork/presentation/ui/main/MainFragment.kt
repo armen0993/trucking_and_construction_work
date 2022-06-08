@@ -69,8 +69,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
         }
 
-        binding.titleOr.setOnClickListener {
-            navigateFragment(R.id.action_mainFragment_to_registrationFragment)
+        binding.registerNow.setOnClickListener {
+            navigateFragment(R.id.action_mainFragment_to_checkerFragment)
         }
     }
 

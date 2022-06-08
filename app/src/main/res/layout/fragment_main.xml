@@ -101,19 +101,45 @@
         app:layout_constraintTop_toBottomOf="@id/label_forgot_password"
         tools:targetApi="p" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/title_or"
-        android:layout_width="@dimen/size_0"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/size_30"
-        android:layout_marginTop="@dimen/size_18"
-        android:gravity="center"
-        android:text="@string/or_register"
-        android:textSize="@dimen/t_size_16"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/container_register"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="@id/btn_sign_in"
+    app:layout_constraintEnd_toEndOf="@id/btn_sign_in"
+    app:layout_constraintTop_toBottomOf="@id/btn_sign_in"
+    android:layout_marginTop="@dimen/size_18">
 
-        app:layout_constraintEnd_toEndOf="parent"
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_new_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_user"
+        android:textFontWeight="300"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:lineHeight="17.57sp"
+        android:layout_marginTop="@dimen/size_18"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_sign_in" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="p" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/register_now"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/register_now"
+        android:textColor="@color/teal_700"
+        android:textFontWeight="300"
+        android:textStyle="normal"
+        android:layout_marginEnd="@dimen/size_30"
+        android:textSize="14sp"
+        android:lineHeight="17.57sp"
+        android:layout_marginTop="@dimen/size_18"
+        app:layout_constraintStart_toEndOf="@id/title_new_user"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="p" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/line"
@@ -123,7 +149,7 @@
         android:layout_marginTop="@dimen/size_30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_or">
+        app:layout_constraintTop_toBottomOf="@id/container_register">
 
         <View
             android:id="@+id/line_1"

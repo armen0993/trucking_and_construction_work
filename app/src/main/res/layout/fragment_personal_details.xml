@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.main.registration.PersonalDetailsFragment">
+
+    <com.ml.truckingandconstructionwork.presentation.custom_view.toolbar.ToolbarStandard
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/registration"
+        app:leftItem="@drawable/ic_arrow_back_black"
+   />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_question"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_16"
+        android:text="@string/please_enter_your_personal_details"
+        android:textSize="@dimen/t_size_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="14dp"
+        android:hint="@string/name"
+        app:hintTextColor="#8998AA"
+        app:layout_constraintTop_toBottomOf="@id/title_question">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_input_edit_text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/surname_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="14dp"
+        android:hint="@string/surname"
+        app:hintTextColor="#8998AA"
+        app:layout_constraintTop_toBottomOf="@id/name_container">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/surname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_input_edit_text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="14dp"
+        android:hint="@string/email_address"
+        app:hintTextColor="#8998AA"
+        app:layout_constraintTop_toBottomOf="@id/surname_container">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_input_edit_text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phone_number_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="14dp"
+        android:hint="@string/phone_number"
+        app:hintTextColor="#8998AA"
+        app:layout_constraintTop_toBottomOf="@id/email_container">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_input_edit_text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/check_box"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@id/phone_number_container"
+        app:layout_constraintTop_toBottomOf="@id/phone_number_container" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_check_box_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/i_agree_to_tac_works"
+        android:textFontWeight="300"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:lineHeight="17.57sp"
+        app:layout_constraintStart_toEndOf="@id/check_box"
+        app:layout_constraintTop_toTopOf="@id/check_box"
+        app:layout_constraintBottom_toBottomOf="@id/check_box"
+        tools:targetApi="p" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/label_check_box_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/terms_amp_conditions"
+        android:textColor="@color/teal_700"
+        android:textFontWeight="300"
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:lineHeight="17.57sp"
+        app:layout_constraintStart_toEndOf="@id/title_check_box_1"
+        app:layout_constraintTop_toTopOf="@id/check_box"
+        app:layout_constraintBottom_toBottomOf="@id/check_box"
+        tools:targetApi="p" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_30"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/bg_button_selector"
+        android:lineHeight="22.59sp"
+        android:enabled="false"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textFontWeight="400"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintTop_toBottomOf="@id/check_box"
+        tools:targetApi="p" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

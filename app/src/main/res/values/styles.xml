@@ -8,6 +8,13 @@
         <item name="android:maxLines">1</item>
     </style>
 
+    <style name="ResetTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="shapeAppearanceMediumComponent">@style/CutShapeAppearance_1</item>
+    </style>
 
+    <style name="CutShapeAppearance_1" parent="ShapeAppearance.MaterialComponents.MediumComponent" >
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
 
 </resources>

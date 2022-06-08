@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Բեռնափոխադրումներ և շինարարական աշխատանքներ</string>
     <string name="main">Հիմնական</string>
     <string name="settings">Կարգավորումներ</string>
     <string name="trucks">Բեռնատարներ</string>
@@ -21,8 +20,23 @@
     <string name="_2021_all_rights_reserved">© 2022 Բոլոր իրավունքները պաշտպանված են</string>
     <string name="privacy_policy">Գաղտնիության քաղաքականություն</string>
     <string name="terms_of_use">Օգտվելու կանոններ</string>
-    <string name="or_register">Նոր օգտատեր? Գրանցվիր հիմա</string>
+    <string name="new_user">"Նոր օգտատեր ես? "</string>
     <string name="registration">Գրանցում</string>
     <string name="use_other_methods">Օգտագործեք այլ մեթոդներ</string>
+    <string name="client">Հաճախորդ</string>
+    <string name="please_select_registration_type">Խնդրում ենք ընտրել գրանցման տեսակը</string>
+    <string name="driver">Վարորդ</string>
+    <string name="register_now">Գրանցվիր հիմա</string>
+    <string name="surname">Ազգանունը</string>
+    <string name="terms_amp_conditions">"  <u>Կանոններ &amp; Պայմանները</u>"</string>
+    <string name="i_agree_to_tac_works">Ես համաձայն եմ TAC Works</string>
+    <string name="phone_number">Հեռախոսահամար</string>
+    <string name="please_enter_your_personal_details">Խնդրում ենք մուտքագրել ձեր անձնական տվյալները</string>
+    <string name="next">Հաջորդը</string>
+    <string name="please_enter_your_username_and_password">Խնդրում ենք մուտքագրել ձեր օգտվողի անունը և գաղտնաբառը</string>
+    <string name="login">Մուտք գործել</string>
+    <string name="repeat_password">Կրկնեք գաղտնաբառը</string>
+    <string name="a_code_has_been_sent_to_your_phone_number_please_enter_it">Ձեր հեռախոսահամարին կոդ է ուղարկվել, խնդրում ենք մուտքագրել այն</string>
+    <string name="enter_code">Մուտքագրեք կոդը</string>
 
 </resources>

@@ -2,7 +2,6 @@
 <resources>
     <string name="settings">Настройки</string>
     <string name="main">Главный</string>
-    <string name="app_name">Грузоперевозки и строительные работы</string>
     <string name="trucks">Грузовые автомобили</string>
     <string name="construction_works">Строительные работы</string>
     <string name="if_you_have_an_account_please_sign_in">Если у вас есть учетная запись, пожалуйста, войдите</string>
@@ -21,8 +20,23 @@
     <string name="_2021_all_rights_reserved">© 2022 Все права защищены</string>
     <string name="privacy_policy">Политика конфиденциальности</string>
     <string name="terms_of_use">Условия эксплуатации</string>
-    <string name="or_register">Новый пользователь? Зарегистрируйтесь сейчас</string>
+    <string name="new_user">Новый пользователь?</string>
     <string name="registration">Регистрация</string>
     <string name="use_other_methods">Используйте другие методы:</string>
+    <string name="client">Клиент</string>
+    <string name="please_select_registration_type">Пожалуйста, выберите тип регистрации</string>
+    <string name="driver">Водитель</string>
+    <string name="register_now">" Зарегистрируйтесь сейчас"</string>
+    <string name="surname">Фамилия</string>
+    <string name="terms_amp_conditions">" <u>Правила &amp; Условия</u>"</string>
+    <string name="i_agree_to_tac_works">Я согласен с TAC Works</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="please_enter_your_personal_details">Пожалуйста, введите ваши личные данные</string>
+    <string name="next">Следующий</string>
+    <string name="please_enter_your_username_and_password">Пожалуйста введите свой логин и пароль</string>
+    <string name="login">Авторизоваться</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="a_code_has_been_sent_to_your_phone_number_please_enter_it">На ваш номер телефона отправлен код, введите его</string>
+    <string name="enter_code">Введите код</string>
 
 </resources>

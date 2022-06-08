@@ -14,23 +14,52 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/registration"
+        app:leftItem="@drawable/ic_arrow_back_black"
       />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_question"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_30"
+        android:layout_marginBottom="@dimen/size_16"
+        android:text="@string/please_select_registration_type"
+        android:textSize="@dimen/t_size_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_client" />
+
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_sign_in"
+        android:id="@+id/btn_client"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/size_30"
         android:layout_marginTop="@dimen/size_100"
-        android:background="@drawable/bg_button_selector"
+        android:background="@drawable/bg_button_enabled"
         android:lineHeight="22.59sp"
-        android:enabled="false"
-        android:text="Client"
+        android:text="@string/client"
         android:textAllCaps="false"
         android:textFontWeight="400"
         android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:targetApi="p" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_driver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_30"
+        android:background="@drawable/bg_button_enabled"
+        android:lineHeight="22.59sp"
+        android:text="@string/driver"
+        android:textAllCaps="false"
+        android:textFontWeight="400"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintTop_toBottomOf="@id/btn_client"
         tools:targetApi="p" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
