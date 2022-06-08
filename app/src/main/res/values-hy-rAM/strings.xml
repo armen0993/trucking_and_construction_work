@@ -38,5 +38,7 @@
     <string name="repeat_password">Կրկնեք գաղտնաբառը</string>
     <string name="a_code_has_been_sent_to_your_phone_number_please_enter_it">Ձեր հեռախոսահամարին կոդ է ուղարկվել, խնդրում ենք մուտքագրել այն</string>
     <string name="enter_code">Մուտքագրեք կոդը</string>
+    <string name="description_forgot_password">Մի անհանգստացեք! դա տեղի է ունենում: Խնդրում ենք մուտքագրել ձեր հաշվի հետ կապված հասցեն</string>
+    <string name="title_forgot_password">Մոռացել եք գաղտնաբառը?</string>
 
 </resources>

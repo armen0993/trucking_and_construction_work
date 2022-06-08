@@ -15,6 +15,8 @@
     <dimen name="size_50">50dp</dimen>
     <dimen name="size_56">56dp</dimen>
     <dimen name="size_70">70dp</dimen>
+    <dimen name="size_100">100dp</dimen>
+
 
 
 
@@ -27,7 +29,7 @@
     <dimen name="t_size_18">18sp</dimen>
     <dimen name="t_size_24">24sp</dimen>
     <dimen name="t_size_25">25sp</dimen>
-    <dimen name="size_100">100dp</dimen>
+    <dimen name="t_size_48">48sp</dimen>
 
 
 </resources>

@@ -3,7 +3,6 @@ package com.ml.truckingandconstructionwork.presentation.ui.main
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
-import androidx.core.widget.doAfterTextChanged
 import androidx.core.widget.doOnTextChanged
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.findNavController
@@ -26,9 +25,10 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
         checkerIsEmpty()
 
 
+        initButtonClickListener()
     }
 
-    private fun validation() {
+    private fun validation(){
         binding.email.doOnTextChanged { text, start, before, count ->
             when {
                 binding.email.text.isNullOrEmpty() -> {
@@ -78,6 +78,18 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
         val drawer = activity?.findViewById<DrawerLayout>(R.id.drawer_layout)
         binding.toolbar.setOnLeftClickListener {
             drawer?.openDrawer(Gravity.LEFT)
+        }
+    }
+
+    private fun goToForgotPassword() {
+
+        navigateFragment(R.id.action_mainFragment_to_forgotPasswordFragment)
+    }
+
+
+    private fun initButtonClickListener() {
+        binding.labelForgotPassword.setOnClickListener {
+             goToForgotPassword()
         }
     }
 
