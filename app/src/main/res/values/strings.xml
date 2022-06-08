@@ -48,7 +48,8 @@
     <string name="enter_code">Enter code</string>
     <string name="title_forgot_password">Forgot\nPassword?</string>
     <string name="description_forgot_password">Don`t worry! it happens.Please enter the address associated with your account.</string>
-    <string name="text_btn_submit">Submit</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
 
 
 </resources>

@@ -40,5 +40,8 @@
     <string name="enter_code">Введите код</string>
     <string name="description_forgot_password">Не волнуйтесь! такое бывает.Пожалуйста, введите адрес, связанный с вашей учетной записью</string>
     <string name="title_forgot_password">Забыли пароль?</string>
+    <string name="submit">Подтверждать</string>
+    <string name="confirm">Подтверждать</string>
+    <string name="cancel">Отмена</string>
 
 </resources>
