@@ -9,7 +9,7 @@
     <string name="name">Имя</string>
     <string name="email_address">Адрес электронной почты</string>
     <string name="password">Пароль</string>
-    <string name="forgot_password">Забыл пароль</string>
+    <string name="forgot_password">Забыл пароль?</string>
     <string name="sign_in">Войти</string>
     <string name="name_surname">Имя Фамилия</string>
     <string name="about_us">О нас</string>

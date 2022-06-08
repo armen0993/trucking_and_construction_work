@@ -27,6 +27,7 @@
     <dimen name="t_size_18">18sp</dimen>
     <dimen name="t_size_24">24sp</dimen>
     <dimen name="t_size_25">25sp</dimen>
+    <dimen name="size_100">100dp</dimen>
 
 
 </resources>

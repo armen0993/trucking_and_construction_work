@@ -24,7 +24,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
         onClick()
         validation()
         checkerIsEmpty()
-        binding.btnSignIn.isEnabled = true
+
 
     }
 
