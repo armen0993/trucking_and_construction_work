@@ -3,6 +3,7 @@ package com.ml.truckingandconstructionwork.presentation.ui.main
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
+import androidx.core.widget.doAfterTextChanged
 import androidx.core.widget.doOnTextChanged
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.findNavController

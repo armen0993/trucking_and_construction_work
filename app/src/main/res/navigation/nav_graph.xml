@@ -12,8 +12,7 @@
         <action
             android:id="@+id/action_mainFragment_to_checkerFragment"
             app:destination="@id/checkerFragment" />
-    </fragment>
-        tools:layout="@layout/fragment_main" >
+
         <action
             android:id="@+id/action_mainFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment"
