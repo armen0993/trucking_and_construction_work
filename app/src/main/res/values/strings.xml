@@ -44,12 +44,19 @@
     <string name="please_enter_your_username_and_password">Please enter your username and password</string>
     <string name="login">Login</string>
     <string name="repeat_password">Repeat password</string>
-    <string name="a_code_has_been_sent_to_your_phone_number_please_enter_it">A code has been sent to your phone number, please enter it</string>
+    <string name="a_code_has_been_sent_to_your_phone_number_please_enter_it">A code has been sent to your phone number, please enter it please</string>
     <string name="enter_code">Enter code</string>
     <string name="title_forgot_password">Forgot\nPassword?</string>
     <string name="description_forgot_password">Don`t worry! it happens.Please enter the address associated with your account.</string>
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
+    <string name="would_you_like_to_use_your_pin_or_fingerprint_to_sign_in">Would you like to use your PIN or fingerprint to sign in?</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="fingerprint">Fingerprint</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_a_pin_code_to_enter">Create a pin code to enter</string>
+    <string name="don_t_create_a_pin">Don\'t create a pin</string>
 
 
 </resources>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/createLoginPasswordFragment">
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment"
@@ -73,5 +73,22 @@
         android:id="@+id/createLoginPasswordFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.CreateLoginPasswordFragment"
         android:label="fragment_create_login_password"
-        tools:layout="@layout/fragment_create_login_password" />
+        tools:layout="@layout/fragment_create_login_password" >
+        <action
+            android:id="@+id/action_createLoginPasswordFragment_to_createPinFragment"
+            app:destination="@id/createPinFragment" />
+        <action
+            android:id="@+id/action_createLoginPasswordFragment_to_createFingerprintFragment"
+            app:destination="@id/createFingerprintFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPinFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.CreatePinFragment"
+        android:label="fragment_create_pin"
+        tools:layout="@layout/fragment_create_pin" />
+    <fragment
+        android:id="@+id/createFingerprintFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.CreateFingerprintFragment"
+        android:label="fragment_create_fingerprint"
+        tools:layout="@layout/fragment_create_fingerprint" />
 </navigation>

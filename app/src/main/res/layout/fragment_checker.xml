@@ -23,19 +23,29 @@
         android:layout_width="@dimen/size_0"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/size_30"
-        android:layout_marginBottom="@dimen/size_16"
+        android:layout_marginTop="@dimen/size_16"
         android:text="@string/please_select_registration_type"
         android:textSize="@dimen/t_size_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn_client" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_client"
+        android:layout_width="@dimen/size_150"
+        android:layout_height="@dimen/size_150"
+        app:srcCompat="@drawable/ic_client"
+        android:layout_marginTop="@dimen/size_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_question"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_client"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/size_30"
-        android:layout_marginTop="@dimen/size_100"
+        android:layout_marginTop="@dimen/size_16"
         android:background="@drawable/bg_button_enabled"
         android:lineHeight="22.59sp"
         android:text="@string/client"
@@ -43,15 +53,25 @@
         android:textFontWeight="400"
         android:textSize="18sp"
         android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/icon_client"
         tools:targetApi="p" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_driver"
+        android:layout_width="@dimen/size_150"
+        android:layout_height="@dimen/size_150"
+        app:srcCompat="@drawable/truck_driver"
+        android:layout_marginTop="@dimen/size_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_client"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_driver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/size_30"
-        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_16"
         android:background="@drawable/bg_button_enabled"
         android:lineHeight="22.59sp"
         android:text="@string/driver"
@@ -59,7 +79,7 @@
         android:textFontWeight="400"
         android:textSize="18sp"
         android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/btn_client"
+        app:layout_constraintTop_toBottomOf="@id/icon_driver"
         tools:targetApi="p" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

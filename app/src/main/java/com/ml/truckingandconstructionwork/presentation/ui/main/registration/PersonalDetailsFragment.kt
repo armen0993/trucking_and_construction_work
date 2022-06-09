@@ -1,20 +1,20 @@
 package com.ml.truckingandconstructionwork.presentation.ui.main.registration
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.ml.truckingandconstructionwork.R
-import com.ml.truckingandconstructionwork.databinding.DialogAlertBinding
+import com.ml.truckingandconstructionwork.databinding.AlertDialogEnterPinBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentPersonalDetailsBinding
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
+
 
 class PersonalDetailsFragment : BaseFragment<FragmentPersonalDetailsBinding>(
     FragmentPersonalDetailsBinding::inflate
 ) {
 
-    private val bindingAlertDialog by lazy { DialogAlertBinding.inflate(layoutInflater) }
+    private val bindingAlertDialog by lazy { AlertDialogEnterPinBinding.inflate(layoutInflater) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,7 +24,6 @@ class PersonalDetailsFragment : BaseFragment<FragmentPersonalDetailsBinding>(
         binding.btnNext.isEnabled = true
 
         onClick()
-
     }
 
     private fun onClick() {
@@ -35,13 +34,17 @@ class PersonalDetailsFragment : BaseFragment<FragmentPersonalDetailsBinding>(
     }
 
     private fun startAlertDialog() {
+        if (bindingAlertDialog.root.parent != null) (bindingAlertDialog.root.parent as ViewGroup).removeView(
+            bindingAlertDialog.root
+        )
         val dialog = MaterialAlertDialogBuilder(
             requireContext(),
             R.style.ResetTheme
         )
-            .setView(bindingAlertDialog.root)
             .setCancelable(false)
+            .setView(bindingAlertDialog.root)
             .show()
+
         bindingAlertDialog.dialogAlertConfirmButton.setOnClickListener {
             dialog.dismiss()
             navigateFragment(R.id.action_personalDetailsFragment_to_createLoginPasswordFragment)

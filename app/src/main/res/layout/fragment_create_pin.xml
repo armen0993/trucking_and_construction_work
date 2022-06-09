@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.main.registration.CreatePinFragment">
+
+
+
+    <TextView
+        android:id="@+id/title_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:text="@string/create_a_pin_code_to_enter"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="24dp"
+        android:alpha="0.2"
+        android:background="@drawable/circle_pin_view_grey"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/title_create"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="26dp"
+        android:alpha="0.2"
+        android:background="@drawable/circle_pin_view_grey"
+        app:layout_constraintLeft_toRightOf="@+id/view1"
+        app:layout_constraintRight_toLeftOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view1" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="26dp"
+        android:alpha="0.2"
+        android:background="@drawable/circle_pin_view_grey"
+        app:layout_constraintLeft_toRightOf="@+id/view2"
+        app:layout_constraintRight_toLeftOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/view1" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:alpha="0.2"
+        android:background="@drawable/circle_pin_view_grey"
+        app:layout_constraintLeft_toRightOf="@+id/view3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view1" />
+
+    <TextView
+        android:id="@+id/btnOne"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/button_click"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btnTwo"
+        app:layout_constraintTop_toTopOf="@+id/btnTwo"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/btnTwo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_click"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnFive"
+        app:layout_constraintLeft_toRightOf="@+id/btnOne"
+        app:layout_constraintRight_toLeftOf="@+id/btnThree"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/btnThree"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/button_click"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintLeft_toRightOf="@+id/btnTwo"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnTwo"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/btnFour"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/button_click"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="4"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btnFive"
+        app:layout_constraintTop_toTopOf="@+id/btnFive"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/btnFive"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_click"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnEight"
+        app:layout_constraintLeft_toRightOf="@+id/btnFour"
+        app:layout_constraintRight_toLeftOf="@+id/btnSix"
+        app:layout_constraintTop_toBottomOf="@+id/btnTwo"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/btnSix"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/button_click"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="6"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintLeft_toRightOf="@+id/btnFive"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnFive"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/btnSeven"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/button_click"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="7"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btnEight"
+        app:layout_constraintTop_toTopOf="@+id/btnEight"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/btnEight"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_click"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="8"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnZero"
+        app:layout_constraintLeft_toRightOf="@+id/btnSeven"
+        app:layout_constraintRight_toLeftOf="@+id/btnNine"
+        app:layout_constraintTop_toBottomOf="@+id/btnFive"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/btnNine"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/button_click"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="9"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintLeft_toRightOf="@+id/btnEight"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnEight"
+        tools:ignore="HardcodedText" />
+
+
+    <TextView
+        android:id="@+id/btnZero"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_click"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/do_not_create"
+        app:layout_constraintLeft_toLeftOf="@+id/btnEight"
+        app:layout_constraintRight_toRightOf="@+id/btnEight"
+        app:layout_constraintTop_toBottomOf="@+id/btnEight"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imgBackspace"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/btnNine"
+        app:layout_constraintRight_toRightOf="@+id/btnNine"
+        app:layout_constraintTop_toTopOf="@+id/btnZero"
+        app:srcCompat="@drawable/ic_backspace_accent" />
+
+    <ImageView
+        android:id="@+id/fingerprint_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="40dp"
+        android:padding="10dp"
+        app:layout_constraintRight_toLeftOf="@+id/btnZero"
+        app:layout_constraintTop_toTopOf="@+id/btnZero"
+        app:srcCompat="@drawable/ic_touch_small_red" />
+
+    <TextView
+        android:id="@+id/do_not_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/don_t_create_a_pin"
+        android:textColor="@color/teal_700"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,8 @@
     <dimen name="t_size_24">24sp</dimen>
     <dimen name="t_size_25">25sp</dimen>
     <dimen name="t_size_48">48sp</dimen>
+    <dimen name="t_size_17">17sp</dimen>
+    <dimen name="size_150">150dp</dimen>
 
 
 </resources>

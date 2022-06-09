@@ -41,7 +41,7 @@
     <string name="description_forgot_password">Մի անհանգստացեք! դա տեղի է ունենում: Խնդրում ենք մուտքագրել ձեր հաշվի հետ կապված հասցեն</string>
     <string name="title_forgot_password">Մոռացել եք գաղտնաբառը?</string>
     <string name="submit">Հաստատել</string>
-    <string name="confirm">Հաստատել</string>
     <string name="cancel">Չեղարկել</string>
+    <string name="would_you_like_to_use_your_pin_or_fingerprint_to_sign_in">Կցանկանա՞ք օգտագործել ձեր PIN-ը կամ մատնահետքը՝ մուտք գործելու համար:</string>
 
 </resources>

@@ -3,14 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/circle_pin_view_grey.xml" value="0.1595" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/circle_pin_view_tehal.xml" value="0.1595" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/drawable_rect_white.xml" value="0.1" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/ic_backspace_accent.xml" value="0.1595" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.169" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/ic_touch_small_red.xml" value="0.1595" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_button_disabled.xml" value="0.246" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_button_enabled.xml" value="0.1975" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_button_selector.xml" value="0.246" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_input_edit_text.xml" value="0.169" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_rounded_button_light_blue.xml" value="0.169" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_toggle_button.xml" value="0.1445" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/button_click.xml" value="0.1595" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_about_us.xml" value="0.1445" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_arrow_back_black.xml" value="0.1835" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_arrow_down.xml" value="0.1445" />
@@ -30,11 +35,14 @@
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_truck_unselected.xml" value="0.3455" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_user_profile.xml" value="0.1445" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/alert_dialog_pin_or_fingerprint.xml" value="0.3463541666666667" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/alert_dialog_wrong_pin.xml" value="0.35052083333333334" />
-        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/dialog_alert.xml" value="0.21" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/dialog_alert.xml" value="0.25" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_checker.xml" value="0.1962962962962963" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_construction_works.xml" value="0.3494791666666667" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_create_fingerprint.xml" value="0.3463541666666667" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_create_login_password.xml" value="0.33645833333333336" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_create_pin.xml" value="0.3463541666666667" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_main.xml" value="0.1" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_personal_details.xml" value="0.1" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_registration.xml" value="0.20535714285714285" />

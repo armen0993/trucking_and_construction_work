@@ -36,12 +36,12 @@
     <string name="please_enter_your_username_and_password">Пожалуйста введите свой логин и пароль</string>
     <string name="login">Авторизоваться</string>
     <string name="repeat_password">Повторите пароль</string>
-    <string name="a_code_has_been_sent_to_your_phone_number_please_enter_it">На ваш номер телефона отправлен код, введите его</string>
+    <string name="a_code_has_been_sent_to_your_phone_number_please_enter_it">На ваш номер телефона отправлен код, введите его пожалуйста</string>
     <string name="enter_code">Введите код</string>
     <string name="description_forgot_password">Не волнуйтесь! такое бывает.Пожалуйста, введите адрес, связанный с вашей учетной записью</string>
     <string name="title_forgot_password">Забыли пароль?</string>
     <string name="submit">Подтверждать</string>
-    <string name="confirm">Подтверждать</string>
     <string name="cancel">Отмена</string>
+    <string name="would_you_like_to_use_your_pin_or_fingerprint_to_sign_in">Хотите использовать PIN-код или отпечаток пальца для входа?</string>
 
 </resources>
