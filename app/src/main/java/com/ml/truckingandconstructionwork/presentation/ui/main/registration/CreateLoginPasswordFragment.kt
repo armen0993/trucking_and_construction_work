@@ -49,6 +49,7 @@ class CreateLoginPasswordFragment : BaseFragment<FragmentCreateLoginPasswordBind
        }
         bindingAlertDialog.dialogAlertCancelButton.setOnClickListener {
             dialog.dismiss()
+            navigateFragment(R.id.action_createLoginPasswordFragment_to_profileFragment)
         }
     }
 

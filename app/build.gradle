@@ -63,4 +63,7 @@ dependencies {
     //PinView
     implementation 'io.github.chaosleung:pinview:1.4.4'
 
+    // Biometric fingerprint
+    implementation "androidx.biometric:biometric:1.1.0"
+
 }

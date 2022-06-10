@@ -18,18 +18,17 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.toolbar.enableLeftItem(true)
 
-        openDrawer()
+        //Temp
+        binding.btnSignIn.isEnabled = true
+
         onClick()
         validation()
         checkerIsEmpty()
-
-
         initButtonClickListener()
     }
 
-    private fun validation(){
+    private fun validation() {
         binding.email.doOnTextChanged { text, start, before, count ->
             when {
                 binding.email.text.isNullOrEmpty() -> {
@@ -51,36 +50,36 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
     }
 
     private fun onClick() {
-        binding.btnSignIn.setOnClickListener {
-            when {
-                emailNotEmpty && passwordNotEmpty -> {
+        with(binding) {
+            btnSignIn.setOnClickListener {
+                when {
+                    emailNotEmpty && passwordNotEmpty -> {
 
-                    //   navigateFragment(R.id.action_mainFragment_to_registrationFragment)
-                }
-                !emailNotEmpty -> {
-                    binding.emailContainer.error =
-                        ERROR_EDIT_TEXT
-                }
-                !passwordNotEmpty -> {
-                    binding.passwordContainer.error =
-                        ERROR_EDIT_TEXT
+                        //   navigateFragment(R.id.action_mainFragment_to_registrationFragment)
+                    }
+                    !emailNotEmpty -> {
+                        binding.emailContainer.error =
+                            ERROR_EDIT_TEXT
+                    }
+                    !passwordNotEmpty -> {
+                        binding.passwordContainer.error =
+                            ERROR_EDIT_TEXT
+                    }
+
                 }
 
             }
-
+            registerNow.setOnClickListener {
+                navigateFragment(R.id.action_mainFragment_to_checkerFragment)
+            }
+            btnSignIn.setOnClickListener {
+                navigateFragment(R.id.action_mainFragment_to_profileFragment)
+            }
         }
 
-        binding.registerNow.setOnClickListener {
-            navigateFragment(R.id.action_mainFragment_to_checkerFragment)
-        }
+
     }
 
-    private fun openDrawer() {
-        val drawer = activity?.findViewById<DrawerLayout>(R.id.drawer_layout)
-        binding.toolbar.setOnLeftClickListener {
-            drawer?.openDrawer(Gravity.LEFT)
-        }
-    }
 
     private fun goToForgotPassword() {
 
@@ -90,7 +89,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
     private fun initButtonClickListener() {
         binding.labelForgotPassword.setOnClickListener {
-             goToForgotPassword()
+            goToForgotPassword()
         }
     }
 

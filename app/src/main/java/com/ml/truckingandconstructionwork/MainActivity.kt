@@ -19,6 +19,7 @@ import com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment
 import com.ml.truckingandconstructionwork.presentation.ui.construction_works.ConstructionWorksFragment
 import com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsFragment
 import com.ml.truckingandconstructionwork.databinding.ActivityMainBinding
+import com.ml.truckingandconstructionwork.presentation.ui.main.profile.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                     Slide(Gravity.BOTTOM).excludeTarget(R.id.nav_host_fragment, true)
                 )
                 when (f) {
-                    is MainFragment -> showBottomNav()
+                    is ProfileFragment -> showBottomNav()
                     is TrucksFragment -> showBottomNav()
                     is ConstructionWorksFragment -> showBottomNav()
                     is SettingsFragment -> showBottomNav()
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomBar.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.main_fragment -> navController.navigate(R.id.mainFragment)
+                R.id.profile_fragment -> navController.navigate(R.id.profileFragment)
                 R.id.trucks_fragment -> navController.navigate(R.id.trucksFragment)
                 R.id.construction_works_fragment -> navController.navigate(R.id.constructionWorksFragment)
                 R.id.settings_fragment -> navController.navigate(R.id.settingsFragment)

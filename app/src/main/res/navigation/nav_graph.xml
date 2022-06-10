@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/createLoginPasswordFragment">
+    app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment"
@@ -20,6 +20,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -80,15 +83,35 @@
         <action
             android:id="@+id/action_createLoginPasswordFragment_to_createFingerprintFragment"
             app:destination="@id/createFingerprintFragment" />
+        <action
+            android:id="@+id/action_createLoginPasswordFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/createPinFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.CreatePinFragment"
         android:label="fragment_create_pin"
-        tools:layout="@layout/fragment_create_pin" />
+        tools:layout="@layout/fragment_create_pin" >
+        <action
+            android:id="@+id/action_createPinFragment_to_createFingerprintFragment"
+            app:destination="@id/createFingerprintFragment" />
+    </fragment>
     <fragment
         android:id="@+id/createFingerprintFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.CreateFingerprintFragment"
         android:label="fragment_create_fingerprint"
-        tools:layout="@layout/fragment_create_fingerprint" />
+        tools:layout="@layout/fragment_create_fingerprint" >
+        <action
+            android:id="@+id/action_createFingerprintFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.main.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
