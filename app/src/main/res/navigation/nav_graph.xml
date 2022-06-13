@@ -48,7 +48,11 @@
         android:id="@+id/settingsFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
         tools:layout="@layout/fragment_forgot_password"
@@ -121,4 +125,9 @@
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.settings.language.LanguageFragment"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" />
 </navigation>

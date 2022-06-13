@@ -35,10 +35,11 @@
 
     <TextView
         android:id="@+id/title_create"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:gravity="center"
+        android:layout_marginHorizontal="@dimen/size_15"
         android:text="@string/a_valid_fingerprint_will_be_enough_to_enter_the_application"
         android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -1,5 +1,6 @@
 package com.ml.truckingandconstructionwork
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.transition.Slide
@@ -20,6 +21,8 @@ import com.ml.truckingandconstructionwork.presentation.ui.construction_works.Con
 import com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsFragment
 import com.ml.truckingandconstructionwork.databinding.ActivityMainBinding
 import com.ml.truckingandconstructionwork.presentation.ui.main.profile.ProfileFragment
+import com.ml.truckingandconstructionwork.presentation.ui.settings.language.LocaleHelper
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
@@ -29,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        LocaleHelper.onCreate(this)
 
         supportFragmentManager.registerFragmentLifecycleCallbacks(object :
             FragmentManager.FragmentLifecycleCallbacks() {
@@ -69,6 +74,8 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
         }
     }
+
+
 
     private fun showBottomNav() {
         binding.bottomBar.show()

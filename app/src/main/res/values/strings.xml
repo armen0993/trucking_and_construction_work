@@ -53,8 +53,6 @@
     <string name="would_you_like_to_use_your_pin_or_fingerprint_to_sign_in">Would you like to use your PIN or fingerprint to sign in?</string>
     <string name="pin_code">Pin Code</string>
     <string name="fingerprint">Fingerprint</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="create_a_pin_code_to_enter">Create a Pin code to enter</string>
     <string name="don_t_create_a_pin">Don\'t create a Pin</string>
     <string name="don_t_create_a_fingerprint">Don\'t create a Fingerprint</string>
@@ -63,6 +61,15 @@
     <string name="use_fingerprint_to_enter">Use fingerprint to enter?</string>
     <string name="a_valid_fingerprint_will_be_enough_to_enter_the_application">A valid fingerprint will be enough\n to enter the application</string>
     <string name="fingerprint_not_detected">"Fingerprint not detected"</string>
+    <string name="city">City</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="user_settings">User settings</string>
+    <string name="system_settings">System settings</string>
+    <string name="application_language">Application language</string>
+    <string name="select_language">Select language</string>
+    <string name="armenian">Armenian</string>
+    <string name="russian">Russian</string>
+    <string name="english">English</string>
 
 
 </resources>

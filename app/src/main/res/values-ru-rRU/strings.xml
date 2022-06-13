@@ -43,5 +43,24 @@
     <string name="submit">Подтверждать</string>
     <string name="cancel">Отмена</string>
     <string name="would_you_like_to_use_your_pin_or_fingerprint_to_sign_in">Хотите использовать PIN-код или отпечаток пальца для входа?</string>
+    <string name="pin_code">Пин-код</string>
+    <string name="fingerprint">Отпечаток пальца</string>
+    <string name="create_a_pin_code_to_enter">Создайте пин-код для входа</string>
+    <string name="don_t_create_a_pin">Не создавайте пин</string>
+    <string name="don_t_create_a_fingerprint">Не создавайте отпечаток пальца</string>
+    <string name="create_a_fingerprint">Создать отпечаток пальца</string>
+    <string name="skip">Пропускать</string>
+    <string name="use_fingerprint_to_enter">Использовать отпечаток пальца для входа?</string>
+    <string name="a_valid_fingerprint_will_be_enough_to_enter_the_application">Достаточно действительного отпечатка пальца   войти в приложение</string>
+    <string name="fingerprint_not_detected">Отпечаток пальца не обнаружен</string>
+    <string name="city">Город</string>
+    <string name="edit_profile">Редактировать профиль</string>
+    <string name="user_settings">Пользовательские настройки</string>
+    <string name="system_settings">Системные настройки</string>
+    <string name="application_language">Язык приложения</string>
+    <string name="select_language">Выберите язык</string>
+    <string name="armenian">Армянский</string>
+    <string name="russian">Русский</string>
+    <string name="english">Английский</string>
 
 </resources>

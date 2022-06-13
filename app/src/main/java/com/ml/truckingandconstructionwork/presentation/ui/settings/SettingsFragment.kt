@@ -9,7 +9,15 @@ import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBinding::inflate) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        onClick()
+    }
 
+    private fun onClick() {
+        with(binding) {
+            itemSystemSettings.language.setOnClickListener {
+                navigateFragment(SettingsFragmentDirections.actionSettingsFragmentToLanguageFragment())
+            }
+        }
     }
 
 

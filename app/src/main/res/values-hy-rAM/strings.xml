@@ -43,5 +43,24 @@
     <string name="submit">Հաստատել</string>
     <string name="cancel">Չեղարկել</string>
     <string name="would_you_like_to_use_your_pin_or_fingerprint_to_sign_in">Կցանկանա՞ք օգտագործել ձեր PIN-ը կամ մատնահետքը՝ մուտք գործելու համար:</string>
+    <string name="pin_code">Փին կոդը</string>
+    <string name="fingerprint">Մատնահետք</string>
+    <string name="create_a_pin_code_to_enter">Մուտքագրելու համար ստեղծեք փին կոդ</string>
+    <string name="don_t_create_a_pin">Մի ստեղծեք փին</string>
+    <string name="don_t_create_a_fingerprint">Մի ստեղծեք Մատնահետք</string>
+    <string name="create_a_fingerprint">Ստեղծեք մատնահետք</string>
+    <string name="skip">Բաց թողնել</string>
+    <string name="use_fingerprint_to_enter">Օգտագործե՞լ մատնահետքը մուտք գործելու համար</string>
+    <string name="a_valid_fingerprint_will_be_enough_to_enter_the_application">Վավեր մատնահետքը բավական կլինի   դիմում մուտքագրելու համար</string>
+    <string name="fingerprint_not_detected">Մատնահետքը չի հայտնաբերվել</string>
+    <string name="city">Քաղաք</string>
+    <string name="edit_profile">Խմբագրել պրոֆիլը</string>
+    <string name="user_settings">Օգտագործողի կարգավորումներ</string>
+    <string name="system_settings">Համակարգի կարգավորումներ</string>
+    <string name="application_language">Հավելվածի լեզուն</string>
+    <string name="select_language">Ընտրել լեզուն</string>
+    <string name="armenian">Հայերեն</string>
+    <string name="russian">Ռուսերեն</string>
+    <string name="english">Անգլերեն</string>
 
 </resources>
