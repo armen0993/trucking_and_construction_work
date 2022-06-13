@@ -59,9 +59,14 @@
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.PersonalDetailsFragment"
         android:label="fragment_personal_details"
         tools:layout="@layout/fragment_personal_details" >
+        <argument
+            android:name="user_type"
+            app:argType="string"
+            />
         <action
             android:id="@+id/action_personalDetailsFragment_to_createLoginPasswordFragment"
             app:destination="@id/createLoginPasswordFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/checkerFragment"
@@ -71,6 +76,8 @@
         <action
             android:id="@+id/action_checkerFragment_to_registrationFragment"
             app:destination="@id/personalDetailsFragment" />
+
+
     </fragment>
     <fragment
         android:id="@+id/createLoginPasswordFragment"

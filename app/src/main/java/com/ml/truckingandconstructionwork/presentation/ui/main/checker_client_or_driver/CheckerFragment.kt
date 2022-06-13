@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.FragmentCheckerBinding
+import com.ml.truckingandconstructionwork.presentation.Constants.CLIENT
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 
 class CheckerFragment : BaseFragment<FragmentCheckerBinding>(FragmentCheckerBinding::inflate) {
@@ -17,7 +18,8 @@ class CheckerFragment : BaseFragment<FragmentCheckerBinding>(FragmentCheckerBind
 
     private fun onClick() {
         binding.btnClient.setOnClickListener {
-            navigateFragment(R.id.action_checkerFragment_to_registrationFragment)
+            navigateFragment(CheckerFragmentDirections.actionCheckerFragmentToRegistrationFragment(
+                CLIENT))
         }
     }
 

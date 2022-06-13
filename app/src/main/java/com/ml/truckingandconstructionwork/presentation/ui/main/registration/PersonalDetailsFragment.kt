@@ -47,7 +47,7 @@ class PersonalDetailsFragment : BaseFragment<FragmentPersonalDetailsBinding>(
 
         bindingAlertDialog.dialogAlertConfirmButton.setOnClickListener {
             dialog.dismiss()
-            navigateFragment(R.id.action_personalDetailsFragment_to_createLoginPasswordFragment)
+            navigateFragment(PersonalDetailsFragmentDirections.actionPersonalDetailsFragmentToCreateLoginPasswordFragment())
         }
         bindingAlertDialog.dialogAlertCancelButton.setOnClickListener {
             dialog.dismiss()
