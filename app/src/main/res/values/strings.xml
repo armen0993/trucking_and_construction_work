@@ -29,14 +29,14 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="_2021_all_rights_reserved">© 2022 All rights reserved</string>
     <string name="new_user">New user?</string>
-    <string name="register_now"> <u>Register now</u></string>
+    <string name="register_now"><u>Register now</u></string>
     <string name="use_other_methods">Use other methods</string>
     <string name="client">Client</string>
     <string name="driver">Driver</string>
     <string name="please_select_registration_type">Please select registration type</string>
     <string name="surname">Surname</string>
-    <string name="terms_amp_conditions">"  <u>Terms &amp; Conditions</u>"</string>
-    <string name="registration"> <u>Registration</u></string>
+    <string name="terms_amp_conditions">"<u>Terms &amp; Conditions</u>"</string>
+    <string name="registration">Registration</string>
     <string name="i_agree_to_tac_works">I agree to TAC Works</string>
     <string name="phone_number">Phone number</string>
     <string name="please_enter_your_personal_details">Please enter your personal details</string>
@@ -70,6 +70,8 @@
     <string name="armenian">Armenian</string>
     <string name="russian">Russian</string>
     <string name="english">English</string>
+    <string name="empty_view_no_data">No data</string>
+    <string name="empty_view_loading">Loading</string>
 
 
 </resources>

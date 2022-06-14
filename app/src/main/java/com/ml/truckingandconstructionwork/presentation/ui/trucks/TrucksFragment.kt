@@ -5,13 +5,14 @@ import android.view.View
 import com.ml.truckingandconstructionwork.databinding.FragmentTruksBinding
 
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
+import com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
 
 class TrucksFragment : BaseFragment<FragmentTruksBinding>(FragmentTruksBinding::inflate) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+       binding.emptyView.showLoader()
     }
 
 

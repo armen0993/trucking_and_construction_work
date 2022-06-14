@@ -8,18 +8,16 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/ptGray4"
+        android:layout_height="@dimen/size_50"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_32"
-            android:layout_margin="@dimen/size_15"
-            android:background="?selectableItemBackground"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="@string/log_out"
-            android:textSize="@dimen/t_size_18" />
+            android:textSize="@dimen/t_size_18"
+            android:background="?selectableItemBackground"/>
 
 
 

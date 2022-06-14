@@ -26,9 +26,9 @@
     <string name="client">Հաճախորդ</string>
     <string name="please_select_registration_type">Խնդրում ենք ընտրել գրանցման տեսակը</string>
     <string name="driver">Վարորդ</string>
-    <string name="register_now">Գրանցվիր հիմա</string>
+    <string name="register_now"><u>Գրանցվիր հիմա</u></string>
     <string name="surname">Ազգանունը</string>
-    <string name="terms_amp_conditions">"  <u>Կանոններ &amp; Պայմանները</u>"</string>
+    <string name="terms_amp_conditions"><u>Կանոններ &amp; Պայմանները</u></string>
     <string name="i_agree_to_tac_works">Ես համաձայն եմ TAC Works</string>
     <string name="phone_number">Հեռախոսահամար</string>
     <string name="please_enter_your_personal_details">Խնդրում ենք մուտքագրել ձեր անձնական տվյալները</string>

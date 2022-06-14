@@ -1,13 +1,9 @@
 package com.ml.truckingandconstructionwork.presentation.ui.settings.language
 
-import android.content.Context
-import android.content.res.Configuration
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.ml.truckingandconstructionwork.MainActivity
 import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.AlertDialogChangeLanguageBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentLanguageBinding
@@ -15,8 +11,7 @@ import com.ml.truckingandconstructionwork.presentation.Constants.ARMENIAN
 import com.ml.truckingandconstructionwork.presentation.Constants.ENGLISH
 import com.ml.truckingandconstructionwork.presentation.Constants.RUSSIAN
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
-import java.util.*
-
+import com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
 
 class LanguageFragment : BaseFragment<FragmentLanguageBinding>(FragmentLanguageBinding::inflate) {
 

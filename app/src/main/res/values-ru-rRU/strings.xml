@@ -26,9 +26,9 @@
     <string name="client">Клиент</string>
     <string name="please_select_registration_type">Пожалуйста, выберите тип регистрации</string>
     <string name="driver">Водитель</string>
-    <string name="register_now">" Зарегистрируйтесь сейчас"</string>
+    <string name="register_now">" <u>Зарегистрируйтесь сейчас</u>"</string>
     <string name="surname">Фамилия</string>
-    <string name="terms_amp_conditions">" <u>Правила &amp; Условия</u>"</string>
+    <string name="terms_amp_conditions"><u>Правила &amp; Условия</u></string>
     <string name="i_agree_to_tac_works">Я согласен с TAC Works</string>
     <string name="phone_number">Номер телефона</string>
     <string name="please_enter_your_personal_details">Пожалуйста, введите ваши личные данные</string>

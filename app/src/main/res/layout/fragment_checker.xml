@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.main.checker_client_or_driver.CheckerFragment">
+    tools:context=".presentation.ui.main.registration.checker_client_or_driver.CheckerFragment">
 
 
     <com.ml.truckingandconstructionwork.presentation.custom_view.toolbar.ToolbarStandard
