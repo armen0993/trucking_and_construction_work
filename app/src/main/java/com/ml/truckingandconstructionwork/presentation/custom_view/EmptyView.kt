@@ -1,6 +1,8 @@
 package com.ml.truckingandconstructionwork.presentation.custom_view
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.ViewEmptyBinding
 
+@SuppressLint("ResourceType")
 class EmptyView(context: Context, attrs: AttributeSet) : ConstraintLayout(context, attrs) {
     private var _binding: ViewEmptyBinding? = null
     val binding get() = _binding!!
@@ -22,8 +25,8 @@ class EmptyView(context: Context, attrs: AttributeSet) : ConstraintLayout(contex
         binding.imageView.setImageResource(R.drawable.ic_empty)
         emptyMessage = context.getString(R.string.empty_view_no_data)
         loadingMessage = context.getString(R.string.empty_view_loading)
+        setBackgroundColor(resources.getColor(R.color.ptWhite,null))
 
-        setBackgroundResource(R.color.ptGray4)
     }
 
     fun setState(state: State) {

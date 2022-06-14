@@ -18,8 +18,10 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
     private fun openDrawer() {
         val drawer = activity?.findViewById<DrawerLayout>(R.id.drawer_layout)
+        drawer?.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
         binding.toolbar.setOnLeftClickListener {
             drawer?.openDrawer(Gravity.LEFT)
+
         }
     }
 

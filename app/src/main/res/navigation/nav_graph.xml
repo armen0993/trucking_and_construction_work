@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/createFingerprintFragment">
+    app:startDestination="@id/personalDetailsFragment">
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment"
@@ -34,6 +34,9 @@
             app:destination="@id/mainFragment"
             app:popUpTo="@id/navigation"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_splashFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/constructionWorksFragment"
@@ -50,8 +53,10 @@
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
-            android:id="@+id/action_settingsFragment_to_languageFragment"
-            app:destination="@id/languageFragment" />
+            android:id="@+id/action_settingsFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
@@ -125,9 +130,4 @@
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/languageFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.settings.language.LanguageFragment"
-        android:label="fragment_language"
-        tools:layout="@layout/fragment_language" />
 </navigation>

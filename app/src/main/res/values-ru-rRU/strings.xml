@@ -57,10 +57,16 @@
     <string name="edit_profile">Редактировать профиль</string>
     <string name="user_settings">Пользовательские настройки</string>
     <string name="system_settings">Системные настройки</string>
-    <string name="application_language">Язык приложения</string>
     <string name="select_language">Выберите язык</string>
     <string name="armenian">Армянский</string>
     <string name="russian">Русский</string>
     <string name="english">Английский</string>
+    <string name="empty_view_no_data">Нет данных</string>
+    <string name="empty_view_loading">Загрузка</string>
+    <string name="change_password">Изменить пароль</string>
+    <string name="log_in_with_fingerprint">Войти с помощью отпечатка пальца</string>
+    <string name="help">Помощь</string>
+    <string name="do_you_want_to_log_out_of_your_account">Вы хотите выйти из своей учетной записи?</string>
+    <string name="yes">Да</string>
 
 </resources>

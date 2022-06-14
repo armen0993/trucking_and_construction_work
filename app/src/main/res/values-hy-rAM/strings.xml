@@ -57,10 +57,16 @@
     <string name="edit_profile">Խմբագրել պրոֆիլը</string>
     <string name="user_settings">Օգտագործողի կարգավորումներ</string>
     <string name="system_settings">Համակարգի կարգավորումներ</string>
-    <string name="application_language">Հավելվածի լեզուն</string>
     <string name="select_language">Ընտրել լեզուն</string>
     <string name="armenian">Հայերեն</string>
     <string name="russian">Ռուսերեն</string>
     <string name="english">Անգլերեն</string>
+    <string name="empty_view_no_data">Տվյալներ չկան</string>
+    <string name="empty_view_loading">Բեռնվում է</string>
+    <string name="change_password">Փոխել գաղտնաբառը</string>
+    <string name="log_in_with_fingerprint">Մուտք գործեք Մատնահետքով</string>
+    <string name="help">Օգնություն</string>
+    <string name="do_you_want_to_log_out_of_your_account">Ցանկանու՞մ եք դուրս գալ ձեր հաշվից</string>
+    <string name="yes">Այո՛</string>
 
 </resources>

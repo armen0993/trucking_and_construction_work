@@ -65,13 +65,19 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="user_settings">User settings</string>
     <string name="system_settings">System settings</string>
-    <string name="application_language">Application language</string>
+
     <string name="select_language">Select language</string>
     <string name="armenian">Armenian</string>
     <string name="russian">Russian</string>
     <string name="english">English</string>
     <string name="empty_view_no_data">No data</string>
     <string name="empty_view_loading">Loading</string>
+    <string name="change_password">Change password</string>
+    <string name="log_in_with_fingerprint">Log in with Fingerprint</string>
+    <string name="help">Help</string>
+    <string name="do_you_want_to_log_out_of_your_account">Do you want to log out of your account?</string>
+    <string name="yes">Yes</string>
+    <string name="error_login">An error occurred, please try again</string>
 
 
 </resources>

@@ -18,6 +18,7 @@
    />
 
 
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_question"
         android:layout_width="@dimen/size_0"
@@ -174,5 +175,16 @@
         android:textStyle="normal"
         app:layout_constraintTop_toBottomOf="@id/check_box"
         tools:targetApi="p" />
+
+    <com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.ml.truckingandconstructionwork.presentation.ui.settings.language
+package com.ml.truckingandconstructionwork.presentation.ui
 
 import android.content.Context
 import android.content.res.Configuration
@@ -31,7 +31,7 @@ object LocaleHelper {
         updateResources(context, language)
     }
 
-    private fun getPersistedData(context: Context, defaultLanguage: String): String? {
+    fun getPersistedData(context: Context, defaultLanguage: String): String? {
         val preferences = PreferenceManager.getDefaultSharedPreferences(context)
         return preferences.getString(SELECTED_LANGUAGE, defaultLanguage)
     }

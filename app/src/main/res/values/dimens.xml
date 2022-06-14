@@ -35,12 +35,7 @@
     <dimen name="size_70">70dp</dimen>
     <dimen name="size_100">100dp</dimen>
     <dimen name="size_150">150dp</dimen>
-
-
-
-
-
-
+    <dimen name="size_10">10dp</dimen>
 
 
 </resources>

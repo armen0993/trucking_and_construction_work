@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/size_15"
@@ -12,12 +13,18 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_exit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:text="@string/log_out"
+            android:drawablePadding = "@dimen/size_10"
+            android:drawableStart="@drawable/ic_exit_small"
+            android:paddingStart="@dimen/size_15"
             android:textSize="@dimen/t_size_18"
-            android:background="?selectableItemBackground"/>
+            android:paddingEnd="60dp"
+            android:background="?selectableItemBackground"
+            tools:ignore="RtlSymmetry" />
 
 
 

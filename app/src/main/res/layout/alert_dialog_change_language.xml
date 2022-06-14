@@ -53,7 +53,7 @@
            />
     </RadioGroup>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size_30"
@@ -77,7 +77,9 @@
             android:textAllCaps="true"
             android:textColor="@color/ptGreen"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/dialog_alert_cancel_button"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/dialog_alert_cancel_button"
@@ -91,8 +93,10 @@
             android:textAllCaps="true"
             android:textColor="@color/ptRed"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

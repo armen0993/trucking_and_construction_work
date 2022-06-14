@@ -11,5 +11,6 @@
         <attr name="subtitleColor" format="color" />
         <attr name="rightItemEnabled" format="boolean" />
         <attr name="leftItemEnabled" format="boolean" />
+
     </declare-styleable>
     </resources>
