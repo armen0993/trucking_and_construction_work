@@ -41,6 +41,7 @@
     <string name="description_forgot_password">Մի անհանգստացեք! դա տեղի է ունենում: Խնդրում ենք մուտքագրել ձեր հաշվի հետ կապված հասցեն</string>
     <string name="title_forgot_password">Մոռացել եք գաղտնաբառը?</string>
     <string name="submit">Հաստատել</string>
+    <string name="send">Ուղարկել</string>
     <string name="cancel">Չեղարկել</string>
     <string name="would_you_like_to_use_your_pin_or_fingerprint_to_sign_in">Կցանկանա՞ք օգտագործել ձեր PIN-ը կամ մատնահետքը՝ մուտք գործելու համար:</string>
     <string name="pin_code">Փին կոդը</string>
@@ -68,5 +69,6 @@
     <string name="help">Օգնություն</string>
     <string name="do_you_want_to_log_out_of_your_account">Ցանկանու՞մ եք դուրս գալ ձեր հաշվից</string>
     <string name="yes">Այո՛</string>
+    <string name="hint_text_new_password">Նոր  գաղտնաբառ</string>
 
 </resources>

@@ -75,7 +75,7 @@
             android:paddingTop="10dp"
             android:paddingEnd="10dp"
             android:paddingBottom="10dp"
-            android:text="@string/submit"
+            android:text="@string/send"
             android:textAllCaps="true"
             android:textColor="@color/ptGreen"
             android:textSize="14sp"
