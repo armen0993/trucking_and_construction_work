@@ -137,11 +137,7 @@
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/languageFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.settings.language.LanguageFragment"
-        android:label="fragment_language"
-        tools:layout="@layout/fragment_language" />
+
     <fragment
         android:id="@+id/verificationFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.forgot_password.VerificationForgotPasswordFragment"

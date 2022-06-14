@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -35,12 +36,12 @@ class PersonalDetailsFragment : BaseFragment<FragmentPersonalDetailsBinding>(
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.enableLeftItem(true)
 
-        //Temp
-        binding.btnNext.isEnabled = true
+
 
 //        checkerType(args.userType)
 
         onClick()
+        inputFields()
 
     }
 
@@ -62,7 +63,8 @@ class PersonalDetailsFragment : BaseFragment<FragmentPersonalDetailsBinding>(
                     surname = binding.surname.text.toString(),
                     city = binding.address.text.toString(),
                     email = binding.email.text.toString(),
-                    phoneNumber = binding.phoneNumber.text.toString()
+                    phoneNumber = binding.phoneNumber.text.toString(),
+                    clientType = args.userType
                 )
             )
             .addOnSuccessListener {
@@ -82,6 +84,36 @@ class PersonalDetailsFragment : BaseFragment<FragmentPersonalDetailsBinding>(
             }
 
 
+    }
+
+    private fun checkEmptyFields(): Boolean {
+
+        return binding.name.text?.isNotEmpty() == true &&
+                binding.surname.text?.isNotEmpty() == true &&
+                binding.address.text?.isNotEmpty() == true &&
+                binding.phoneNumber.text?.isNotEmpty() == true &&
+                binding.email.text?.isNotEmpty() == true
+
+    }
+
+    private fun inputFields() {
+        with(binding) {
+            name.doOnTextChanged { _, _, _, _ ->
+                btnNext.isEnabled = checkEmptyFields()
+            }
+            surname.doOnTextChanged { _, _, _, _ ->
+                btnNext.isEnabled = checkEmptyFields()
+            }
+            address.doOnTextChanged { _, _, _, _ ->
+                btnNext.isEnabled = checkEmptyFields()
+            }
+            phoneNumber.doOnTextChanged { _, _, _, _ ->
+                btnNext.isEnabled = checkEmptyFields()
+            }
+            email.doOnTextChanged { _, _, _, _ ->
+                btnNext.isEnabled = checkEmptyFields()
+            }
+        }
     }
 
 //    private fun checkerType(type:String){

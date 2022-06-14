@@ -8,4 +8,5 @@ data class UserDetails(
     val phoneNumber:String? = null,
     val login:String? = null,
     val password:String? = null,
+    val clientType:String? = null
 )

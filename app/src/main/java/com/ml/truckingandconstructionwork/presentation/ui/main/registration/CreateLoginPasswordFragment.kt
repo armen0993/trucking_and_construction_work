@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.firestore.ktx.firestore
@@ -36,8 +37,7 @@ class CreateLoginPasswordFragment :
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.enableLeftItem(true)
 
-        //Temp
-        binding.btnRegistration.isEnabled = true
+        inputFields()
         onClick()
     }
 
@@ -45,6 +45,28 @@ class CreateLoginPasswordFragment :
         binding.btnRegistration.setOnClickListener {
             userDetails()
 
+        }
+    }
+
+    private fun checkEmptyFields(): Boolean {
+
+        return binding.login.text?.isNotEmpty() == true &&
+                binding.password.text?.isNotEmpty() == true &&
+                binding.repeatPassword.text?.isNotEmpty() == true
+
+    }
+
+    private fun inputFields() {
+        with(binding) {
+            login.doOnTextChanged { _, _, _, _ ->
+                btnRegistration.isEnabled = checkEmptyFields()
+            }
+            password.doOnTextChanged { _, _, _, _ ->
+                btnRegistration.isEnabled = checkEmptyFields()
+            }
+            repeatPassword.doOnTextChanged { _, _, _, _ ->
+                btnRegistration.isEnabled = checkEmptyFields()
+            }
         }
     }
 
