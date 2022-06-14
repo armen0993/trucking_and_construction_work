@@ -8,7 +8,7 @@
         android:id="@+id/mainFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_checkerFragment"
             app:destination="@id/checkerFragment" />
@@ -55,18 +55,25 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        tools:layout="@layout/fragment_forgot_password"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.forgot_password.ForgotPasswordFragment"
-        android:label="ForgotPasswordFragment" />
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password">
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_verificationFragment"
+            app:destination="@id/verificationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
     <fragment
         android:id="@+id/personalDetailsFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.PersonalDetailsFragment"
         android:label="fragment_personal_details"
-        tools:layout="@layout/fragment_personal_details" >
+        tools:layout="@layout/fragment_personal_details">
         <argument
             android:name="user_type"
-            app:argType="string"
-            />
+            app:argType="string" />
         <action
             android:id="@+id/action_personalDetailsFragment_to_createLoginPasswordFragment"
             app:destination="@id/createLoginPasswordFragment" />
@@ -76,7 +83,7 @@
         android:id="@+id/checkerFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.checker_client_or_driver.CheckerFragment"
         android:label="fragment_checker"
-        tools:layout="@layout/fragment_checker" >
+        tools:layout="@layout/fragment_checker">
         <action
             android:id="@+id/action_checkerFragment_to_registrationFragment"
             app:destination="@id/personalDetailsFragment" />
@@ -87,7 +94,7 @@
         android:id="@+id/createLoginPasswordFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.CreateLoginPasswordFragment"
         android:label="fragment_create_login_password"
-        tools:layout="@layout/fragment_create_login_password" >
+        tools:layout="@layout/fragment_create_login_password">
         <action
             android:id="@+id/action_createLoginPasswordFragment_to_createPinFragment"
             app:destination="@id/createPinFragment" />
@@ -98,13 +105,13 @@
             android:id="@+id/action_createLoginPasswordFragment_to_profileFragment"
             app:destination="@id/profileFragment"
             app:popUpTo="@id/navigation"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/createPinFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.CreatePinFragment"
         android:label="fragment_create_pin"
-        tools:layout="@layout/fragment_create_pin" >
+        tools:layout="@layout/fragment_create_pin">
         <action
             android:id="@+id/action_createPinFragment_to_createFingerprintFragment"
             app:destination="@id/createFingerprintFragment" />
@@ -113,12 +120,12 @@
         android:id="@+id/createFingerprintFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.registration.CreateFingerprintFragment"
         android:label="fragment_create_fingerprint"
-        tools:layout="@layout/fragment_create_fingerprint" >
+        tools:layout="@layout/fragment_create_fingerprint">
         <action
             android:id="@+id/action_createFingerprintFragment_to_profileFragment"
             app:destination="@id/profileFragment"
             app:popUpTo="@id/navigation"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -130,4 +137,18 @@
         android:name="com.ml.truckingandconstructionwork.presentation.ui.settings.language.LanguageFragment"
         android:label="fragment_language"
         tools:layout="@layout/fragment_language" />
+    <fragment
+        android:id="@+id/verificationFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.forgot_password.VerificationForgotPasswordFragment"
+        android:label="OtpFragment"
+        tools:layout="@layout/fragment_verification_forgot_password" >
+        <action
+            android:id="@+id/action_verificationFragment_to_newPasswordFragment"
+            app:destination="@id/newPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPasswordFragment"
+        tools:layout="@layout/fragment_new_password"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.forgot_password.NewPasswordFragment"
+        android:label="NewPasswordFragment" />
 </navigation>

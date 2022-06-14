@@ -40,7 +40,7 @@
     <string name="enter_code">Введите код</string>
     <string name="description_forgot_password">Не волнуйтесь! такое бывает.Пожалуйста, введите адрес, связанный с вашей учетной записью</string>
     <string name="title_forgot_password">Забыли пароль?</string>
-    <string name="submit">Подтверждать</string>
+    <string name="send">Отправить</string>
     <string name="cancel">Отмена</string>
     <string name="would_you_like_to_use_your_pin_or_fingerprint_to_sign_in">Хотите использовать PIN-код или отпечаток пальца для входа?</string>
     <string name="pin_code">Пин-код</string>
@@ -62,5 +62,6 @@
     <string name="armenian">Армянский</string>
     <string name="russian">Русский</string>
     <string name="english">Английский</string>
+    <string name="hint_text_new_password">Новый пароль</string>
 
 </resources>

@@ -48,7 +48,7 @@
     <string name="enter_code">Enter code</string>
     <string name="title_forgot_password">Forgot\nPassword?</string>
     <string name="description_forgot_password">Don`t worry! it happens.Please enter the address associated with your account.</string>
-    <string name="submit">Submit</string>
+    <string name="send">Send</string>
     <string name="cancel">Cancel</string>
     <string name="would_you_like_to_use_your_pin_or_fingerprint_to_sign_in">Would you like to use your PIN or fingerprint to sign in?</string>
     <string name="pin_code">Pin Code</string>
@@ -72,6 +72,13 @@
     <string name="english">English</string>
     <string name="empty_view_no_data">No data</string>
     <string name="empty_view_loading">Loading</string>
+    <string name="title_text_enter_otp">Enter the verification code we just sent you on your email address.</string>
+    <string name="description_verification_otp">Dont receive the OTP?</string>
+    <string name="btn_resend_otp">RESEND OTP</string>
+    <string name="text_btn_verify">Verify</string>
+    <string name="title_text_reset_password">Reset\nPassword</string>
+    <string name="hint_text_new_password">New password</string>
+    <string name="text_btn_reset_password">Reset Password</string>
 
 
 </resources>
