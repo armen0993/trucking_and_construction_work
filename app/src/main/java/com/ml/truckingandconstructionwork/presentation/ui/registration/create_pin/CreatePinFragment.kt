@@ -1,16 +1,18 @@
-package com.ml.truckingandconstructionwork.presentation.ui.main.registration
+package com.ml.truckingandconstructionwork.presentation.ui.registration.create_pin
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.FragmentCreatePinBinding
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
-import com.ml.truckingandconstructionwork.presentation.models.UserDetails
+import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
+import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class CreatePinFragment : BaseFragment<FragmentCreatePinBinding>(FragmentCreatePinBinding::inflate) {
+class CreatePinFragment() : BaseFragment<BaseViewModel,FragmentCreatePinBinding>() {
+
+    override val binding: FragmentCreatePinBinding by viewBinding()
+    override val viewModel: CreatePinViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

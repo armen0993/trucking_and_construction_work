@@ -1,52 +1,61 @@
-package com.ml.truckingandconstructionwork.presentation.ui.main.registration
+package com.ml.truckingandconstructionwork.presentation.ui.registration.create_login_password
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
-import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.ml.truckingandconstructionwork.R
-import com.ml.truckingandconstructionwork.databinding.AlertDialogEnterPinBinding
 import com.ml.truckingandconstructionwork.databinding.AlertDialogPinOrFingerprintBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentCreateLoginPasswordBinding
-import com.ml.truckingandconstructionwork.presentation.Constants.DOC_LOGIN_PASSWORD
-import com.ml.truckingandconstructionwork.presentation.Constants.USER_DETAILS
+import com.ml.truckingandconstructionwork.domain.models.UserDetails
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
-import com.ml.truckingandconstructionwork.presentation.models.UserDetails
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
+import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class CreateLoginPasswordFragment :
-    BaseFragment<FragmentCreateLoginPasswordBinding>(FragmentCreateLoginPasswordBinding::inflate) {
+class CreateLoginPasswordFragment() :
+    BaseFragment<BaseViewModel, FragmentCreateLoginPasswordBinding>() {
+
+    override val binding: FragmentCreateLoginPasswordBinding by viewBinding()
+    override val viewModel: CreateLoginPasswordViewModel by viewModel()
 
     private val bindingAlertDialog by lazy {
         AlertDialogPinOrFingerprintBinding.inflate(
             layoutInflater
         )
     }
-    private val db = Firebase.firestore
+    private val args:CreateLoginPasswordFragmentArgs by navArgs()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onView() {
         binding.toolbar.enableLeftItem(true)
-
         inputFields()
-        onClick()
+
     }
 
-    private fun onClick() {
+    override fun onViewClick() {
         binding.btnRegistration.setOnClickListener {
             userDetails()
 
         }
+
     }
+
+    override fun onEach() {
+        onEach(viewModel.showProgressBar) {
+            showProgress(it)
+        }
+        onEach(viewModel.startAlertDialog) {
+            if (it) {
+                startAlertDialog()
+            } else {
+                Toast.makeText(context, "Please check your data", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
 
     private fun checkEmptyFields(): Boolean {
 
@@ -71,33 +80,18 @@ class CreateLoginPasswordFragment :
     }
 
     private fun userDetails() {
-        binding.emptyView.showLoader()
-        db.collection(USER_DETAILS).document(DOC_LOGIN_PASSWORD)
-            .set(
-                UserDetails(
-                    login = binding.login.text.toString(),
-                    password = binding.repeatPassword.text.toString()
-                )
+        viewModel.setUserDetails(
+            UserDetails(
+                userid = args.userId,
+                login = binding.login.text.toString(),
+                password = binding.repeatPassword.text.toString()
             )
-            .addOnSuccessListener {
+        )
+        viewModel.getUserDetails()
+    }
 
-                lifecycleScope.launch {
-                    delay(1000L)
-                    binding.emptyView.hide()
-                    startAlertDialog()
-                }
-
-
-            }
-            .addOnFailureListener {
-                Toast.makeText(
-                    context,
-                    resources.getString(R.string.error_login),
-                    Toast.LENGTH_SHORT
-                ).show()
-
-
-            }
+    private fun showProgress(show: Boolean) {
+        if (show) binding.emptyView.showLoader() else binding.emptyView.hide()
     }
 
     private fun startAlertDialog() {

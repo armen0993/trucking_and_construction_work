@@ -10,13 +10,19 @@ import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.AlertDialogChangeLanguageBinding
 import com.ml.truckingandconstructionwork.databinding.AlertDialogExitBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentSettingsBinding
-import com.ml.truckingandconstructionwork.presentation.Constants
+import com.ml.truckingandconstructionwork.presentation.utils.Constants
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
+import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.LocaleHelper
+import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBinding::inflate) {
+class SettingsFragment() : BaseFragment<BaseViewModel,FragmentSettingsBinding>() {
+
+    override val binding: FragmentSettingsBinding by viewBinding()
+    override val viewModel: SettingsViewModel by viewModel()
 
     private val bindingAlertDialogLanguage by lazy {
         AlertDialogChangeLanguageBinding.inflate(

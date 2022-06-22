@@ -85,6 +85,70 @@
     <string name="title_text_reset_password">Reset\nPassword</string>
     <string name="hint_text_new_password">New password</string>
     <string name="text_btn_reset_password">Reset Password</string>
+    <string name="data_birth">Дата рождения</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
+
+    <string-array name="city">
+        <item>Yerevan</item>
+        <item>Gyumri</item>
+        <item>Vanadzor</item>
+        <item>Vagharshapat</item>
+        <item>Hrazdan</item>
+        <item>Abovyan</item>
+        <item>Kapan</item>
+        <item>Ararat</item>
+        <item>Armavir</item>
+        <item>Stepanavan</item>
+        <item>Gavar</item>
+        <item>Artashat</item>
+        <item>Goris</item>
+        <item>Masis</item>
+        <item>Ashtarak</item>
+        <item>Sevan</item>
+        <item>Spitak</item>
+        <item>Ijevan</item>
+        <item>Dilijan</item>
+        <item>Alaverdi</item>
+        <item>Vedi</item>
+        <item>Vardenis</item>
+        <item>Martuni</item>
+        <item>Yeghvard</item>
+        <item>Metsamor</item>
+        <item>Berd</item>
+        <item>Yeghegnadzor</item>
+        <item>Vardenik</item>
+        <item>Akhuryan</item>
+        <item>Tashir</item>
+        <item>Nerkin Getashen</item>
+        <item>Byureghavan</item>
+        <item>Garrni</item>
+        <item>Chambarak</item>
+        <item>Aparan</item>
+        <item>Vayk</item>
+        <item>Sardarapat</item>
+        <item>Noyemberyan</item>
+        <item>Talin</item>
+        <item>Nor Geghi</item>
+        <item>Oshakan</item>
+        <item>Agarak</item>
+        <item>Jermuk</item>
+        <item>Meghri</item>
+        <item>Odzun</item>
+        <item>Zovuni</item>
+        <item>Azatan</item>
+        <item>Prroshyan</item>
+        <item>Kasakh</item>
+        <item>Yeranos</item>
+        <item>Avshar</item>
+        <item>Lchashen</item>
+        <item>Malishka</item>
+        <item>Verin Getashen</item>
+        <item>Lichk</item>
+        <item>Vosketap</item>
+        <item>Tsaghkadzor</item>
+
+    </string-array>
 
 
 </resources>

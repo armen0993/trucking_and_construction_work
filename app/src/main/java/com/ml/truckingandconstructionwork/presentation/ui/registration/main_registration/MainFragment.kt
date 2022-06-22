@@ -1,18 +1,20 @@
-package com.ml.truckingandconstructionwork.presentation.ui.main
+package com.ml.truckingandconstructionwork.presentation.ui.registration.main_registration
 
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
 import androidx.core.widget.doAfterTextChanged
 import androidx.core.widget.doOnTextChanged
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.fragment.findNavController
 import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.FragmentMainBinding
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
+import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
+import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
+class MainFragment() : BaseFragment<BaseViewModel,FragmentMainBinding>() {
 
+    override val binding: FragmentMainBinding by viewBinding()
+    override val viewModel: MainViewModel by viewModel()
     private var emailNotEmpty = false
     private var passwordNotEmpty = false
 

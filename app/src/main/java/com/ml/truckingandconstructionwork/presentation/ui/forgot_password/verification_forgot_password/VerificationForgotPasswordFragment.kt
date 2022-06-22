@@ -1,4 +1,4 @@
-package com.ml.truckingandconstructionwork.presentation.ui.forgot_password
+package com.ml.truckingandconstructionwork.presentation.ui.forgot_password.verification_forgot_password
 
 import android.os.Bundle
 import android.view.View
@@ -7,13 +7,18 @@ import com.google.android.material.snackbar.Snackbar
 import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.FragmentVerificationForgotPasswordBinding
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
+import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
 import com.ml.truckingandconstructionwork.presentation.utils.hideKeyboard
 import com.ml.truckingandconstructionwork.presentation.utils.showKeyboard
+import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class VerificationForgotPasswordFragment :
-    BaseFragment<FragmentVerificationForgotPasswordBinding>(
-        FragmentVerificationForgotPasswordBinding::inflate
+class VerificationForgotPasswordFragment() :
+    BaseFragment<BaseViewModel,FragmentVerificationForgotPasswordBinding>(
+
     ) {
+    override val binding: FragmentVerificationForgotPasswordBinding by viewBinding()
+    override val viewModel: VerificationForgotPasswordViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

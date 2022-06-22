@@ -34,7 +34,7 @@
     <string name="please_enter_your_personal_details">Пожалуйста, введите ваши личные данные</string>
     <string name="next">Следующий</string>
     <string name="please_enter_your_username_and_password">Пожалуйста введите свой логин и пароль</string>
-    <string name="login">Авторизоваться</string>
+    <string name="login">Логин</string>
     <string name="repeat_password">Повторите пароль</string>
     <string name="a_code_has_been_sent_to_your_phone_number_please_enter_it">На ваш номер телефона отправлен код, введите его пожалуйста</string>
     <string name="enter_code">Введите код</string>

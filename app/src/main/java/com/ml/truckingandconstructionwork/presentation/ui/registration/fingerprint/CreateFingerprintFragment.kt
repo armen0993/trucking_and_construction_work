@@ -1,4 +1,4 @@
-package com.ml.truckingandconstructionwork.presentation.ui.main.registration
+package com.ml.truckingandconstructionwork.presentation.ui.registration.fingerprint
 
 
 
@@ -8,14 +8,20 @@ import android.widget.Toast
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
-import androidx.navigation.fragment.findNavController
 import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.FragmentCreateFingerprintBinding
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
+import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
+import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.concurrent.Executor
 
-class CreateFingerprintFragment :
-    BaseFragment<FragmentCreateFingerprintBinding>(FragmentCreateFingerprintBinding::inflate) {
+class CreateFingerprintFragment() :
+    BaseFragment<BaseViewModel,FragmentCreateFingerprintBinding>() {
+
+    override val binding: FragmentCreateFingerprintBinding by viewBinding()
+    override val viewModel: CreateFingerprintViewModel by viewModel()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onClick()

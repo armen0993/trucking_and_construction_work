@@ -69,7 +69,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     private fun showBottomNav() {
         binding.bottomBar.show()
     }
