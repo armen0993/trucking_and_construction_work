@@ -87,7 +87,6 @@ class CreateLoginPasswordFragment() :
                 password = binding.repeatPassword.text.toString()
             )
         )
-        viewModel.getUserDetails()
     }
 
     private fun showProgress(show: Boolean) {

@@ -70,5 +70,8 @@
     <string name="do_you_want_to_log_out_of_your_account">Ցանկանու՞մ եք դուրս գալ ձեր հաշվից</string>
     <string name="yes">Այո՛</string>
     <string name="hint_text_new_password">Նոր  գաղտնաբառ</string>
+    <string name="error_login">Произошла ошибка. Пожалуйста, попробуйте еще раз</string>
+    <string name="title_text_enter_otp">Введите проверочный код, который мы только что отправили вам на ваш адрес электронной почты.</string>
+    <string name="description_verification_otp">Не получили одноразовый пароль?</string>
 
 </resources>

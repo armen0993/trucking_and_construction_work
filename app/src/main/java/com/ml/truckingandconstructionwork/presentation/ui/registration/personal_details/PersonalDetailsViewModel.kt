@@ -27,7 +27,7 @@ class PersonalDetailsViewModel(
         viewModelScope.launch {
             _showProgressBar.emit(true)
             setUserDetailsInteractor(userDetails)
-            getUserDetails()
+
             _showProgressBar.emit(false)
         }
     }

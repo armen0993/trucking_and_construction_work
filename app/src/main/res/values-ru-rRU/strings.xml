@@ -70,5 +70,8 @@
     <string name="do_you_want_to_log_out_of_your_account">Вы хотите выйти из своей учетной записи?</string>
     <string name="yes">Да</string>
     <string name="hint_text_new_password">Новый пароль</string>
+    <string name="error_login">Սխալ է տեղի ունեցել, խնդրում ենք կրկին փորձել</string>
+    <string name="title_text_enter_otp">Մուտքագրեք հաստատման կոդը, որը մենք ուղարկել ենք ձեզ ձեր էլ.փոստի հասցեով:</string>
+    <string name="description_verification_otp">Չե՞ք ստացել մեկանգամյա կոդը</string>
 
 </resources>
