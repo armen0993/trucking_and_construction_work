@@ -13,10 +13,11 @@ import androidx.navigation.fragment.NavHostFragment
 import com.ml.truckingandconstructionwork.presentation.extensions.hide
 import com.ml.truckingandconstructionwork.presentation.extensions.show
 import com.ml.truckingandconstructionwork.presentation.ui.trucks.TrucksFragment
-import com.ml.truckingandconstructionwork.presentation.ui.construction_works.ConstructionWorksFragment
+import com.ml.truckingandconstructionwork.presentation.ui.special_equipment.SpecialEquipmentFragment
 import com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsFragment
 import com.ml.truckingandconstructionwork.databinding.ActivityMainBinding
 import com.ml.truckingandconstructionwork.presentation.ui.main.profile.ProfileFragment
+import com.ml.truckingandconstructionwork.presentation.ui.special_offer.SpecialOfferFragment
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
@@ -42,8 +43,9 @@ class MainActivity : AppCompatActivity() {
                 )
                 when (f) {
                     is ProfileFragment -> showBottomNav()
+                    is SpecialOfferFragment -> showBottomNav()
                     is TrucksFragment -> showBottomNav()
-                    is ConstructionWorksFragment -> showBottomNav()
+                    is SpecialEquipmentFragment -> showBottomNav()
                     is SettingsFragment -> showBottomNav()
                     else -> hideBottomNav()
                 }
@@ -60,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.profile_fragment -> navController.navigate(R.id.profileFragment)
+                R.id.special_offer_fragment -> navController.navigate(R.id.specialOfferFragment)
                 R.id.trucks_fragment -> navController.navigate(R.id.trucksFragment)
                 R.id.construction_works_fragment -> navController.navigate(R.id.constructionWorksFragment)
                 R.id.settings_fragment -> navController.navigate(R.id.settingsFragment)

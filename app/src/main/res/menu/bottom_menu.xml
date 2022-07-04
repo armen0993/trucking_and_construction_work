@@ -4,6 +4,11 @@
         android:id="@+id/profile_fragment"
         android:icon="@drawable/ic_home_selector"
         android:title="@string/main" />
+
+    <item
+        android:id="@+id/special_offer_fragment"
+        android:icon="@drawable/ic_special_offer_selector"
+        android:title="@string/special_offer" />
     <item
         android:id="@+id/trucks_fragment"
         android:icon="@drawable/ic_truck_selector"
@@ -12,7 +17,7 @@
     <item
         android:id="@+id/construction_works_fragment"
         android:icon="@drawable/ic_construction_work_selector"
-        android:title="@string/construction_works" />
+        android:title="@string/special_equipment" />
 
     <item
         android:id="@+id/settings_fragment"

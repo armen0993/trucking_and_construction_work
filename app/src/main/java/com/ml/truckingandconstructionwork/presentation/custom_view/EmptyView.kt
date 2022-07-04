@@ -2,7 +2,6 @@ package com.ml.truckingandconstructionwork.presentation.custom_view
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View

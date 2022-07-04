@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.ml.truckingandconstructionwork.R
-import com.ml.truckingandconstructionwork.databinding.FragmentForgotPasswordBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentSplashBinding
 
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment

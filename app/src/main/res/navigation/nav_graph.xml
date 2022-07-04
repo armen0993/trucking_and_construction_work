@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/checkerFragment">
+    app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.main_registration.MainFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.MainFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_main">
         <action
@@ -40,9 +40,9 @@
     </fragment>
     <fragment
         android:id="@+id/constructionWorksFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.construction_works.ConstructionWorksFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.special_equipment.SpecialEquipmentFragment"
         android:label="fragment_construction_works"
-        tools:layout="@layout/fragment_construction_works" />
+        tools:layout="@layout/fragment_special_equipment" />
     <fragment
         android:id="@+id/trucksFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.trucks.TrucksFragment"
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.forgot_password.forgot_password.ForgotPasswordFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.forgot_password.forgot_password.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment"
         tools:layout="@layout/fragment_forgot_password">
         <action
@@ -73,7 +73,7 @@
     </fragment>
     <fragment
         android:id="@+id/personalDetailsFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.personal_details.PersonalDetailsFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.personal_details.PersonalDetailsFragment"
         android:label="fragment_personal_details"
         tools:layout="@layout/fragment_personal_details">
         <argument
@@ -86,7 +86,7 @@
     </fragment>
     <fragment
         android:id="@+id/checkerFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.checker_client_or_driver.CheckerFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.checker_client_or_driver.CheckerFragment"
         android:label="fragment_checker"
         tools:layout="@layout/fragment_checker">
         <action
@@ -97,7 +97,7 @@
     </fragment>
     <fragment
         android:id="@+id/createLoginPasswordFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.create_login_password.CreateLoginPasswordFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.create_login_password.CreateLoginPasswordFragment"
         android:label="fragment_create_login_password"
         tools:layout="@layout/fragment_create_login_password">
         <argument
@@ -117,7 +117,7 @@
     </fragment>
     <fragment
         android:id="@+id/createPinFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.create_pin.CreatePinFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.create_pin.CreatePinFragment"
         android:label="fragment_create_pin"
         tools:layout="@layout/fragment_create_pin">
         <action
@@ -126,7 +126,7 @@
     </fragment>
     <fragment
         android:id="@+id/createFingerprintFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.fingerprint.CreateFingerprintFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.fingerprint.CreateFingerprintFragment"
         android:label="fragment_create_fingerprint"
         tools:layout="@layout/fragment_create_fingerprint">
         <action
@@ -143,7 +143,7 @@
 
     <fragment
         android:id="@+id/verificationFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.forgot_password.verification_forgot_password.VerificationForgotPasswordFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.forgot_password.verification_forgot_password.VerificationForgotPasswordFragment"
         android:label="OtpFragment"
         tools:layout="@layout/fragment_verification_forgot_password" >
         <action
@@ -153,6 +153,10 @@
     <fragment
         android:id="@+id/newPasswordFragment"
         tools:layout="@layout/fragment_new_password"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.forgot_password.new_password.NewPasswordFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.forgot_password.new_password.NewPasswordFragment"
         android:label="NewPasswordFragment" />
+    <fragment
+        android:id="@+id/specialOfferFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.special_offer.SpecialOfferFragment"
+        android:label="SpecialOfferFragment" />
 </navigation>
