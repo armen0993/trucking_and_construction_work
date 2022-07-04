@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/jobOfferFragment">
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.MainFragment"
@@ -36,7 +36,9 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/constructionWorksFragment"
@@ -159,14 +161,38 @@
     </fragment>
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.forgot_password.NewPasswordFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.forgot_password.new_password.NewPasswordFragment"
         android:label="NewPasswordFragment"
         tools:layout="@layout/fragment_new_password" />
-        tools:layout="@layout/fragment_new_password"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.forgot_password.new_password.NewPasswordFragment"
-        android:label="NewPasswordFragment" />
+
     <fragment
-        android:id="@+id/specialOfferFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.special_offer.SpecialOfferFragment"
-        android:label="SpecialOfferFragment" />
+        android:id="@+id/jobOfferFragment"
+        tools:layout="@layout/fragment_job_offer"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.job_offer.JobOfferFragment"
+        android:label="SpecialOfferFragment" >
+        <action
+            android:id="@+id/action_jobOfferFragment_to_addJobOfferFragment"
+            app:destination="@id/addJobOfferFragment" />
+        <action
+            android:id="@+id/action_jobOfferFragment_to_offersListFragment"
+            app:destination="@id/offersListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addJobOfferFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.job_offer.add_offer.AddJobOfferFragment"
+        android:label="fragment_add_job_offer"
+        tools:layout="@layout/fragment_add_job_offer" >
+
+        <action
+            android:id="@+id/action_addJobOfferFragment_to_offersListFragment"
+            app:destination="@id/offersListFragment"
+
+       />
+    </fragment>
+
+    <fragment
+        android:id="@+id/offersListFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.job_offer.offers_list.OffersListFragment"
+        android:label="fragment_offers_list"
+        tools:layout="@layout/fragment_offers_list" />
 </navigation>

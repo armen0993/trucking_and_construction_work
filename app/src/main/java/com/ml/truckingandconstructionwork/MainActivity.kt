@@ -17,7 +17,7 @@ import com.ml.truckingandconstructionwork.presentation.ui.special_equipment.Spec
 import com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsFragment
 import com.ml.truckingandconstructionwork.databinding.ActivityMainBinding
 import com.ml.truckingandconstructionwork.presentation.ui.main.profile.ProfileFragment
-import com.ml.truckingandconstructionwork.presentation.ui.special_offer.SpecialOfferFragment
+import com.ml.truckingandconstructionwork.presentation.ui.job_offer.JobOfferFragment
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 )
                 when (f) {
                     is ProfileFragment -> showBottomNav()
-                    is SpecialOfferFragment -> showBottomNav()
+                    is JobOfferFragment -> showBottomNav()
                     is TrucksFragment -> showBottomNav()
                     is SpecialEquipmentFragment -> showBottomNav()
                     is SettingsFragment -> showBottomNav()
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.profile_fragment -> navController.navigate(R.id.profileFragment)
-                R.id.special_offer_fragment -> navController.navigate(R.id.specialOfferFragment)
+                R.id.special_offer_fragment -> navController.navigate(R.id.jobOfferFragment)
                 R.id.trucks_fragment -> navController.navigate(R.id.trucksFragment)
                 R.id.construction_works_fragment -> navController.navigate(R.id.constructionWorksFragment)
                 R.id.settings_fragment -> navController.navigate(R.id.settingsFragment)

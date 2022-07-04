@@ -12,7 +12,9 @@ import com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.f
 import com.ml.truckingandconstructionwork.presentation.ui.sign_in.MainViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.personal_details.PersonalDetailsViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsViewModel
-import com.ml.truckingandconstructionwork.presentation.ui.special_offer.SpecialOfferViewModel
+import com.ml.truckingandconstructionwork.presentation.ui.job_offer.JobOfferViewModel
+import com.ml.truckingandconstructionwork.presentation.ui.job_offer.add_offer.AddJobOfferViewModel
+import com.ml.truckingandconstructionwork.presentation.ui.job_offer.offers_list.OffersListViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.splash.SplashViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.trucks.TrucksViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -34,5 +36,7 @@ val viewModelModule = module {
     viewModel { MainViewModel()  }
     viewModel { SettingsViewModel()  }
     viewModel { TrucksViewModel()  }
-    viewModel { SpecialOfferViewModel()  }
+    viewModel { JobOfferViewModel()  }
+    viewModel { AddJobOfferViewModel()  }
+    viewModel { OffersListViewModel()  }
 }

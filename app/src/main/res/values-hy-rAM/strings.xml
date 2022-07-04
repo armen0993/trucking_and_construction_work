@@ -69,8 +69,42 @@
     <string name="do_you_want_to_log_out_of_your_account">Ցանկանու՞մ եք դուրս գալ ձեր հաշվից</string>
     <string name="yes">Այո՛</string>
     <string name="hint_text_new_password">Նոր  գաղտնաբառ</string>
-    <string name="error_login">Произошла ошибка. Пожалуйста, попробуйте еще раз</string>
-    <string name="title_text_enter_otp">Введите проверочный код, который мы только что отправили вам на ваш адрес электронной почты.</string>
-    <string name="description_verification_otp">Не получили одноразовый пароль?</string>
+    <string name="error_login">Սխալ է տեղի ունեցել, խնդրում ենք կրկին փորձել</string>
+    <string name="title_text_enter_otp">Մուտքագրեք հաստատման կոդը, որը մենք ուղարկել ենք ձեզ ձեր էլ.փոստի հասցեով:</string>
+    <string name="description_verification_otp">Չե՞ք ստացել մեկանգամյա կոդը</string>
+    <string name="special_equipment">Հատուկ տեխնիկա</string>
+    <string name="btn_resend_otp">Կրկին ուղարկել մեկանգամյա կոդը</string>
+    <string name="text_btn_verify">Հաստատել</string>
+    <string name="title_text_reset_password">Վերականգնել\nգաղտնաբառը</string>
+    <string name="text_btn_reset_password">Վերականգնել գաղտնաբառը</string>
+    <string name="data_birth">Ծննդյան ամսաթիվ</string>
+    <string name="male">Արական</string>
+    <string name="female">Իգական</string>
+    <string name="job_offers">Աշխատանքային առաջարկներ</string>
+    <string name="add_special_offer">Եթե ունեք աշխատանքի առաջարկ, կարող եք գրանցվել այստեղ և անպայման կստանաք այդ առաջարկին համարժեք պատասխան</string>
+    <string name="add_offer">Ավելացնել առաջարկ</string>
+    <string name="see_offers">Տես առաջարկները</string>
+    <string name="see_special_offers">Այստեղ դուք կարող եք տեսնել աշխատանքի առաջարկները, որոնք նախապես են արվել</string>
+    <string name="please_enter_your_requirements">Խնդրում ենք մուտքագրել ձեր պահանջները</string>
+    <string name="type_special_equipment">Հատուկ սարքավորումների տեսակը</string>
+    <string name="start_address">Մեկնարկի հասցեն</string>
+    <string name="end_address">Վերջնական հասցե</string>
+    <string name="proposed_price_of_the_work">Աշխատանքի առաջարկվող գինը</string>
+    <string name="brief_job_description">Աշխատանքի համառոտ նկարագրությունը</string>
+    <string name="add_job_offer">Ավելացնել աշխատանքի առաջարկ</string>
+    <string name="order_now">Պատվիրե՛ք հիմա</string>
+
+    <string-array name="special_equipment">
+        <item>Բեռնատարներ</item>
+        <item>Բեռնատար ամբարձիչներ</item>
+        <item>Մանիպուլյատորներ</item>
+        <item>Թրթուրավոր էքսկավատորներ</item>
+        <item>Անիվավոր էքսկավատորներ</item>
+        <item>Էքսկավատոր բեռնիչներ</item>
+        <item>Բետոնախառնիչներ</item>
+        <item>Բետոնի պոմպ մեքենա</item>
+        <item>Քարշակ մեքենաներ</item>
+
+    </string-array>
 
 </resources>

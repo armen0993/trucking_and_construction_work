@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.job_offer.add_offer.AddJobOfferFragment">
+
+    <com.ml.truckingandconstructionwork.presentation.custom_view.toolbar.ToolbarStandard
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:leftItemEnabled="true"
+        app:leftItem="@drawable/ic_arrow_back_black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/add_job_offer" />
+
+    <com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_16">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_question"
+                android:layout_width="@dimen/size_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_30"
+                android:text="@string/please_enter_your_requirements"
+                android:textColor="@color/black"
+                android:textSize="@dimen/t_size_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/special_equipment_type_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:hint="@string/type_special_equipment"
+                app:endIconDrawable="@drawable/ic_next_gray"
+                app:endIconMode="custom"
+                app:hintTextColor="#8998AA"
+                app:layout_constraintTop_toBottomOf="@id/title_question">
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/special_equipment_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_input_edit_text"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:gravity="center_vertical"
+                    android:inputType="none"
+                    android:paddingStart="@dimen/size_18"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="@dimen/size_5" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/start_address_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:hint="@string/start_address"
+                app:hintTextColor="#8998AA"
+                app:layout_constraintTop_toBottomOf="@id/special_equipment_type_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/start_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_input_edit_text"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/end_address_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:hint="@string/end_address"
+
+                app:endIconMode="custom"
+                app:layout_constraintTop_toBottomOf="@id/start_address_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/end_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input_edit_text"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:singleLine="true"
+                    android:textStyle="normal"
+                    tools:ignore="TextContrastCheck"
+                    tools:targetApi="p" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/price_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:hint="@string/proposed_price_of_the_work"
+                app:hintTextColor="#8998AA"
+                app:layout_constraintTop_toBottomOf="@id/end_address_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_input_edit_text"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/job_description_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_70"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:hint="@string/brief_job_description"
+                app:hintTextColor="#8998AA"
+                app:layout_constraintTop_toBottomOf="@id/price_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/job_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_input_edit_text"
+                     />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_30"
+                android:layout_marginTop="33dp"
+                android:layout_marginBottom="@dimen/size_50"
+                android:background="@drawable/bg_button_selector"
+                android:enabled="false"
+                android:lineHeight="22.59sp"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textFontWeight="400"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                app:layout_constraintTop_toBottomOf="@id/job_description_container"
+                tools:targetApi="p" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
