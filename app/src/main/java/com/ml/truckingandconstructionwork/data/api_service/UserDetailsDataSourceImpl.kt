@@ -6,7 +6,7 @@ import com.google.firebase.ktx.Firebase
 import com.ml.truckingandconstructionwork.core.ActionResult
 import com.ml.truckingandconstructionwork.core.CallException
 import com.ml.truckingandconstructionwork.data.data_source_interface.UserDetailsDataSource
-import com.ml.truckingandconstructionwork.data.models.UserDetailsModel
+import com.ml.truckingandconstructionwork.data.models.registration.UserDetailsModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -19,7 +19,7 @@ class UserDetailsDataSourceImpl : UserDetailsDataSource {
         withContext(Dispatchers.IO) {
             db.collection("user_details")
                 .document("users_document")
-                .set(mapOf(userDetailsModel.userId.toString() to userDetailsModel))
+                .update(mapOf("${userDetailsModel.userId}.login" to userDetailsModel.login,"${userDetailsModel.userId}.password" to userDetailsModel.password))
         }
     }
 
@@ -27,7 +27,8 @@ class UserDetailsDataSourceImpl : UserDetailsDataSource {
         withContext(Dispatchers.IO) {
             db.collection("user_details")
                 .document("users_document")
-                .update(mapOf("${userDetailsModel.userId}.login" to userDetailsModel.login,"${userDetailsModel.userId}.password" to userDetailsModel.password))
+                .set(mapOf("${userDetailsModel.userId}" to userDetailsModel))
+
         }
     }
 
@@ -47,7 +48,7 @@ class UserDetailsDataSourceImpl : UserDetailsDataSource {
                     }
                     snapshot?.let {document->
 
-                        document.toObject<UserDetailsModel>().let {doc->
+                        document.toObject<UserDetailsModel>().let { doc->
                             doc?.let { data->
 //                                snapshotSuccess = if (data?.phoneNumber.isNullOrEmpty()){
 //                                    ActionResult.Error(CallException(100,"null data"))

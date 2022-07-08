@@ -18,7 +18,7 @@
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
         android:gravity="center"
-        android:text="@string/a_code_has_been_sent_to_your_phone_number_please_enter_it"
+        android:text="@string/request_post"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -37,6 +37,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dialog_alert_title">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -48,29 +49,16 @@
             android:paddingTop="10dp"
             android:paddingEnd="10dp"
             android:paddingBottom="10dp"
-            android:text="@string/see_offers"
+            android:text="@string/submit"
             android:textAllCaps="true"
             android:textColor="@color/ptGreen"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/dialog_alert_cancel_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/dialog_alert_cancel_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="20dp"
-            android:paddingBottom="10dp"
-            android:text="@string/cancel"
-            android:textAllCaps="true"
-            android:textColor="@color/ptRed"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

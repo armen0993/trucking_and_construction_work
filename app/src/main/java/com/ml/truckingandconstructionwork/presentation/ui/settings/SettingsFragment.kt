@@ -19,7 +19,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SettingsFragment() : BaseFragment<BaseViewModel,FragmentSettingsBinding>() {
+class SettingsFragment() : BaseFragment<BaseViewModel, FragmentSettingsBinding>() {
 
     override val binding: FragmentSettingsBinding by viewBinding()
     override val viewModel: SettingsViewModel by viewModel()
@@ -116,7 +116,7 @@ class SettingsFragment() : BaseFragment<BaseViewModel,FragmentSettingsBinding>()
 
         bindingAlertDialogExit.dialogAlertConfirmButton.setOnClickListener {
             binding.emptyView.showLoader()
-            navigateFragment(SettingsFragmentDirections.actionSettingsFragmentToMainFragment())
+
             dialog.dismiss()
             lifecycleScope.launch {
 

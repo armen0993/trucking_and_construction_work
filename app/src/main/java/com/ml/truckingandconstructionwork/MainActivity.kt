@@ -2,6 +2,7 @@ package com.ml.truckingandconstructionwork
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.transition.Slide
 import android.transition.TransitionManager
 import android.view.Gravity
@@ -12,16 +13,19 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.ml.truckingandconstructionwork.presentation.extensions.hide
 import com.ml.truckingandconstructionwork.presentation.extensions.show
-import com.ml.truckingandconstructionwork.presentation.ui.trucks.TrucksFragment
-import com.ml.truckingandconstructionwork.presentation.ui.special_equipment.SpecialEquipmentFragment
+import com.ml.truckingandconstructionwork.presentation.ui.add_work.AddWorkFragment
 import com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsFragment
 import com.ml.truckingandconstructionwork.databinding.ActivityMainBinding
-import com.ml.truckingandconstructionwork.presentation.ui.main.profile.ProfileFragment
-import com.ml.truckingandconstructionwork.presentation.ui.job_offer.JobOfferFragment
+import com.ml.truckingandconstructionwork.presentation.extensions.getCurrentFragment
+import com.ml.truckingandconstructionwork.presentation.ui.offers.OffersListFragment
+import com.ml.truckingandconstructionwork.presentation.ui.profile.profile.ProfileFragment
+import com.ml.truckingandconstructionwork.presentation.ui.registration.RegistrationFragment
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
+
+    private var exit = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,9 +47,9 @@ class MainActivity : AppCompatActivity() {
                 )
                 when (f) {
                     is ProfileFragment -> showBottomNav()
-                    is JobOfferFragment -> showBottomNav()
-                    is TrucksFragment -> showBottomNav()
-                    is SpecialEquipmentFragment -> showBottomNav()
+                    is OffersListFragment -> showBottomNav()
+                    is AddWorkFragment -> showBottomNav()
+                    is RegistrationFragment -> showBottomNav()
                     is SettingsFragment -> showBottomNav()
                     else -> hideBottomNav()
                 }
@@ -62,15 +66,38 @@ class MainActivity : AppCompatActivity() {
         binding.bottomBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.profile_fragment -> navController.navigate(R.id.profileFragment)
-                R.id.special_offer_fragment -> navController.navigate(R.id.jobOfferFragment)
-                R.id.trucks_fragment -> navController.navigate(R.id.trucksFragment)
-                R.id.construction_works_fragment -> navController.navigate(R.id.constructionWorksFragment)
+                R.id.list_offer_fragment -> navController.navigate(R.id.offersListFragment)
+                R.id.add_works_fragment -> navController.navigate(R.id.addWorkFragment)
+                R.id.registration_fragment -> navController.navigate(R.id.registrationFragment)
                 R.id.settings_fragment -> navController.navigate(R.id.settingsFragment)
             }
             return@setOnItemSelectedListener true
         }
+
+        binding.bottomBar.setOnItemReselectedListener {
+            when (it.itemId) {
+                R.id.list_offer_fragment -> {
+                    getCurrentFragment<OffersListFragment>(navHostFragment)?.run {
+                        it.apply {
+                            this@run.scrollToTop()
+                        }
+                    }
+                }
+
+            }
+        }
     }
 
+
+    override fun onBackPressed() {
+        if (exit) {
+            finish() // finish activity
+        } else {
+            exit = true
+            Handler().postDelayed({ exit = false }, 3 * 1000)
+
+        }
+    }
 
     private fun showBottomNav() {
         binding.bottomBar.show()

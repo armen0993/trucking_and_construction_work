@@ -1,6 +1,8 @@
 package com.ml.truckingandconstructionwork.presentation.ui.splash
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.ml.truckingandconstructionwork.R
@@ -17,13 +19,21 @@ class SplashFragment() : BaseFragment<BaseViewModel,FragmentSplashBinding>() {
 
     override val binding: FragmentSplashBinding by viewBinding()
     override val viewModel: SplashViewModel by viewModel()
+    private lateinit var sharedPref: SharedPreferences
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         lifecycleScope.launch {
             delay(3000)
-            navigateFragment(R.id.action_splashFragment_to_mainFragment)
+
+            if (sharedPref.getBoolean("skiped",false)){
+                navigateFragment(SplashFragmentDirections.actionSplashFragmentToProfileFragment())
+            }else{
+                navigateFragment(SplashFragmentDirections.actionSplashFragmentToSignInFragment())
+            }
+
         }
     }
 }

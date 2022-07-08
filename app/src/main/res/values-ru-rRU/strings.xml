@@ -69,7 +69,7 @@
     <string name="do_you_want_to_log_out_of_your_account">Вы хотите выйти из своей учетной записи?</string>
     <string name="yes">Да</string>
     <string name="hint_text_new_password">Новый пароль</string>
-    <string name="special_equipment">Специальная техника</string>
+    <string name="add_work">Добавить работу</string>
     <string name="btn_resend_otp">Повторно отправить одноразовый код</string>
     <string name="description_verification_otp">Не получили одноразовый пароль?</string>
     <string name="title_text_enter_otp">Введите проверочный код, который мы только что отправили вам на ваш адрес электронной почты.</string>
@@ -106,5 +106,7 @@
         <item>Эвакуаторы</item>
 
     </string-array>
+    <string name="request_post">Мы рассмотрим ваш запрос и, если он соответствует критериям программы, ваш запрос будет размещен в разделе объявлений.</string>
+    <string name="offers">Предложения</string>
 
 </resources>

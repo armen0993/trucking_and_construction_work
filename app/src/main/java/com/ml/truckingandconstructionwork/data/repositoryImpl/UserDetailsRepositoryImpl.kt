@@ -3,7 +3,7 @@ package com.ml.truckingandconstructionwork.data.repositoryImpl
 import com.ml.truckingandconstructionwork.core.ActionResult
 import com.ml.truckingandconstructionwork.core.CallException
 import com.ml.truckingandconstructionwork.data.data_source_interface.UserDetailsDataSource
-import com.ml.truckingandconstructionwork.data.models.UserDetailsModel
+import com.ml.truckingandconstructionwork.data.models.registration.UserDetailsModel
 import com.ml.truckingandconstructionwork.data.repositoryInterface.UserDetailsRepository
 
 class UserDetailsRepositoryImpl(

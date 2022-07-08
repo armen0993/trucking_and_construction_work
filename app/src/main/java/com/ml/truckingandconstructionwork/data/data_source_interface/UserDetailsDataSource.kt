@@ -1,7 +1,7 @@
 package com.ml.truckingandconstructionwork.data.data_source_interface
 
 import com.ml.truckingandconstructionwork.core.ActionResult
-import com.ml.truckingandconstructionwork.data.models.UserDetailsModel
+import com.ml.truckingandconstructionwork.data.models.registration.UserDetailsModel
 
 interface UserDetailsDataSource {
     suspend fun setUserDetails(userDetailsModel: UserDetailsModel)

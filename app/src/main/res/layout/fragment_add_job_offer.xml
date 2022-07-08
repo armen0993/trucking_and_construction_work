@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.job_offer.add_offer.AddJobOfferFragment">
+    tools:context=".presentation.ui.add_work.add_offer.AddJobOfferFragment">
 
     <com.ml.truckingandconstructionwork.presentation.custom_view.toolbar.ToolbarStandard
         android:id="@+id/toolbar"

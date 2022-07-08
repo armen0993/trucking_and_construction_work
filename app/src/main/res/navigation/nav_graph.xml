@@ -3,26 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/jobOfferFragment">
+    app:startDestination="@id/splashFragment">
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.MainFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_main">
-        <action
-            android:id="@+id/action_mainFragment_to_checkerFragment"
-            app:destination="@id/checkerFragment" />
+        android:id="@+id/signInFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in">
 
         <action
-            android:id="@+id/action_mainFragment_to_forgotPasswordFragment"
+            android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_mainFragment_to_profileFragment"
+            android:id="@+id/action_signInFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+
+        <action
+            android:id="@+id/action_signInFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -30,35 +31,29 @@
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
-            android:id="@+id/action_splashFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:popUpTo="@id/navigation"
-            app:popUpToInclusive="true" />
-        <action
             android:id="@+id/action_splashFragment_to_profileFragment"
             app:destination="@id/profileFragment"
             app:popUpTo="@id/navigation"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_splashFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
-        android:id="@+id/constructionWorksFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.special_equipment.SpecialEquipmentFragment"
-        android:label="fragment_construction_works"
-        tools:layout="@layout/fragment_special_equipment" />
-    <fragment
-        android:id="@+id/trucksFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.trucks.TrucksFragment"
-        android:label="TrucksFragment" />
+        android:id="@+id/addWorkFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.add_work.AddWorkFragment"
+        android:label="fragment_add_work"
+        tools:layout="@layout/fragment_add_work" >
+        <action
+            android:id="@+id/action_addWorkFragment_to_addJobOfferFragment"
+            app:destination="@id/addJobOfferFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings">
-        <action
-            android:id="@+id/action_settingsFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:popUpTo="@id/navigation"
-            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
@@ -75,20 +70,26 @@
     </fragment>
     <fragment
         android:id="@+id/personalDetailsFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.personal_details.PersonalDetailsFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.personal_details.PersonalDetailsFragment"
         android:label="fragment_personal_details"
         tools:layout="@layout/fragment_personal_details">
         <argument
             android:name="user_type"
             app:argType="string" />
         <action
-            android:id="@+id/action_personalDetailsFragment_to_createLoginPasswordFragment"
-            app:destination="@id/createLoginPasswordFragment" />
+            android:id="@+id/action_personalDetailsFragment_to_createPinFragment"
+            app:destination="@id/createPinFragment" />
+        <action
+            android:id="@+id/action_personalDetailsFragment_to_createFingerprintFragment"
+            app:destination="@id/createFingerprintFragment" />
+        <action
+            android:id="@+id/action_personalDetailsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
 
     </fragment>
     <fragment
         android:id="@+id/checkerFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.checker_client_or_driver.CheckerFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.checker_client_or_driver.CheckerFragment"
         android:label="fragment_checker"
         tools:layout="@layout/fragment_checker">
         <action
@@ -98,28 +99,22 @@
 
     </fragment>
     <fragment
-        android:id="@+id/createLoginPasswordFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.create_login_password.CreateLoginPasswordFragment"
-        android:label="fragment_create_login_password"
-        tools:layout="@layout/fragment_create_login_password">
-        <argument
-            android:name="userId"
-            app:argType="integer" />
-        <action
-            android:id="@+id/action_createLoginPasswordFragment_to_createPinFragment"
-            app:destination="@id/createPinFragment" />
-        <action
-            android:id="@+id/action_createLoginPasswordFragment_to_createFingerprintFragment"
-            app:destination="@id/createFingerprintFragment" />
+        android:id="@+id/registrationFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration">
+
         <action
             android:id="@+id/action_createLoginPasswordFragment_to_profileFragment"
             app:destination="@id/profileFragment"
-            app:popUpTo="@id/navigation"
-            app:popUpToInclusive="true" />
+           />
+        <action
+            android:id="@+id/action_createLoginPasswordFragment_to_checkerFragment"
+            app:destination="@id/checkerFragment" />
     </fragment>
     <fragment
         android:id="@+id/createPinFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.create_pin.CreatePinFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.create_pin.CreatePinFragment"
         android:label="fragment_create_pin"
         tools:layout="@layout/fragment_create_pin">
         <action
@@ -128,7 +123,7 @@
     </fragment>
     <fragment
         android:id="@+id/createFingerprintFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.sign_in.registration.fingerprint.CreateFingerprintFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.fingerprint.CreateFingerprintFragment"
         android:label="fragment_create_fingerprint"
         tools:layout="@layout/fragment_create_fingerprint">
         <action
@@ -139,7 +134,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.main.profile.ProfileFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.profile.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 
@@ -166,33 +161,14 @@
         tools:layout="@layout/fragment_new_password" />
 
     <fragment
-        android:id="@+id/jobOfferFragment"
-        tools:layout="@layout/fragment_job_offer"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.job_offer.JobOfferFragment"
-        android:label="SpecialOfferFragment" >
-        <action
-            android:id="@+id/action_jobOfferFragment_to_addJobOfferFragment"
-            app:destination="@id/addJobOfferFragment" />
-        <action
-            android:id="@+id/action_jobOfferFragment_to_offersListFragment"
-            app:destination="@id/offersListFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/addJobOfferFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.job_offer.add_offer.AddJobOfferFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.add_work.add_offer.AddJobOfferFragment"
         android:label="fragment_add_job_offer"
-        tools:layout="@layout/fragment_add_job_offer" >
-
-        <action
-            android:id="@+id/action_addJobOfferFragment_to_offersListFragment"
-            app:destination="@id/offersListFragment"
-
-       />
-    </fragment>
+        tools:layout="@layout/fragment_add_job_offer" />
 
     <fragment
         android:id="@+id/offersListFragment"
-        android:name="com.ml.truckingandconstructionwork.presentation.ui.job_offer.offers_list.OffersListFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.offers.OffersListFragment"
         android:label="fragment_offers_list"
         tools:layout="@layout/fragment_offers_list" />
 </navigation>

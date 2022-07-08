@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginHorizontal="@dimen/size_15"
-    android:layout_marginTop="@dimen/size_10">
+    android:layout_marginVertical="@dimen/size_5">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,7 +55,6 @@
             android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:textSize="@dimen/t_size_16"
-
             android:layout_marginHorizontal="@dimen/size_15"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,14 +63,16 @@
             tools:text="@string/trucks"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/odd_button"
-            android:layout_width="@dimen/size_96"
+            android:id="@+id/order_button"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/size_32"
             android:layout_marginEnd="@dimen/size_16"
             android:layout_marginBottom="@dimen/size_24"
             android:background="@drawable/bg_button_order"
             android:text="@string/order_now"
             android:layout_marginTop="@dimen/size_15"
+            android:padding="@dimen/size_5"
+            android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/t_size_16"
             app:layout_constraintBottom_toBottomOf="parent"

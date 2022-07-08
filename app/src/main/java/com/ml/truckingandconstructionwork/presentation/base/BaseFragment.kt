@@ -15,12 +15,9 @@ import com.ml.truckingandconstructionwork.presentation.utils.observeInLifecycle
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.onEach
 
-typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
 abstract class BaseFragment<ViewModel : BaseViewModel,ViewBind : ViewBinding>() : Fragment()  {
 
-//    private var _binding: Binding? = null
-//    val binding get() = _binding!!
 
     abstract val viewModel: ViewModel
 
@@ -38,17 +35,8 @@ abstract class BaseFragment<ViewModel : BaseViewModel,ViewBind : ViewBinding>() 
     }
 
 
-    protected open fun onView() {}
 
-    protected open fun onViewClick() {}
 
-    protected open fun onEach() {}
-
-    protected inline fun <reified T> onEach(flow: Flow<T>, crossinline action: (T) -> Unit) =
-        view?.run {
-            if (!this@BaseFragment.isAdded) return@run
-            flow.onEach { action(it ?: return@onEach) }.observeInLifecycle(viewLifecycleOwner)
-        }
 
     protected open lateinit var navController: NavController
 
@@ -73,6 +61,19 @@ abstract class BaseFragment<ViewModel : BaseViewModel,ViewBind : ViewBinding>() 
             .setLaunchSingleTop(true)
             .build()
     }
+
+    protected open fun onView() {}
+
+    protected open fun onViewClick() {}
+
+    protected open fun onEach() {}
+
+    protected inline fun <reified T> onEach(flow: Flow<T>, crossinline action: (T) -> Unit) =
+        view?.run {
+            if (!this@BaseFragment.isAdded) return@run
+            flow.onEach { action(it ?: return@onEach) }.observeInLifecycle(viewLifecycleOwner)
+        }
+
 
 
 

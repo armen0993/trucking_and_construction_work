@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.ml.truckingandconstructionwork.presentation.custom_view.toolbar.ToolbarStandard
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/add_work" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_job_offer"
+        android:layout_width="@dimen/size_150"
+        android:layout_height="@dimen/size_150"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:srcCompat="@drawable/ic_special_offer" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_add_offer"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ic_job_offer"
+        android:text="@string/add_special_offer"
+        android:textSize="@dimen/t_size_18"
+        android:textStyle="bold"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add_offer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_15"
+        android:lineHeight="22.59sp"
+        android:text="@string/add_offer"
+        android:textAllCaps="false"
+        android:background="@drawable/bg_button_enabled"
+        android:textFontWeight="400"
+        android:textSize="@dimen/t_size_18"
+        android:textStyle="normal"
+        app:layout_constraintTop_toBottomOf="@id/title_add_offer"
+        tools:targetApi="p" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
