@@ -10,6 +10,7 @@ import com.ml.truckingandconstructionwork.databinding.FragmentSplashBinding
 
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
+import com.ml.truckingandconstructionwork.presentation.utils.Constants.SPLASH_TYPE
 import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -29,9 +30,9 @@ class SplashFragment() : BaseFragment<BaseViewModel,FragmentSplashBinding>() {
             delay(3000)
 
             if (sharedPref.getBoolean("skiped",false)){
-                navigateFragment(SplashFragmentDirections.actionSplashFragmentToProfileFragment())
+                navigateFragment(SplashFragmentDirections.actionSplashFragmentToMainFragment())
             }else{
-                navigateFragment(SplashFragmentDirections.actionSplashFragmentToSignInFragment())
+                navigateFragment(SplashFragmentDirections.actionSplashFragmentToSignInFragment().setSignInType(SPLASH_TYPE))
             }
 
         }

@@ -16,20 +16,8 @@ class ProfileFragment() : BaseFragment<BaseViewModel, FragmentProfileBinding>() 
     override val binding: FragmentProfileBinding by viewBinding()
     override val viewModel: ProfileViewModel by viewModel()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.toolbar.enableLeftItem(true)
 
-        openDrawer()
-    }
 
-    private fun openDrawer() {
-        val drawer = activity?.findViewById<DrawerLayout>(R.id.drawer_layout)
-        drawer?.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-        binding.toolbar.setOnLeftClickListener {
-            drawer?.openDrawer(Gravity.LEFT)
 
-        }
-    }
 
 }

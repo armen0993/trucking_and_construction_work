@@ -7,7 +7,7 @@ import com.ml.truckingandconstructionwork.domain.models.registration.UserDetails
 
 fun UserDetails.toRequest() =
     UserDetailsModel(
-        userid,
+        id,
         gender,
         name,
         surname,

@@ -9,6 +9,7 @@ import com.ml.truckingandconstructionwork.databinding.AlertDialogAddJobBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentAddJobOfferBinding
 import com.ml.truckingandconstructionwork.domain.models.add_work.Offer
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
+import com.ml.truckingandconstructionwork.presentation.extensions.GENERATE_ID
 import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
@@ -39,14 +40,14 @@ class AddJobOfferFragment : BaseFragment<AddJobOfferViewModel, FragmentAddJobOff
         }
     }
 
-    var idA =  UUID.randomUUID().toString()
+//    var idA =  UUID.randomUUID().toString()
 
 
 
     private fun setDetails() {
         viewModel.setOffer(
             Offer(
-                id = idA,
+                id = GENERATE_ID,
                 equipmentType = binding.specialEquipmentType.text.toString(),
                 description = binding.jobDescription.text.toString()
             )

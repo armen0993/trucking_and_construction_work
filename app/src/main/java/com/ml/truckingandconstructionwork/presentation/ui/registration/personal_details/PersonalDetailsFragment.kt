@@ -174,10 +174,10 @@ class PersonalDetailsFragment() :
 
 
     private fun userDetails() {
-        userId = ThreadLocalRandom.current().nextInt(1000, 9999);
+      //  userId = ThreadLocalRandom.current().nextInt(1000, 9999);
         viewModel.setUserDetails(
             UserDetails(
-                userid = userId,
+                //id = id,
                 name = binding.name.text.toString(),
                 surname = binding.surname.text.toString(),
                 city = binding.address.text.toString(),

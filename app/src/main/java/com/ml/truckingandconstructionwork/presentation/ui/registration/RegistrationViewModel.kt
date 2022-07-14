@@ -25,6 +25,14 @@ class RegistrationViewModel(
         viewModelScope.launch {
             _showProgressBar.emit(true)
             setUserLoginPasswordInteractor(userDetails)
+            when (val result = getUserDetailsInteractor()) {
+                is ActionResult.Success -> {
+                    _startAlertDialog.emit(true)
+                }
+                is ActionResult.Error->{
+                    _startAlertDialog.emit(false)
+                }
+            }
             _showProgressBar.emit(false)
         }
     }

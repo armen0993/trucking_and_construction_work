@@ -1,5 +1,6 @@
 package com.ml.truckingandconstructionwork.data.repositoryImpl
 
+import android.util.Log
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
@@ -11,24 +12,28 @@ import com.ml.truckingandconstructionwork.data.models.add_work.OfferModel
 import com.ml.truckingandconstructionwork.data.models.registration.UserDetailsModel
 import com.ml.truckingandconstructionwork.data.repositoryInterface.OfferRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 
 class OfferRepositoryImpl() : OfferRepository {
     private val db = Firebase.firestore
-    private var snapshotSuccess: ActionResult<OfferModel>? = null
+
 
     override suspend fun setOffer(offer: OfferModel) {
         withContext(Dispatchers.IO) {
             db.collection("offers")
                 .document("${offer.id}")
-                .set(mapOf("${offer.id}" to offer))
+                .set(offer)
 
         }
     }
 
     override suspend fun getOffers(): ActionResult<List<OfferModel>> {
-        var listOffers = mutableMapOf<String,OfferModel>()
-        withContext(Dispatchers.IO) {
+        val offersMap = mutableMapOf<String, OfferModel>()
+        val list = mutableListOf<OfferModel>()
+        var snapshotSuccess: ActionResult<List<OfferModel>>? = null
+
+        return withContext(Dispatchers.IO) {
             db.collection("offers")
                 .addSnapshotListener { snapshot, exception ->
                     if (exception != null) {
@@ -38,30 +43,30 @@ class OfferRepositoryImpl() : OfferRepository {
                                 exception.message ?: "error getData"
                             )
                         )
+
                     }
                     snapshot?.let {
-                        for (change in snapshot.documentChanges) {
-                            when (change.type) {
-                                DocumentChange.Type.ADDED,
-                                DocumentChange.Type.MODIFIED -> {
+                        for (change in it.documentChanges) {
 
-                                    val liveOffer = change.document.toObject<OfferModel>()
-//seeeee
-                                      //  listOffers[liveOffer.id] = liveOffer
-
-
-
-                                    DocumentChange.Type.REMOVED
-                                }
+                            change.document.toObject(OfferModel::class.java).let { doc ->
+                                offersMap[doc.id.toString()] = doc
+                                list.add(doc)
                             }
                         }
+                        ActionResult.Success(list)
                     }
+
+
                 }
-        }
-        return if (listOffers.isNotEmpty()) {
-            ActionResult.Success(listOffers.values ) as ActionResult<List<OfferModel>>
-        }else{
-            ActionResult.Error(CallException(100,"null"))
+
+
+            withContext(Dispatchers.Default){
+                delay(2000)
+                return@withContext ActionResult.Success(list)
+            }
+
+
+
         }
     }
 }

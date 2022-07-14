@@ -1,7 +1,6 @@
 package com.ml.truckingandconstructionwork
 
 import android.app.Application
-import com.ml.truckingandconstructionwork.data.di.dataSourceModule
 import com.ml.truckingandconstructionwork.data.di.repositoryModule
 import com.ml.truckingandconstructionwork.domain.di.interactorModule
 import com.ml.truckingandconstructionwork.presentation.di.viewModelModule
@@ -20,7 +19,7 @@ class TruckApplication : Application() {
     private val modules = listOf(
         viewModelModule,
         interactorModule,
-        repositoryModule,
-        dataSourceModule,
+        repositoryModule
+
     )
 }

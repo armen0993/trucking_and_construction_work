@@ -5,13 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.ml.truckingandconstructionwork.presentation.custom_view.toolbar.ToolbarStandard
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:leftItem="@drawable/ic_burg" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

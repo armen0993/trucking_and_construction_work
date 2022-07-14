@@ -1,11 +1,13 @@
 package com.ml.truckingandconstructionwork.presentation.ui.settings
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.ml.truckingandconstructionwork.MainActivity
 import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.AlertDialogChangeLanguageBinding
 import com.ml.truckingandconstructionwork.databinding.AlertDialogExitBinding
@@ -90,8 +92,14 @@ class SettingsFragment() : BaseFragment<BaseViewModel, FragmentSettingsBinding>(
                         LocaleHelper.setLocale(requireContext(), Constants.ENGLISH)
                 }
                 dialog.dismiss()
+                val intent = Intent(context,MainActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 delay(1000L)
                 binding.emptyView.hide()
+//                val bundle = Bundle()
+//                bundle.putBoolean("language",true)
+//                intent.putExtra("language",bundle)
+                startActivity(intent)
             }
 
         }

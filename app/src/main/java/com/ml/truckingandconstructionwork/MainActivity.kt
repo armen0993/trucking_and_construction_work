@@ -9,17 +9,22 @@ import android.view.Gravity
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.NavArgument
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.ml.truckingandconstructionwork.presentation.extensions.hide
 import com.ml.truckingandconstructionwork.presentation.extensions.show
 import com.ml.truckingandconstructionwork.presentation.ui.add_work.AddWorkFragment
 import com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsFragment
 import com.ml.truckingandconstructionwork.databinding.ActivityMainBinding
 import com.ml.truckingandconstructionwork.presentation.extensions.getCurrentFragment
+import com.ml.truckingandconstructionwork.presentation.ui.LocaleHelper
+import com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment
 import com.ml.truckingandconstructionwork.presentation.ui.offers.OffersListFragment
 import com.ml.truckingandconstructionwork.presentation.ui.profile.profile.ProfileFragment
 import com.ml.truckingandconstructionwork.presentation.ui.registration.RegistrationFragment
+import com.ml.truckingandconstructionwork.presentation.ui.sign_in.SignInFragment
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
@@ -29,8 +34,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        LocaleHelper.updateResources(this, LocaleHelper.getLanguage(this))
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
+
+
+
 
 
         supportFragmentManager.registerFragmentLifecycleCallbacks(object :
@@ -46,10 +58,11 @@ class MainActivity : AppCompatActivity() {
                     Slide(Gravity.BOTTOM).excludeTarget(R.id.nav_host_fragment, true)
                 )
                 when (f) {
-                    is ProfileFragment -> showBottomNav()
+                    is MainFragment -> showBottomNav()
                     is OffersListFragment -> showBottomNav()
                     is AddWorkFragment -> showBottomNav()
-                    is RegistrationFragment -> showBottomNav()
+                    is SignInFragment -> showBottomNav()
+                    is ProfileFragment -> showBottomNav()
                     is SettingsFragment -> showBottomNav()
                     else -> hideBottomNav()
                 }
@@ -63,12 +76,13 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController: NavController = navHostFragment.navController
 
+
         binding.bottomBar.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.profile_fragment -> navController.navigate(R.id.profileFragment)
+                R.id.main_fragment -> navController.navigate(R.id.mainFragment)
                 R.id.list_offer_fragment -> navController.navigate(R.id.offersListFragment)
                 R.id.add_works_fragment -> navController.navigate(R.id.addWorkFragment)
-                R.id.registration_fragment -> navController.navigate(R.id.registrationFragment)
+                R.id.signIn_fragment -> navController.navigate(R.id.signInFragment)
                 R.id.settings_fragment -> navController.navigate(R.id.settingsFragment)
             }
             return@setOnItemSelectedListener true

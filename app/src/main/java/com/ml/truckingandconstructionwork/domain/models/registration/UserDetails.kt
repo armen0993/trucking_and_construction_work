@@ -2,7 +2,7 @@ package com.ml.truckingandconstructionwork.domain.models.registration
 import com.ml.truckingandconstructionwork.data.models.registration.UserDetailsModel
 
 data class UserDetails(
-    val userid:Int=-1,
+    val id:String="",
     val gender:String ="",
     val name: String = "",
     val surname: String ="",
@@ -17,7 +17,7 @@ data class UserDetails(
     companion object {
         fun from(data: UserDetailsModel) =
             UserDetails(
-                data.userId?:-1,
+                data.id?:"",
                 data.gender?:"",
                 data.name ?: "",
                 data.surname ?: "",

@@ -2,7 +2,7 @@ package com.ml.truckingandconstructionwork.data.models.registration
 
 
 data class UserDetailsModel(
-    val userId:Int?=null,
+    val id:String?=null,
 
     val gender:String? = null,
 

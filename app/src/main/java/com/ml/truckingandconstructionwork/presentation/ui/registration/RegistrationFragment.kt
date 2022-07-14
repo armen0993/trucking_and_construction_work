@@ -11,6 +11,7 @@ import com.ml.truckingandconstructionwork.databinding.FragmentRegistrationBindin
 import com.ml.truckingandconstructionwork.domain.models.registration.UserDetails
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
+import com.ml.truckingandconstructionwork.presentation.extensions.GENERATE_ID
 import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -46,16 +47,18 @@ class RegistrationFragment() :
     }
 
     override fun onEach() {
-//        onEach(viewModel.showProgressBar) {
-//            showProgress(it)
-//        }
-//        onEach(viewModel.startAlertDialog) {
-//            if (it) {
-//                startAlertDialog()
-//            } else {
-//                Toast.makeText(context, "Please check your data", Toast.LENGTH_SHORT).show()
-//            }
-//        }
+   lifecycleScope.launch{
+            viewModel.showProgressBar.collect {
+                showProgress(it)
+            }
+            viewModel.startAlertDialog.collect {
+                if (it) {
+                    startAlertDialog()
+                } else {
+                    Toast.makeText(context, "Please check your data", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
 
 
     }
@@ -86,23 +89,12 @@ class RegistrationFragment() :
     private fun userDetails() {
         viewModel.setUserDetails(
             UserDetails(
+                id = GENERATE_ID,
                 login = binding.login.text.toString(),
                 password = binding.repeatPassword.text.toString()
             )
         )
 
-        lifecycleScope.launch{
-            viewModel.showProgressBar.collect {
-                showProgress(it)
-            }
-            viewModel.startAlertDialog.collect {
-                if (it) {
-                    startAlertDialog()
-                } else {
-                    Toast.makeText(context, "Please check your data", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
     }
 
     private fun showProgress(show: Boolean) {
@@ -131,7 +123,7 @@ class RegistrationFragment() :
         }
         bindingAlertDialog.dialogAlertCancelButton.setOnClickListener {
             dialog.dismiss()
-            navigateFragment(R.id.action_createLoginPasswordFragment_to_profileFragment)
+            popBackStack()
         }
     }
 

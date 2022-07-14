@@ -105,6 +105,7 @@
         android:lineHeight="22.59sp"
         android:enabled="true"
         android:text="@string/skip"
+        android:visibility="gone"
         android:textAllCaps="false"
         android:textFontWeight="400"
         android:textSize="18sp"

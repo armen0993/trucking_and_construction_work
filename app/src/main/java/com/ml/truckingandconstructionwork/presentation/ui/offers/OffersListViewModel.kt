@@ -22,34 +22,24 @@ class OffersListViewModel(
 
     private var list = listOf<Offer>()
 
-    init {
-//        list = listOf(
-//            Offer(12, "truk", "yeesss"),
-//            Offer(142, "Exvdfb", "yeesss"),
-//            Offer(122, "trdffduk", "yefdfdesss"),
-//            Offer(123, "trukdfd", "yeefdfdsss"),
-//            Offer(124, "trdfdfuk", "yedffdesss"),
-//        )
-        getOffersList()
-    }
 
-    private fun getOffersList() {
+    fun getOffersList() {
         viewModelScope.launch {
             _showProgressBar.emit(EmptyView.State.LOADING)
 
-            when(val result = getOffersInteractor.invoke()){
-                is ActionResult.Success->{
+
+            when (val result = getOffersInteractor.invoke()) {
+                is ActionResult.Success -> {
                     _listOffers.emit(result.data)
                 }
             }
 
 
-
-            if (list.isEmpty()) {
-                _showProgressBar.emit(EmptyView.State.EMPTY)
-            } else {
-                _showProgressBar.emit(EmptyView.State.HIDE)
-            }
+//            if (list.isEmpty()) {
+//                _showProgressBar.emit(EmptyView.State.EMPTY)
+//            } else {
+            _showProgressBar.emit(EmptyView.State.HIDE)
+            //  }
 
         }
     }

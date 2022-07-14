@@ -13,4 +13,6 @@ object Constants {
     /** Format DatePicker **/
     const val FORMAT_DATE = "dd.MM.yyyy"
     const val FILENAME_DATE_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
+
+    const val SPLASH_TYPE = "splash"
 }

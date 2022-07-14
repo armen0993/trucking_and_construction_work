@@ -21,14 +21,7 @@ class OffersListFragment : BaseFragment<OffersListViewModel, FragmentOffersListB
 
     override fun onView() {
         initRecycler()
-
-//        setListInAdapter(listOf(
-//            OffersListModel(12, "truk", "yeesss"),
-//            OffersListModel(142, "Exvdfb", "yeesss"),
-//            OffersListModel(122, "trdffduk", "yefdfdesss"),
-//            OffersListModel(123, "trukdfd", "yeefdfdsss"),
-//            OffersListModel(124, "trdfdfuk", "yedffdesss"),
-//        ))
+        viewModel.getOffersList()
 
         lifecycleScope.launch {
             viewModel.listOffers.collect {
@@ -38,13 +31,14 @@ class OffersListFragment : BaseFragment<OffersListViewModel, FragmentOffersListB
 
         lifecycleScope.launch {
             viewModel.showProgressBar.collect {
-                showProgress(it)
+                binding.emptyView.visibility = VISIBLE
+                binding.emptyView.setState(it)
             }
         }
 
     }
 
-    fun scrollToTop(){
+    fun scrollToTop() {
         binding.recyclerListOffers.scrollToPosition(0)
     }
 
@@ -63,27 +57,27 @@ class OffersListFragment : BaseFragment<OffersListViewModel, FragmentOffersListB
 //    }
 
     private fun showProgress(show: EmptyView.State) {
-        binding.emptyView.visibility = VISIBLE
-        when (show){
-             EmptyView.State.LOADING-> binding.emptyView.showLoader()
-             EmptyView.State.EMPTY-> binding.emptyView.showEmpty()
-            else -> binding.emptyView.hide()
+
+
+//             EmptyView.State.LOADING-> binding.emptyView.showLoader()
+//             EmptyView.State.EMPTY-> binding.emptyView.showEmpty()
+//            else -> binding.emptyView.hide()
+
+}
+
+private fun setListInAdapter(listOffers: List<Offer>) {
+    offersListAdapter.submitList(listOffers)
+
+}
+
+private fun initRecycler() {
+    with(binding) {
+        recyclerListOffers.run {
+            adapter = offersListAdapter
+            recyclerListOffers.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         }
     }
-
-    private fun setListInAdapter(listOffers: List<Offer>) {
-        offersListAdapter.submitList(listOffers)
-
-    }
-
-    private fun initRecycler() {
-        with(binding) {
-            recyclerListOffers.run {
-                adapter = offersListAdapter
-                recyclerListOffers.layoutManager =
-                    LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            }
-        }
-    }
+}
 
 }

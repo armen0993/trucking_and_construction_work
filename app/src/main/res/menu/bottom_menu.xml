@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/profile_fragment"
+        android:id="@+id/main_fragment"
         android:icon="@drawable/ic_home_selector"
         android:title="@string/main" />
 
@@ -16,9 +16,9 @@
         android:title="@string/add_work" />
 
     <item
-        android:id="@+id/registration_fragment"
+        android:id="@+id/signIn_fragment"
         android:icon="@drawable/ic_profile_selector"
-        android:title="@string/registration" />
+        android:title="@string/profile" />
 
     <item
         android:id="@+id/settings_fragment"

@@ -10,6 +10,12 @@
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in">
 
+        <argument
+            android:name="sign_in_type"
+            app:argType="string"
+            android:defaultValue=""
+            />
+
         <action
             android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment"
@@ -17,13 +23,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_signInFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
 
         <action
             android:id="@+id/action_signInFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -31,13 +37,11 @@
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
-            android:id="@+id/action_splashFragment_to_profileFragment"
-            app:destination="@id/profileFragment"
-            app:popUpTo="@id/navigation"
-            app:popUpToInclusive="true"/>
-        <action
             android:id="@+id/action_splashFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/addWorkFragment"
@@ -105,10 +109,6 @@
         tools:layout="@layout/fragment_registration">
 
         <action
-            android:id="@+id/action_createLoginPasswordFragment_to_profileFragment"
-            app:destination="@id/profileFragment"
-           />
-        <action
             android:id="@+id/action_createLoginPasswordFragment_to_checkerFragment"
             app:destination="@id/checkerFragment" />
     </fragment>
@@ -171,4 +171,9 @@
         android:name="com.ml.truckingandconstructionwork.presentation.ui.offers.OffersListFragment"
         android:label="fragment_offers_list"
         tools:layout="@layout/fragment_offers_list" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>
