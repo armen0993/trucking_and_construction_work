@@ -2,19 +2,21 @@ package com.ml.truckingandconstructionwork.presentation.ui.main
 
 import android.view.Gravity
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.fragment.navArgs
 import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.FragmentMainBinding
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainFragment : BaseFragment<MainViewModel,FragmentMainBinding>() {
+class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
     override val viewModel: MainViewModel by viewModel()
     override val binding: FragmentMainBinding by viewBinding()
+    private val args: MainFragmentArgs by navArgs()
 
     override fun onView() {
         binding.toolbar.enableLeftItem(true)
-
+        val id = args.userId
         openDrawer()
     }
 

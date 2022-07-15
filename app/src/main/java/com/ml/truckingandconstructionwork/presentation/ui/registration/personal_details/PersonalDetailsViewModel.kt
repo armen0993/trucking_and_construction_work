@@ -31,14 +31,16 @@ class PersonalDetailsViewModel(
         }
     }
 
-     fun getUserDetails() {
+
+
+    fun getUserDetails() {
         viewModelScope.launch {
             _showProgressBar.emit(true)
             when (val result = getUserDetailsInteractor()) {
                 is ActionResult.Success -> {
                     _startAlertConfirmPhoneNumber.emit(true)
                 }
-                is ActionResult.Error->{
+                is ActionResult.Error -> {
                     _startAlertConfirmPhoneNumber.emit(false)
                 }
             }

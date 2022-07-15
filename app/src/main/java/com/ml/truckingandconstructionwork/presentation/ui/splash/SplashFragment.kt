@@ -21,19 +21,30 @@ class SplashFragment() : BaseFragment<BaseViewModel,FragmentSplashBinding>() {
     override val binding: FragmentSplashBinding by viewBinding()
     override val viewModel: SplashViewModel by viewModel()
     private lateinit var sharedPref: SharedPreferences
+    private var userId=""
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         lifecycleScope.launch {
-            delay(3000)
+
 
             if (sharedPref.getBoolean("skiped",false)){
-                navigateFragment(SplashFragmentDirections.actionSplashFragmentToMainFragment())
+                viewModel.getUserDetailWithSharedPref()
+                delay(3000)
+                navigateFragment(SplashFragmentDirections.actionSplashFragmentToMainFragment().setUserId(userId))
             }else{
+                delay(3000)
                 navigateFragment(SplashFragmentDirections.actionSplashFragmentToSignInFragment().setSignInType(SPLASH_TYPE))
             }
+
+        }
+    }
+
+    override fun onEach() {
+        onEach(viewModel.userId){
+            userId = it
 
         }
     }

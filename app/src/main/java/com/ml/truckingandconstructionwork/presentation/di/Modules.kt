@@ -22,7 +22,7 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel { PersonalDetailsViewModel(get(),get())  }
-    viewModel { SplashViewModel()  }
+    viewModel { SplashViewModel(get())  }
     viewModel { AddWorkViewModel()  }
     viewModel { ForgotPasswordViewModel()  }
     viewModel { NewPasswordViewModel()  }
@@ -32,7 +32,7 @@ val viewModelModule = module {
     viewModel { RegistrationViewModel(get(),get())  }
     viewModel { CreatePinViewModel()  }
     viewModel { CreateFingerprintViewModel()  }
-    viewModel { SignInViewModel()  }
+    viewModel { SignInViewModel(get(),get())  }
     viewModel { SettingsViewModel()  }
     viewModel { AddJobOfferViewModel(get())  }
     viewModel { OffersListViewModel(get())  }

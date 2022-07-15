@@ -15,4 +15,5 @@ object Constants {
     const val FILENAME_DATE_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
 
     const val SPLASH_TYPE = "splash"
+    const val USER_DETAILS_COLLECTION = "user_details"
 }

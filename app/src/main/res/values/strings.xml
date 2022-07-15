@@ -180,6 +180,11 @@
     <string name="profile">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="please_try_again">Please try again</string>
+    <string name="remember_login_and_password">Login was successful.\nRemember login and password ?</string>
+    <string name="no">No</string>
+    <string name="accept">Accept</string>
+    <string name="not_now">Not now</string>
 
 
 </resources>

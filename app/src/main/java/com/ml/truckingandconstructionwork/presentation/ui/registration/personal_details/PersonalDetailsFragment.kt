@@ -22,7 +22,9 @@ import com.ml.truckingandconstructionwork.presentation.utils.Constants
 import com.ml.truckingandconstructionwork.presentation.utils.CustomDateDialogTools
 import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
 import com.ml.truckingandconstructionwork.databinding.AlertDialogEnterPinBinding
+import com.ml.truckingandconstructionwork.databinding.AlertDialogPinOrFingerprintBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentPersonalDetailsBinding
+import com.ml.truckingandconstructionwork.presentation.ui.registration.RegistrationFragmentDirections
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.concurrent.ThreadLocalRandom
 import java.util.concurrent.TimeUnit
@@ -43,6 +45,11 @@ class PersonalDetailsFragment() :
     private lateinit var city: String
     private lateinit var gender: String
     private var userId = -1
+    private val bindingAlertDialogFingerprint by lazy {
+        AlertDialogPinOrFingerprintBinding.inflate(
+            layoutInflater
+        )
+    }
 
     override fun onView() {
         callBackAuth()
@@ -51,7 +58,7 @@ class PersonalDetailsFragment() :
         checkCity()
         getGender()
 
-        binding.phoneNumber.mask("(__) __ __ __",binding.phoneNumber)
+        binding.phoneNumber.mask("(__) __ __ __", binding.phoneNumber)
 
 
     }
@@ -174,19 +181,18 @@ class PersonalDetailsFragment() :
 
 
     private fun userDetails() {
-      //  userId = ThreadLocalRandom.current().nextInt(1000, 9999);
+        //  userId = ThreadLocalRandom.current().nextInt(1000, 9999);
         viewModel.setUserDetails(
             UserDetails(
-                //id = id,
+                id = args.userId,
                 name = binding.name.text.toString(),
                 surname = binding.surname.text.toString(),
                 city = binding.address.text.toString(),
-                email = binding.email.text.toString(),
-                phoneNumber = "+374${binding.phoneNumber.text?.replace("[^0-9]".toRegex(),"")}",
+                phoneNumber = "+374${binding.phoneNumber.text?.replace("[^0-9]".toRegex(), "")}",
                 clientType = args.userType,
                 dataOfBirth = binding.dateOfBirth.text.toString(),
                 gender = gender,
-                login = "",
+                email = "",
                 password = ""
             )
         )
@@ -224,8 +230,7 @@ class PersonalDetailsFragment() :
                 binding.dateOfBirth.text?.isNotEmpty() == true &&
                 binding.address.text?.isNotEmpty() == true &&
                 binding.phoneNumber.text?.isNotEmpty() == true &&
-                binding.checkBox.isChecked &&
-                binding.email.text?.isNotEmpty() == true
+                binding.checkBox.isChecked
 
     }
 
@@ -246,22 +251,18 @@ class PersonalDetailsFragment() :
             phoneNumber.doOnTextChanged { _, _, _, _ ->
 
 
-
-
-                if (binding.phoneNumber.isFocused){
+                if (binding.phoneNumber.isFocused) {
                     binding.phoneNumber.hint = "(98) 00 00 00"
                 }
 
-                btnNext.isEnabled = checkEmptyFields()
-            }
-            email.doOnTextChanged { _, _, _, _ ->
                 btnNext.isEnabled = checkEmptyFields()
             }
         }
     }
 
     private fun startAlertDialog() {
-         checkerPhoneNumber(binding.phoneNumber.text.toString())
+        //temp
+        //  checkerPhoneNumber(binding.phoneNumber.text.toString())
         if (bindingAlertDialog.root.parent != null) (bindingAlertDialog.root.parent as ViewGroup).removeView(
             bindingAlertDialog.root
         )
@@ -274,18 +275,46 @@ class PersonalDetailsFragment() :
             .show()
 
         bindingAlertDialog.dialogAlertConfirmButton.setOnClickListener {
+            //temp
             dialog.dismiss()
-            if (storedVerificationId== bindingAlertDialog.dialogAlertMessage.toString()){
-                navigateFragment(
-                    PersonalDetailsFragmentDirections.actionPersonalDetailsFragmentToProfileFragment(
+            startAlertDialogUseFingerprint()
 
-                    )
-                )
-            }
+//            if (storedVerificationId== bindingAlertDialog.dialogAlertMessage.toString()){
+//                dialog.dismiss()
+//                    startAlertDialogUseFingerprint()
+//            }else{
+//                Toast.makeText(context,"Please try again",Toast.LENGTH_SHORT).show()
+//            }
 
         }
         bindingAlertDialog.dialogAlertCancelButton.setOnClickListener {
             dialog.dismiss()
+        }
+    }
+
+    private fun startAlertDialogUseFingerprint() {
+        if (bindingAlertDialogFingerprint.root.parent != null) (bindingAlertDialogFingerprint.root.parent as ViewGroup).removeView(
+            bindingAlertDialogFingerprint.root
+        )
+        val dialog = MaterialAlertDialogBuilder(
+            requireContext(),
+            R.style.ResetTheme
+        )
+            .setCancelable(false)
+            .setView(bindingAlertDialogFingerprint.root)
+            .show()
+
+        bindingAlertDialogFingerprint.btnUsePin.setOnClickListener {
+            dialog.dismiss()
+            navigateFragment(PersonalDetailsFragmentDirections.actionPersonalDetailsFragmentToCreatePinFragment())
+        }
+        bindingAlertDialogFingerprint.btnUseFingerprint.setOnClickListener {
+            dialog.dismiss()
+            navigateFragment(PersonalDetailsFragmentDirections.actionPersonalDetailsFragmentToCreateFingerprintFragment())
+        }
+        bindingAlertDialogFingerprint.dialogAlertCancelButton.setOnClickListener {
+            dialog.dismiss()
+            popBackStack()
         }
     }
 

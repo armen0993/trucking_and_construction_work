@@ -28,6 +28,9 @@
             android:id="@+id/action_signInFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
         <action
+            android:id="@+id/action_signInFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
             android:id="@+id/action_signInFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
@@ -80,6 +83,9 @@
         <argument
             android:name="user_type"
             app:argType="string" />
+        <argument
+            android:name="user_id"
+            app:argType="string" />
         <action
             android:id="@+id/action_personalDetailsFragment_to_createPinFragment"
             app:destination="@id/createPinFragment" />
@@ -96,11 +102,14 @@
         android:name="com.ml.truckingandconstructionwork.presentation.ui.registration.checker_client_or_driver.CheckerFragment"
         android:label="fragment_checker"
         tools:layout="@layout/fragment_checker">
+
+
         <action
-            android:id="@+id/action_checkerFragment_to_registrationFragment"
+            android:id="@+id/action_checkerFragment_to_personalDetailsFragment"
             app:destination="@id/personalDetailsFragment" />
-
-
+        <argument
+            android:name="user_id"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -136,7 +145,13 @@
         android:id="@+id/profileFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.profile.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+
+        <argument
+            android:name="user_id"
+            app:argType="string"
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/verificationFragment"
@@ -175,5 +190,13 @@
         android:id="@+id/mainFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+
+        <argument
+            android:name="user_id"
+            app:argType="string"
+            android:defaultValue=""
+            />
+
+    </fragment>
 </navigation>

@@ -13,9 +13,8 @@ fun UserDetails.toRequest() =
         surname,
         dataOfBirth,
         city,
-        email,
         phoneNumber,
-        login,
+        email,
         password,
         clientType
     )

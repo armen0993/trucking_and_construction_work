@@ -38,13 +38,6 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
-
-
-
-
-
         supportFragmentManager.registerFragmentLifecycleCallbacks(object :
             FragmentManager.FragmentLifecycleCallbacks() {
             override fun onFragmentViewCreated(
@@ -82,7 +75,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.main_fragment -> navController.navigate(R.id.mainFragment)
                 R.id.list_offer_fragment -> navController.navigate(R.id.offersListFragment)
                 R.id.add_works_fragment -> navController.navigate(R.id.addWorkFragment)
-                R.id.signIn_fragment -> navController.navigate(R.id.signInFragment)
+                R.id.signIn_fragment -> {
+                    navController.navigate(R.id.signInFragment)
+                }
                 R.id.settings_fragment -> navController.navigate(R.id.settingsFragment)
             }
             return@setOnItemSelectedListener true

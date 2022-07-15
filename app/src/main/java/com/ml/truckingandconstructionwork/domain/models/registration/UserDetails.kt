@@ -10,7 +10,6 @@ data class UserDetails(
     val city: String ="",
     val email: String ="",
     val phoneNumber: String ="",
-    val login: String ="",
     val password: String ="",
     val clientType: String =""
 ) {
@@ -25,7 +24,6 @@ data class UserDetails(
                 data.city ?: "",
                 data.email ?: "",
                 data.phoneNumber ?: "",
-                data.login ?: "",
                 data.password ?: "",
                 data.clientType ?: ""
             )

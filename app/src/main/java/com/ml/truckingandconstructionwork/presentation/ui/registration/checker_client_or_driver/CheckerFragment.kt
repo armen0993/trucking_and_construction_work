@@ -2,6 +2,7 @@ package com.ml.truckingandconstructionwork.presentation.ui.registration.checker_
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.navArgs
 import com.ml.truckingandconstructionwork.databinding.FragmentCheckerBinding
 import com.ml.truckingandconstructionwork.presentation.utils.Constants.CLIENT
 import com.ml.truckingandconstructionwork.presentation.utils.Constants.DRIVER
@@ -14,6 +15,7 @@ class CheckerFragment() : BaseFragment<BaseViewModel,FragmentCheckerBinding>() {
 
     override val binding: FragmentCheckerBinding by viewBinding()
     override val viewModel: CheckerViewModel by viewModel()
+    private val args :CheckerFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,12 +27,12 @@ class CheckerFragment() : BaseFragment<BaseViewModel,FragmentCheckerBinding>() {
     private fun onClick() {
         with(binding){
             btnClient.setOnClickListener {
-                navigateFragment(CheckerFragmentDirections.actionCheckerFragmentToRegistrationFragment(
-                    CLIENT))
+                navigateFragment(CheckerFragmentDirections.actionCheckerFragmentToPersonalDetailsFragment(
+                    CLIENT,args.userId))
             }
             btnDriver.setOnClickListener {
-                navigateFragment(CheckerFragmentDirections.actionCheckerFragmentToRegistrationFragment(
-                    DRIVER))
+                navigateFragment(CheckerFragmentDirections.actionCheckerFragmentToPersonalDetailsFragment(
+                    DRIVER,args.userId))
             }
         }
     }

@@ -13,7 +13,7 @@ class SetUserDetailsUseCase(private val userDetailsRepository: UserDetailsReposi
     override suspend fun invoke(userDetails: UserDetails) {
         withContext(Dispatchers.IO) {
 
-            userDetailsRepository.setUserLoginPassword(userDetails.toRequest())
+            userDetailsRepository.setUserDetails(userDetails.toRequest())
 
         }
     }

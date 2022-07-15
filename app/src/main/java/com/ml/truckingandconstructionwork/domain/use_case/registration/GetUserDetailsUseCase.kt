@@ -11,12 +11,12 @@ import kotlinx.coroutines.withContext
 class GetUserDetailsUseCase(private val userDetailsRepository: UserDetailsRepository) :
     GetUserDetailsInteractor {
 
-    override suspend fun invoke(): ActionResult<UserDetails> =
+    override suspend fun invoke(): ActionResult<List<UserDetails>> =
         withContext(Dispatchers.IO) {
             when (val apiData = userDetailsRepository.getUserDetails()) {
                 is ActionResult.Success -> {
                     apiData.data.let {
-                        ActionResult.Success(UserDetails.from(it))
+                        ActionResult.Success(it.map { UserDetails.from(it)})
                     }
                 }
                 is ActionResult.Error->{

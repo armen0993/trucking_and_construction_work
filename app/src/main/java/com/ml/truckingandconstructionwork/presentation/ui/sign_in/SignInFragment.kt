@@ -7,11 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.ml.truckingandconstructionwork.MainActivity
+import com.ml.truckingandconstructionwork.R
+import com.ml.truckingandconstructionwork.databinding.AlertDialogPinOrFingerprintBinding
+import com.ml.truckingandconstructionwork.databinding.AlertDialogSavePasswordBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentSignInBinding
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
+import com.ml.truckingandconstructionwork.presentation.ui.registration.personal_details.PersonalDetailsFragmentDirections
 import com.ml.truckingandconstructionwork.presentation.utils.Constants.SPLASH_TYPE
 import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -21,6 +28,12 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
     override val binding: FragmentSignInBinding by viewBinding()
     override val viewModel: SignInViewModel by viewModel()
     private val args: SignInFragmentArgs by navArgs()
+
+    private val bindingAlertDialogSavePassword by lazy {
+        AlertDialogSavePasswordBinding.inflate(
+            layoutInflater
+        )
+    }
 
     private lateinit var sharedPref: SharedPreferences
 
@@ -45,11 +58,26 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
 
     }
 
+    override fun onEach() {
+        onEach(viewModel.userId) {
+            if (it.isNotEmpty()) {
+                startAlertDialogSavePassword(it)
+            } else {
+                Toast.makeText(context, getString(R.string.please_try_again), Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+    }
+
 
     override fun onViewClick() {
         with(binding) {
             btnSignIn.setOnClickListener {
-               // navigateFragment(SignInFragmentDirections.actionSignInFragmentToProfileFragment())
+                viewModel.checkUserDetail(
+                    binding.email.text.toString(),
+                    binding.password.text.toString()
+                )
+                // navigateFragment(SignInFragmentDirections.actionSignInFragmentToProfileFragment())
             }
             registerNow.setOnClickListener {
                 navigateFragment(SignInFragmentDirections.actionSignInFragmentToRegistrationFragment())
@@ -70,6 +98,32 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
                 binding.btnSkip.visibility = VISIBLE
             }
 
+        }
+    }
+
+    private fun startAlertDialogSavePassword(userId:String) {
+        if (bindingAlertDialogSavePassword.root.parent != null) (bindingAlertDialogSavePassword.root.parent as ViewGroup).removeView(
+            bindingAlertDialogSavePassword.root
+        )
+        val dialog = MaterialAlertDialogBuilder(
+            requireContext(),
+            R.style.ResetTheme
+        )
+            .setCancelable(false)
+            .setView(bindingAlertDialogSavePassword.root)
+            .show()
+
+        bindingAlertDialogSavePassword.btnYes.setOnClickListener {
+            dialog.dismiss()
+            viewModel.saveUserDetailsInSharedPref(userId)
+            if (userId.isNotEmpty()){
+
+            }
+            navigateFragment(SignInFragmentDirections.actionSignInFragmentToProfileFragment(userId))
+        }
+        bindingAlertDialogSavePassword.btnNo.setOnClickListener {
+            dialog.dismiss()
+            navigateFragment(SignInFragmentDirections.actionSignInFragmentToProfileFragment(userId))
         }
     }
 
