@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/size_15"
+    android:background="@drawable/bg_item_settings">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_user"
+            android:layout_width="@dimen/size_56"
+            android:layout_height="@dimen/size_56"
+            android:layout_margin="@dimen/size_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_user_profile_black" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:paddingStart="@dimen/size_15"
+            android:paddingEnd="60dp"
+            android:text="@string/name_surname"
+            android:textSize="@dimen/t_size_18"
+            app:layout_constraintStart_toEndOf="@id/img_user"
+            app:layout_constraintTop_toTopOf="@id/img_user"
+            app:layout_constraintBottom_toBottomOf="@id/img_user"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

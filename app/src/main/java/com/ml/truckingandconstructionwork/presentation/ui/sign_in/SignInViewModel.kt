@@ -7,6 +7,7 @@ import com.ml.truckingandconstructionwork.domain.interactor.registration.GetUser
 import com.ml.truckingandconstructionwork.domain.interactor.registration.SaveDataInSharedInteractor
 import com.ml.truckingandconstructionwork.domain.models.registration.UserDetails
 import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
+import com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
@@ -17,7 +18,7 @@ class SignInViewModel(
     ) :
     BaseViewModel() {
 
-    private val _showProgressBar: MutableSharedFlow<Boolean> by lazy { MutableSharedFlow() }
+    private val _showProgressBar: MutableSharedFlow<EmptyView.State> by lazy { MutableSharedFlow() }
     val showProgressBar = _showProgressBar.asSharedFlow()
 
     private val _userId: MutableSharedFlow<String> by lazy { MutableSharedFlow() }
@@ -25,7 +26,7 @@ class SignInViewModel(
 
     fun checkUserDetail(email: String, password: String) {
         viewModelScope.launch {
-            _showProgressBar.emit(true)
+            _showProgressBar.emit(EmptyView.State.LOADING)
 
 
             when (val result =
@@ -37,7 +38,7 @@ class SignInViewModel(
                 }
             }
 
-            _showProgressBar.emit(false)
+            _showProgressBar.emit(EmptyView.State.HIDE)
         }
     }
 

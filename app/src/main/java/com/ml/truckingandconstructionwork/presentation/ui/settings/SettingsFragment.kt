@@ -123,13 +123,11 @@ class SettingsFragment() : BaseFragment<BaseViewModel, FragmentSettingsBinding>(
             .show()
 
         bindingAlertDialogExit.dialogAlertConfirmButton.setOnClickListener {
-            binding.emptyView.showLoader()
 
             dialog.dismiss()
             lifecycleScope.launch {
 
-                delay(1000L)
-                binding.emptyView.hide()
+               viewModel.signOut()
             }
 
         }

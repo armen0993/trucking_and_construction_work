@@ -129,5 +129,9 @@ class UserDetailsRepositoryImpl(
        return sharedPreferenceService.getUserDetails()
     }
 
+    override suspend fun logOut() {
+     sharedPreferenceService.cleraUserDetails()
+    }
+
 
 }

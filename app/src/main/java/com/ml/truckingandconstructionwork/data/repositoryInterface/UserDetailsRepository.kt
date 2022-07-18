@@ -12,5 +12,7 @@ interface UserDetailsRepository {
     suspend fun getUser(userId:String):ActionResult<UserDetailsModel>
     suspend fun setUserDetailInSharedPref(userDetails: UserDetails)
     suspend fun getUserDetailInSharedPref(): UserDetails
+    suspend fun logOut()
+
 
 }

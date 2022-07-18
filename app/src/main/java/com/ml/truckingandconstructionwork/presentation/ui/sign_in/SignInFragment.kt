@@ -18,6 +18,7 @@ import com.ml.truckingandconstructionwork.databinding.AlertDialogSavePasswordBin
 import com.ml.truckingandconstructionwork.databinding.FragmentSignInBinding
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
+import com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
 import com.ml.truckingandconstructionwork.presentation.ui.registration.personal_details.PersonalDetailsFragmentDirections
 import com.ml.truckingandconstructionwork.presentation.utils.Constants.SPLASH_TYPE
 import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
@@ -66,6 +67,9 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
                 Toast.makeText(context, getString(R.string.please_try_again), Toast.LENGTH_SHORT)
                     .show()
             }
+        }
+        onEach(viewModel.showProgressBar){
+            showProgress(it)
         }
     }
 
@@ -116,14 +120,12 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
         bindingAlertDialogSavePassword.btnYes.setOnClickListener {
             dialog.dismiss()
             viewModel.saveUserDetailsInSharedPref(userId)
-            if (userId.isNotEmpty()){
 
-            }
-            navigateFragment(SignInFragmentDirections.actionSignInFragmentToProfileFragment(userId))
+            navigateFragment(SignInFragmentDirections.actionSignInFragmentToProfileFragment().setUserId(userId))
         }
         bindingAlertDialogSavePassword.btnNo.setOnClickListener {
             dialog.dismiss()
-            navigateFragment(SignInFragmentDirections.actionSignInFragmentToProfileFragment(userId))
+            navigateFragment(SignInFragmentDirections.actionSignInFragmentToProfileFragment().setUserId(userId))
         }
     }
 
@@ -143,6 +145,14 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
                 btnSignIn.isEnabled = checkEmptyFields()
             }
         }
+    }
+    private fun showProgress(show: EmptyView.State) {
+        binding.emptyView.visibility = VISIBLE
+        when(show){
+            EmptyView.State.LOADING-> binding.emptyView.showLoader()
+            else -> binding.emptyView.hide()
+        }
+
     }
 
     companion object {

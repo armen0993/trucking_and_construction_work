@@ -76,5 +76,9 @@ class PreferenceServiceImpl(private val context: Context):PreferenceService {
         return get<UserDetails>(USER_DETAILS) ?: UserDetails()
     }
 
+    override fun cleraUserDetails() {
+        put(UserDetails(),USER_DETAILS)
+    }
+
 
 }

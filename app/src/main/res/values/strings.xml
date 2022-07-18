@@ -185,6 +185,11 @@
     <string name="no">No</string>
     <string name="accept">Accept</string>
     <string name="not_now">Not now</string>
+    <string name="my_profile">My profile</string>
+    <string name="my_statements">My statements</string>
+    <string name="preferred_announcements">Preferred announcements</string>
+    <string name="contacts">Contacts</string>
+    <string name="wallet">Wallet</string>
 
 
 </resources>

@@ -1,5 +1,6 @@
 package com.ml.truckingandconstructionwork.presentation.di
 
+import com.ml.truckingandconstructionwork.MainActivityViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.add_work.AddWorkViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.sign_in.forgot_password.forgot_password.ForgotPasswordViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.sign_in.forgot_password.new_password.NewPasswordViewModel
@@ -21,20 +22,21 @@ import org.koin.dsl.module
 
 
 val viewModelModule = module {
+    viewModel { MainActivityViewModel(get())  }
     viewModel { PersonalDetailsViewModel(get(),get())  }
     viewModel { SplashViewModel(get())  }
     viewModel { AddWorkViewModel()  }
     viewModel { ForgotPasswordViewModel()  }
     viewModel { NewPasswordViewModel()  }
     viewModel { VerificationForgotPasswordViewModel()  }
-    viewModel { ProfileViewModel()  }
+    viewModel { ProfileViewModel(get())  }
     viewModel { CheckerViewModel()  }
     viewModel { RegistrationViewModel(get(),get())  }
     viewModel { CreatePinViewModel()  }
     viewModel { CreateFingerprintViewModel()  }
     viewModel { SignInViewModel(get(),get())  }
-    viewModel { SettingsViewModel()  }
+    viewModel { SettingsViewModel(get())  }
     viewModel { AddJobOfferViewModel(get())  }
     viewModel { OffersListViewModel(get())  }
-    viewModel { MainViewModel()  }
+    viewModel { MainViewModel(get())  }
 }
