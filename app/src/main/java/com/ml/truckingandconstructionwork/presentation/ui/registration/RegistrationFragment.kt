@@ -15,26 +15,16 @@ class RegistrationFragment() :
 
     override val binding: FragmentRegistrationBinding by viewBinding()
     override val viewModel: RegistrationViewModel by viewModel()
-
     private var id= ""
 
-
-
-
     override fun onView() {
-
         inputFields()
-
-
-
     }
 
     override fun onViewClick() {
         binding.btnRegistration.setOnClickListener {
             userDetails()
-
         }
-
     }
 
     override fun onEach() {
@@ -45,25 +35,9 @@ class RegistrationFragment() :
                 Toast.makeText(context, "Please check your data", Toast.LENGTH_SHORT).show()
             }
         }
-//   lifecycleScope.launch{
-//            viewModel.showProgressBar.collect {
-//                showProgress(it)
-//            }
-//            viewModel.startAlertDialog.collect {
-//                if (it) {
-//                    startAlertDialog()
-//                } else {
-//                    Toast.makeText(context, "Please check your data", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        }
-
-
     }
 
-
     private fun checkEmptyFields(): Boolean {
-
         return binding.email.text?.isNotEmpty() == true &&
                 binding.password.text?.isNotEmpty() == true &&
                 binding.repeatPassword.text?.isNotEmpty() == true
@@ -87,20 +61,15 @@ class RegistrationFragment() :
     private fun userDetails() {
         id = GENERATE_ID
         viewModel.setUserDetails(
-
             UserDetails(
                 id = id,
                 email = binding.email.text.toString(),
                 password = binding.repeatPassword.text.toString()
             )
         )
-
     }
 
     private fun showProgress(show: Boolean) {
         if (show) binding.emptyView.showLoader() else binding.emptyView.hide()
     }
-
-
-
 }

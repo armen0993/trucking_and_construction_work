@@ -61,7 +61,7 @@ class OfferRepositoryImpl() : OfferRepository {
 
 
             withContext(Dispatchers.Default){
-                delay(2000)
+                delay(1000)
                 return@withContext ActionResult.Success(list)
             }
 

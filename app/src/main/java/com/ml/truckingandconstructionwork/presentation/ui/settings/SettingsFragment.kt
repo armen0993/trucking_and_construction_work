@@ -32,15 +32,14 @@ class SettingsFragment() : BaseFragment<BaseViewModel, FragmentSettingsBinding>(
         )
     }
     private val bindingAlertDialogExit by lazy { AlertDialogExitBinding.inflate(layoutInflater) }
+    private var userId = ""
 
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        onClick()
-
+    override fun onView() {
+        binding.toolbar.enableLeftItem(true)
+       userId = arguments?.getString(Constants.USER_ID)!!
     }
 
-    private fun onClick() {
+    override fun onViewClick() {
         with(binding) {
             itemSystemSettings.language.setOnClickListener {
                 when {
@@ -62,8 +61,15 @@ class SettingsFragment() : BaseFragment<BaseViewModel, FragmentSettingsBinding>(
             itemExit.btnExit.setOnClickListener {
                 startAlertDialogExit()
             }
+            itemProfileSettings.editProfile.setOnClickListener {
+                navigateFragment(SettingsFragmentDirections.actionSettingsFragmentToEditProfileFragment().setUserId(userId))
+            }
+            itemProfileSettings.changePassword.setOnClickListener {
+                navigateFragment(SettingsFragmentDirections.actionSettingsFragmentToChangePasswordFragment().setUserId(userId))
+            }
         }
     }
+
 
     private fun startAlertDialogLanguage() {
 

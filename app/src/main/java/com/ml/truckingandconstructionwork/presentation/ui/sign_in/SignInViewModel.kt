@@ -3,6 +3,7 @@ package com.ml.truckingandconstructionwork.presentation.ui.sign_in
 import androidx.lifecycle.viewModelScope
 import com.ml.truckingandconstructionwork.core.ActionResult
 import com.ml.truckingandconstructionwork.domain.interactor.log_in.CheckUserDetailsInteractor
+import com.ml.truckingandconstructionwork.domain.interactor.log_in.SetSkippedTypeInSharedInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.registration.GetUserDetailsInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.registration.SaveDataInSharedInteractor
 import com.ml.truckingandconstructionwork.domain.models.registration.UserDetails
@@ -14,7 +15,8 @@ import kotlinx.coroutines.launch
 
 class SignInViewModel(
     private val checkUserDetailsInteractor: CheckUserDetailsInteractor,
-    private val saveDataInSharedInteractor: SaveDataInSharedInteractor
+    private val saveDataInSharedInteractor: SaveDataInSharedInteractor,
+    private val setSkippedTypeInSharedInteractor: SetSkippedTypeInSharedInteractor
     ) :
     BaseViewModel() {
 
@@ -27,17 +29,12 @@ class SignInViewModel(
     fun checkUserDetail(email: String, password: String) {
         viewModelScope.launch {
             _showProgressBar.emit(EmptyView.State.LOADING)
-
-
             when (val result =
                 checkUserDetailsInteractor(UserDetails(email = email, password = password))) {
                 is ActionResult.Success -> {
-
                     result.data?.let { _userId.emit(it) }
-
                 }
             }
-
             _showProgressBar.emit(EmptyView.State.HIDE)
         }
     }
@@ -45,6 +42,12 @@ class SignInViewModel(
     fun saveUserDetailsInSharedPref(userId:String) {
         viewModelScope.launch {
             saveDataInSharedInteractor(userId)
+        }
+    }
+
+    fun saveSkippedTypeInSharedPref(boolean: Boolean) {
+        viewModelScope.launch {
+            setSkippedTypeInSharedInteractor(boolean)
         }
     }
 }

@@ -83,8 +83,6 @@
     <string name="job_offers">Աշխատանքային առաջարկներ</string>
     <string name="add_special_offer">Եթե ունեք աշխատանքի առաջարկ, կարող եք գրանցվել այստեղ և անպայման կստանաք այդ առաջարկին համարժեք պատասխան</string>
     <string name="add_offer">Ավելացնել առաջարկ</string>
-    <string name="see_offers">Տես առաջարկները</string>
-    <string name="see_special_offers">Այստեղ դուք կարող եք տեսնել աշխատանքի առաջարկները, որոնք նախապես են արվել</string>
     <string name="please_enter_your_requirements">Խնդրում ենք մուտքագրել ձեր պահանջները</string>
     <string name="type_special_equipment">Հատուկ սարքավորումների տեսակը</string>
     <string name="start_address">Մեկնարկի հասցեն</string>
@@ -96,6 +94,7 @@
 
     <string-array name="special_equipment">
         <item>Բեռնատարներ</item>
+        <item>Ինքնաթափ մեքենա</item>
         <item>Բեռնատար ամբարձիչներ</item>
         <item>Մանիպուլյատորներ</item>
         <item>Թրթուրավոր էքսկավատորներ</item>
@@ -108,5 +107,34 @@
     </string-array>
     <string name="request_post">Մենք կդիտարկենք Ձեր հարցումը և եթե այն համապատասխանի ծրագրի ստանդարտներին, ապա  Ձեր հարցումը կտեղադրվի հայտարարությունների բաժնում:</string>
     <string name="offers">Առաջարկներ</string>
+    <string name="profile">Պրոֆիլ</string>
+    <string name="please_try_again">Խնդրում եմ կրկին փորձեք</string>
+    <string name="remember_login_and_password">Մուտքը հաջողվեց: Հիշե՞լ օգտվողի անունը և գաղտնաբառը:</string>
+    <string name="accept">Ընդունել</string>
+    <string name="not_now">Ոչ հիմա</string>
+    <string name="my_profile">Իմ էջը</string>
+    <string name="my_statements">Իմ հայտարարությունները</string>
+    <string name="preferred_announcements">Նախընտրելի հայտարարություններ</string>
+    <string name="contacts">Կոնտակտներ</string>
+    <string name="wallet">Դրամապանակ</string>
+    <string name="search">Որոնում</string>
+    <string name="popular_sections">Հանրաճանաչ բաժիններ</string>
+    <string name="sections">Բաժիններ</string>
+    <string name="loader">Բեռնիչ</string>
+    <string name="excavator">Էքսկավատոր</string>
+    <string name="dump_truck">Ինքնաթափ բեռնատար</string>
+    <string name="truck_cranes">Բեռնատար կռունկ</string>
+    <string name="manipulators">Մանիպուլյատոր</string>
+    <string name="crawler_excavators">Թրթուրավոր էքսկավատորներ</string>
+    <string name="wheeled_excavators">Անիվավոր էքսկավատոր</string>
+    <string name="excavator_loaders">Էքսկավատոր բեռնիչ</string>
+    <string name="concrete_mixers">Բետոնի խառնիչ</string>
+    <string name="concrete_pump">Բետոնի պոմպ մեքենա</string>
+    <string name="tow_trucks">Քարշակ մեքենա</string>
+    <string name="no">Ոչ</string>
+    <string name="operation_completed_successfully">Գործողությունը հաջողությամբ ավարտվեց</string>
+    <string name="confirm">Հաստատել</string>
+    <string name="old_password">Հին գաղտնաբառ</string>
+    <string name="new_password">Նոր գաղտնաբառ</string>
 
 </resources>

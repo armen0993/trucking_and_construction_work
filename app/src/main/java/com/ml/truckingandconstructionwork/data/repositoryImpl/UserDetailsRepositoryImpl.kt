@@ -6,7 +6,6 @@ import com.google.firebase.ktx.Firebase
 import com.ml.truckingandconstructionwork.core.ActionResult
 import com.ml.truckingandconstructionwork.core.CallException
 import com.ml.truckingandconstructionwork.data.app_service.PreferenceService
-import com.ml.truckingandconstructionwork.data.models.add_work.OfferModel
 import com.ml.truckingandconstructionwork.data.models.registration.UserDetailsModel
 import com.ml.truckingandconstructionwork.data.repositoryInterface.UserDetailsRepository
 import com.ml.truckingandconstructionwork.domain.models.registration.UserDetails
@@ -48,10 +47,33 @@ class UserDetailsRepositoryImpl(
         }
     }
 
-    override suspend fun getUserDetails(): ActionResult<List<UserDetailsModel>>{
+    override suspend fun editUserDetails(userDetailsModel: UserDetailsModel) {
+        withContext(Dispatchers.IO) {
+            db.collection(USER_DETAILS_COLLECTION)
+                .document("${userDetailsModel.id}")
+                .update(
+                    "name", userDetailsModel.name,
+                    "surname", userDetailsModel.surname,
+                    "city", userDetailsModel.city,
+                    "dataOfBirth", userDetailsModel.dataOfBirth,
+                )
+        }
+    }
+
+    override suspend fun changePassword(userDetailsModel: UserDetailsModel,newPassword:String) {
+        withContext(Dispatchers.IO) {
+            db.collection(USER_DETAILS_COLLECTION)
+                .document("${userDetailsModel.id}")
+                .update(
+                    "password", newPassword
+                )
+        }
+    }
+
+    override suspend fun getUserDetails(): ActionResult<List<UserDetailsModel>> {
         val usersMap = mutableMapOf<String, UserDetailsModel>()
         val list = mutableListOf<UserDetailsModel>()
-      return  withContext(Dispatchers.IO) {
+        return withContext(Dispatchers.IO) {
             db.collection(USER_DETAILS_COLLECTION)
                 .addSnapshotListener { snapshot, exception ->
                     if (exception != null) {
@@ -69,18 +91,18 @@ class UserDetailsRepositoryImpl(
 
                                 usersMap[doc.id.toString()] = doc
 
-                             list.add(doc)
+                                list.add(doc)
                             }
 
 
                         }
-                     //   snapshotSuccess = ActionResult.Success(list)
+                        //   snapshotSuccess = ActionResult.Success(list)
 
 
                     }
                 }
 
-            withContext(Dispatchers.Default){
+            withContext(Dispatchers.Default) {
                 delay(2000)
                 return@withContext ActionResult.Success(list)
             }
@@ -89,8 +111,8 @@ class UserDetailsRepositoryImpl(
     }
 
     override suspend fun getUser(userId: String): ActionResult<UserDetailsModel> {
-      return  withContext(Dispatchers.IO){
-          var user = UserDetailsModel()
+        return withContext(Dispatchers.IO) {
+            var user = UserDetailsModel()
             db.collection(USER_DETAILS_COLLECTION)
                 .document(userId)
                 .addSnapshotListener { snapshot, exception ->
@@ -105,8 +127,7 @@ class UserDetailsRepositoryImpl(
                     }
                     snapshot?.let { document ->
 
-                          user = document.toObject<UserDetailsModel>()!!
-
+                        user = document.toObject<UserDetailsModel>()!!
 
 
                         //   snapshotSuccess = ActionResult.Success(list)
@@ -114,7 +135,7 @@ class UserDetailsRepositoryImpl(
 
                     }
                 }
-            withContext(Dispatchers.Default){
+            withContext(Dispatchers.Default) {
                 delay(2000)
                 return@withContext ActionResult.Success(user)
             }
@@ -126,11 +147,20 @@ class UserDetailsRepositoryImpl(
     }
 
     override suspend fun getUserDetailInSharedPref(): UserDetails {
-       return sharedPreferenceService.getUserDetails()
+        return sharedPreferenceService.getUserDetails()
+    }
+
+    override suspend fun getSkippedTypeInSharedPref(): Boolean {
+        return sharedPreferenceService.getSkipped()
+    }
+
+    override suspend fun setSkippedTypeInSharedPref(boolean: Boolean) {
+        sharedPreferenceService.setSkipped(boolean)
     }
 
     override suspend fun logOut() {
-     sharedPreferenceService.cleraUserDetails()
+        sharedPreferenceService.clearUserDetails()
+        sharedPreferenceService.setSkipped(false)
     }
 
 

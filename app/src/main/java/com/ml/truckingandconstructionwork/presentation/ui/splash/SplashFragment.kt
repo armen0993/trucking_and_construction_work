@@ -1,13 +1,7 @@
 package com.ml.truckingandconstructionwork.presentation.ui.splash
 
-import android.content.SharedPreferences
-import android.os.Bundle
-import android.preference.PreferenceManager
-import android.view.View
 import androidx.lifecycle.lifecycleScope
-import com.ml.truckingandconstructionwork.R
 import com.ml.truckingandconstructionwork.databinding.FragmentSplashBinding
-
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
 import com.ml.truckingandconstructionwork.presentation.utils.Constants.SPLASH_TYPE
@@ -20,17 +14,25 @@ class SplashFragment() : BaseFragment<BaseViewModel,FragmentSplashBinding>() {
 
     override val binding: FragmentSplashBinding by viewBinding()
     override val viewModel: SplashViewModel by viewModel()
-    private lateinit var sharedPref: SharedPreferences
+
     private var userId=""
 
+    override fun onView() {
+        viewModel.getSkippedTypeWithSharedPref()
+    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+    override fun onEach() {
+        onEach(viewModel.userId){
+            userId = it
+        }
+        onEach(viewModel.skipped){
+            skippedType(it)
+        }
+    }
+
+    private fun skippedType(skipped:Boolean){
         lifecycleScope.launch {
-
-
-            if (sharedPref.getBoolean("skiped",false)){
+            if (skipped){
                 viewModel.getUserDetailWithSharedPref()
                 delay(3000)
                 navigateFragment(SplashFragmentDirections.actionSplashFragmentToMainFragment().setUserId(userId))
@@ -38,14 +40,6 @@ class SplashFragment() : BaseFragment<BaseViewModel,FragmentSplashBinding>() {
                 delay(3000)
                 navigateFragment(SplashFragmentDirections.actionSplashFragmentToSignInFragment().setSignInType(SPLASH_TYPE))
             }
-
-        }
-    }
-
-    override fun onEach() {
-        onEach(viewModel.userId){
-            userId = it
-
         }
     }
 }

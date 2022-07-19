@@ -7,5 +7,8 @@ interface PreferenceService {
     fun setUserDetails(userDetails: UserDetails)
     fun getUserDetails(): UserDetails
 
-    fun cleraUserDetails()
+    fun clearUserDetails()
+
+    fun setSkipped(skipped:Boolean)
+    fun getSkipped():Boolean
 }

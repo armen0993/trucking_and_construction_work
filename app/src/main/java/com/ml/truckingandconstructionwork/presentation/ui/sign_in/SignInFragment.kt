@@ -36,13 +36,6 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
         )
     }
 
-    private lateinit var sharedPref: SharedPreferences
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -54,7 +47,6 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
     }
 
     override fun onView() {
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         inputFields()
 
     }
@@ -91,7 +83,7 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
             }
             btnSkip.setOnClickListener {
                 navigateFragment(SignInFragmentDirections.actionSignInFragmentToMainFragment())
-                sharedPref.edit().putBoolean(SKIPED, true).apply()
+                viewModel.saveSkippedTypeInSharedPref(true)
             }
         }
     }
@@ -153,10 +145,5 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
             else -> binding.emptyView.hide()
         }
 
-    }
-
-    companion object {
-        const val ERROR_EDIT_TEXT = "Поле ввода не должно быть пустым"
-        const val SKIPED = "skiped"
     }
 }

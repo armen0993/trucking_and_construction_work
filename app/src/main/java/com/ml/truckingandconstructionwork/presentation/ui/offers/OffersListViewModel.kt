@@ -28,18 +28,19 @@ class OffersListViewModel(
             _showProgressBar.emit(EmptyView.State.LOADING)
 
 
-            when (val result = getOffersInteractor.invoke()) {
+            when (val result = getOffersInteractor()) {
                 is ActionResult.Success -> {
-                    _listOffers.emit(result.data)
+                    list = result.data
+                    _listOffers.emit(list)
                 }
             }
 
 
-//            if (list.isEmpty()) {
-//                _showProgressBar.emit(EmptyView.State.EMPTY)
-//            } else {
+            if (list.isEmpty()) {
+                _showProgressBar.emit(EmptyView.State.EMPTY)
+            } else {
             _showProgressBar.emit(EmptyView.State.HIDE)
-            //  }
+              }
 
         }
     }

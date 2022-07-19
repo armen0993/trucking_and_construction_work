@@ -14,10 +14,245 @@
         app:layout_constraintTop_toTopOf="parent"
         app:leftItem="@drawable/ic_burg" />
 
+    <com.ml.truckingandconstructionwork.presentation.custom_view.SearchBarControl
+        android:id="@+id/search_answer"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/background_edit_text_gray"
+        android:drawablePadding="8dp"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:hint="@string/search"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:paddingStart="13dp"
+        android:paddingEnd="10dp"
+        app:drawableEndCompat="@drawable/ic_clear"
+        app:drawableStartCompat="@drawable/ic_search_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sections"
+        android:layout_width="match_parent"
+        android:background="@drawable/background_edit_text_gray"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_15"
+        android:layout_marginTop="@dimen/size_30"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:text="@string/sections"
+        android:paddingStart="@dimen/size_15"
+        android:drawableEnd="@drawable/ic_next_gray"
+        android:textSize="@dimen/t_size_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_answer"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/popular_models"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_30"
+        android:layout_marginTop="@dimen/size_30"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:text="@string/popular_sections"
+        android:textSize="@dimen/t_size_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sections"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/container_excavator"
+        app:layout_constraintTop_toBottomOf="@id/popular_models">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:padding="8dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_loader"
+                android:layout_width="96dp"
+                android:layout_height="70dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/loader_ex"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/loader_name"
+                android:layout_width="@dimen/size_96"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/loader"
+                android:textSize="12sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_loader" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container_excavator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toEndOf="@id/container_loader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/popular_models">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:padding="8dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_car"
+                android:layout_width="96dp"
+                android:layout_height="70dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_excavator"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/label_car_name"
+                android:layout_width="@dimen/size_96"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/excavator"
+                android:textSize="12sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_car" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container_dump_truck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/container_crane"
+        app:layout_constraintTop_toBottomOf="@id/container_loader"
+        android:layout_marginTop="@dimen/size_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:padding="8dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_dump_truck"
+                android:layout_width="96dp"
+                android:layout_height="70dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_dump_truck"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/dump_truck_name"
+                android:layout_width="@dimen/size_96"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:text="@string/dump_truck"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_dump_truck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container_crane"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toEndOf="@id/container_dump_truck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_loader"
+        android:layout_marginTop="@dimen/size_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:padding="8dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_crane"
+                android:layout_width="96dp"
+                android:layout_height="70dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_crane"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/crane_name"
+                android:layout_width="@dimen/size_96"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/truck_cranes"
+                android:textSize="12sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_crane" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
     <com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
         android:id="@+id/empty_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/size_0"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

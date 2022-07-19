@@ -21,12 +21,9 @@ import com.ml.truckingandconstructionwork.presentation.extensions.getCurrentFrag
 import com.ml.truckingandconstructionwork.presentation.ui.LocaleHelper
 import com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment
 import com.ml.truckingandconstructionwork.presentation.ui.offers.OffersListFragment
-import com.ml.truckingandconstructionwork.presentation.ui.profile.profile.ProfileFragment
+import com.ml.truckingandconstructionwork.presentation.ui.profile.ProfileFragment
 import com.ml.truckingandconstructionwork.presentation.ui.sign_in.SignInFragment
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -136,11 +133,12 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onBackPressed() {
+        super.onBackPressed()
         if (exit) {
             finish() // finish activity
         } else {
             exit = true
-            Handler().postDelayed({ exit = false }, 3 * 1000)
+            Handler().postDelayed({ exit = false }, 2 * 1000)
 
         }
     }

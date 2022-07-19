@@ -22,9 +22,11 @@
         <entry key="..\:/ArmProject/app/src/main/res/layout/main_header.xml" value="0.10416666666666667" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/bg_list_offers_item_bottom.xml" value="0.185" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/drawable_rect_white.xml" value="0.1" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/ic_clear.xml" value="0.1825" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.169" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/background_button_radio.xml" value="0.216" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/background_button_radio_white.xml" value="0.216" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/background_edit_text_gray.xml" value="0.1465" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_button_disabled.xml" value="0.246" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_button_enabled.xml" value="0.1975" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_button_order.xml" value="0.185" />
@@ -33,6 +35,7 @@
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_item_offer_list.xml" value="0.184" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_list_offers_item_bottom.xml" value="0.185" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_list_offers_item_top.xml" value="0.185" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_popular_item.xml" value="0.1465" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_radio_button_selector.xml" value="0.1" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_rounded_button_light_blue.xml" value="0.169" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/bg_toggle_button.xml" value="0.1445" />
@@ -42,6 +45,7 @@
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_add_unselected.xml" value="0.1945" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_arrow_back_black.xml" value="0.1835" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_arrow_down.xml" value="0.1445" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_bank_auth_success.xml" value="0.1255" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_construction_work_selector.xml" value="0.169" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_construction_work_unselected.xml" value="0.1945" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_contact_us.xml" value="0.1445" />
@@ -55,6 +59,7 @@
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_profile.xml" value="0.142" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_profile_selected.xml" value="0.142" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_profile_selector.xml" value="0.142" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_search_gray.xml" value="0.1825" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_settings_selected.xml" value="0.1" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_settings_selector.xml" value="0.1" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_special_offer_selected.xml" value="0.178" />
@@ -69,23 +74,30 @@
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/drawable/ic_user_profile_black.xml" value="0.1695" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/alert_dialog_add_job.xml" value="0.1765625" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/alert_dialog_change_language.xml" value="0.16145833333333334" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/alert_dialog_enter_pin.xml" value="0.3463541666666667" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/alert_dialog_exit.xml" value="0.16145833333333334" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/alert_dialog_pin_or_fingerprint.xml" value="0.3463541666666667" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/alert_dialog_save_password.xml" value="0.3463541666666667" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/alert_dialog_success.xml" value="0.16145833333333334" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/alert_dialog_wrong_pin.xml" value="0.35052083333333334" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/dialog_alert.xml" value="0.21" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_add_job_offer.xml" value="0.2861111111111111" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_add_special_offer.xml" value="0.35052083333333334" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_add_work.xml" value="0.17131474103585656" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_change_password.xml" value="0.16145833333333334" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_checker.xml" value="0.1962962962962963" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_construction_works.xml" value="0.3494791666666667" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_create_login_password.xml" value="0.33645833333333336" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_edit_profile.xml" value="0.1734375" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_job_offer.xml" value="0.1765625" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_main.xml" value="0.22" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_offers_list.xml" value="0.1765625" />
-        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_personal_details.xml" value="0.2732049036777583" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_personal_details.xml" value="0.25084745762711863" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_profile_edit.xml" value="0.1734375" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_registration.xml" value="0.20535714285714285" />
+        <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_sections.xml" value="0.17395833333333333" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_see_job_offer.xml" value="0.1765625" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_see_special_offer.xml" value="0.35052083333333334" />
         <entry key="..\:/TruckingandConstructionwork/app/src/main/res/layout/fragment_settings.xml" value="0.1" />

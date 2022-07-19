@@ -181,10 +181,12 @@
                     android:background="@drawable/bg_input_edit_text"
                     android:cursorVisible="false"
                     android:gravity="center_vertical"
-                    android:padding="@dimen/size_16"
+                    android:paddingStart="@dimen/size_16"
+                    android:paddingBottom="@dimen/size_12"
+                    android:paddingTop="@dimen/size_20"
                     android:focusable="false"
                     android:inputType="none"
-             />
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
 

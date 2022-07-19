@@ -9,6 +9,7 @@ import com.ml.truckingandconstructionwork.domain.models.registration.UserDetails
 class PreferenceServiceImpl(private val context: Context):PreferenceService {
 
     private val USER_DETAILS = "USER_DETAILS"
+    private val SKIPPED = "SKIPPED"
 
     val sharedPreferences: SharedPreferences = //PreferenceManager.getDefaultSharedPreferences(context)
         context.getSharedPreferences(context.packageName + "_preferences", Context.MODE_PRIVATE)
@@ -76,8 +77,16 @@ class PreferenceServiceImpl(private val context: Context):PreferenceService {
         return get<UserDetails>(USER_DETAILS) ?: UserDetails()
     }
 
-    override fun cleraUserDetails() {
+    override fun clearUserDetails() {
         put(UserDetails(),USER_DETAILS)
+    }
+
+    override fun setSkipped(skipped: Boolean) {
+        put(skipped,SKIPPED)
+    }
+
+    override fun getSkipped(): Boolean {
+        return get<Boolean>(SKIPPED)?:false
     }
 
 

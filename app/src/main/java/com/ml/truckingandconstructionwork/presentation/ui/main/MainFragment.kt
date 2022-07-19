@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.drawerlayout.widget.DrawerLayout
@@ -25,14 +26,6 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
     private val bindingDrawer by lazy { MainHeaderBinding.inflate(layoutInflater) }
     var name = ""
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-    //    drawerLayout = activity?.findViewById<DrawerLayout>(R.id.drawer_layout)!!
-        return super.onCreateView(inflater, container, savedInstanceState)
-    }
 
     override fun onView() {
         drawerLayout = activity?.findViewById<DrawerLayout>(R.id.drawer_layout)!!
@@ -45,7 +38,6 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
     }
 
     override fun onEach() {
-
         onEach(viewModel.userDetails) {
             name = "${it.name} ${it.surname}"
         }
@@ -54,8 +46,15 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
         }
     }
 
+    override fun onViewClick() {
+        with(binding){
+            sections.setOnClickListener {
+                navigateFragment(MainFragmentDirections.actionMainFragmentToSectionsFragment())
+            }
+        }
+    }
+
     private fun showProgress(show: EmptyView.State) {
-        binding.emptyView.visibility = View.VISIBLE
         when (show) {
             EmptyView.State.LOADING -> binding.emptyView.showLoader()
             else -> binding.emptyView.hide()

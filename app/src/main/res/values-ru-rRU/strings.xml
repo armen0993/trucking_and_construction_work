@@ -83,8 +83,6 @@
     <string name="job_offers">Предложения о работе</string>
     <string name="add_special_offer">Если у вас есть предложение о работе, вы можете зарегистрировать его здесь, и вы обязательно получите ответ, эквивалентный этому предложению.</string>
     <string name="add_offer">Добавить предложение</string>
-    <string name="see_offers">Посмотреть предложения</string>
-    <string name="see_special_offers">Здесь вы можете увидеть предложения о работе, которые были сделаны заранее</string>
     <string name="please_enter_your_requirements">Пожалуйста, введите ваши требования</string>
     <string name="type_special_equipment">Тип спецтехники</string>
     <string name="start_address">Начальный адрес</string>
@@ -96,6 +94,7 @@
 
     <string-array name="special_equipment">
         <item>Грузовые автомобили</item>
+        <item>Самосвал</item>
         <item>Автокраны</item>
         <item>Манипуляторы</item>
         <item>Гусеничные экскаваторы</item>
@@ -108,5 +107,34 @@
     </string-array>
     <string name="request_post">Мы рассмотрим ваш запрос и, если он соответствует критериям программы, ваш запрос будет размещен в разделе объявлений.</string>
     <string name="offers">Предложения</string>
+    <string name="profile">Профиль</string>
+    <string name="please_try_again">Пожалуйста, попробуйте еще раз</string>
+    <string name="remember_login_and_password">Вход прошел успешно. Помнить имя пользователя и пароль?</string>
+    <string name="accept">Принимать</string>
+    <string name="not_now">Не сейчас</string>
+    <string name="my_profile">Мой профиль</string>
+    <string name="my_statements">Мои заявления</string>
+    <string name="preferred_announcements">Предпочтительные объявления</string>
+    <string name="contacts">Контакты</string>
+    <string name="wallet">Кошелек</string>
+    <string name="search">Поиск</string>
+    <string name="popular_sections">Популярные разделы</string>
+    <string name="sections">Разделы</string>
+    <string name="loader">Погрузчик</string>
+    <string name="excavator">Экскаватор</string>
+    <string name="dump_truck">Самосвал</string>
+    <string name="truck_cranes">Автокран</string>
+    <string name="manipulators">Манипулятор</string>
+    <string name="crawler_excavators">Гусеничный экскаватор</string>
+    <string name="wheeled_excavators">Колесный экскаватор</string>
+    <string name="excavator_loaders">Экскаватор-погрузчик</string>
+    <string name="concrete_mixers">Бетономешалка</string>
+    <string name="concrete_pump">Бетононасос</string>
+    <string name="tow_trucks">Эвакуатор</string>
+    <string name="no">Нет</string>
+    <string name="operation_completed_successfully">Операция завершена успешно</string>
+    <string name="confirm">Подтверждать</string>
+    <string name="old_password">Старый пароль</string>
+    <string name="new_password">Новый пароль</string>
 
 </resources>
