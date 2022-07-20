@@ -23,6 +23,8 @@
             android:drawableEnd="@drawable/ic_next_gray"
             android:background="?selectableItemBackground"
             android:textSize="@dimen/t_size_18"
+            android:singleLine="true"
+            android:ellipsize="end"
             tools:ignore="RtlSymmetry" />
 
         <View
@@ -39,6 +41,8 @@
             android:background="?selectableItemBackground"
             android:text="@string/wallet"
             android:textSize="@dimen/t_size_18"
+            android:singleLine="true"
+            android:ellipsize="end"
             tools:ignore="RtlSymmetry" />
 
 

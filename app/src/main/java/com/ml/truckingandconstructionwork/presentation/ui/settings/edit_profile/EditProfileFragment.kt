@@ -1,8 +1,11 @@
 package com.ml.truckingandconstructionwork.presentation.ui.settings.edit_profile
 
+import android.os.Build
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -12,8 +15,7 @@ import com.ml.truckingandconstructionwork.databinding.FragmentEditProfileBinding
 import com.ml.truckingandconstructionwork.domain.models.registration.UserDetails
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 import com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
-import com.ml.truckingandconstructionwork.presentation.utils.Constants
-import com.ml.truckingandconstructionwork.presentation.utils.CustomDateDialogTools
+import com.ml.truckingandconstructionwork.presentation.utils.MaterialDateDialog
 import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -27,7 +29,12 @@ class EditProfileFragment : BaseFragment<EditProfileViewModel, FragmentEditProfi
 
     override fun onView() {
         binding.toolbar.enableLeftItem(true)
-        viewModel.getUserDetails(args.userId)
+        if (args.userId.isNotEmpty()) {
+            viewModel.getUserDetails(args.userId)
+        } else {
+            binding.emptyView.hide()
+        }
+
         inputFields()
         checkCity()
     }
@@ -41,10 +48,16 @@ class EditProfileFragment : BaseFragment<EditProfileViewModel, FragmentEditProfi
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewClick() {
         with(binding) {
             btnNext.setOnClickListener {
-                changeUserDetails()
+                if (args.userId.isNotEmpty()) {
+                    changeUserDetails()
+                } else {
+                    Toast.makeText(context, getString(R.string.pleace_sign_in), Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
             dateOfBirth.setOnClickListener {
                 birthOfData()
@@ -53,17 +66,12 @@ class EditProfileFragment : BaseFragment<EditProfileViewModel, FragmentEditProfi
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun birthOfData() {
         binding.dateOfBirth.setOnClickListener {
-            binding.dateOfBirth.also {
-                context?.let { it1 ->
-                    CustomDateDialogTools.createDateDialog(
-                        it1,
-                        Constants.FORMAT_DATE,
-                        it
-                    )
-                }
-            }
+            MaterialDateDialog.showDateValid18Year(
+                childFragmentManager, binding.dateOfBirth
+            )
         }
     }
 

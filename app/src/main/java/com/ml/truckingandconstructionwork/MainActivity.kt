@@ -23,6 +23,8 @@ import com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment
 import com.ml.truckingandconstructionwork.presentation.ui.offers.OffersListFragment
 import com.ml.truckingandconstructionwork.presentation.ui.profile.ProfileFragment
 import com.ml.truckingandconstructionwork.presentation.ui.sign_in.SignInFragment
+import com.ml.truckingandconstructionwork.presentation.ui.sign_in.SignInViewModel
+import com.ml.truckingandconstructionwork.presentation.utils.Constants.USER_ID
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -31,13 +33,14 @@ class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MainActivityViewModel by viewModel()
+    private val viewModelSignIn: SignInViewModel by viewModel()
 
     private var exit = false
     private var userId = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getDetaisSharedPref()
+        getDetaIsSharedPref()
         LocaleHelper.updateResources(this, LocaleHelper.getLanguage(this))
         _binding = ActivityMainBinding.inflate(layoutInflater)
 
@@ -45,14 +48,19 @@ class MainActivity : AppCompatActivity() {
 
 
         hideBottomBar()
+
+
+
         lifecycleScope.launch {
+
             delay(2000L)
             setupNavigation()
         }
 
+
     }
 
-    private fun getDetaisSharedPref() {
+    private fun getDetaIsSharedPref() {
         lifecycleScope.launch {
             viewModel.userId.collect {
                 userId = it
@@ -91,16 +99,18 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController: NavController = navHostFragment.navController
+
         val bundle = Bundle()
-        bundle.putString("userid", userId)
+        bundle.putString(USER_ID, userId)
+
         if (userId.isNotEmpty()) {
             binding.bottomBar.setOnItemSelectedListener {
                 when (it.itemId) {
-                    R.id.main_fragment -> navController.navigate(R.id.mainFragment,bundle)
+                    R.id.main_fragment -> navController.navigate(R.id.mainFragment, bundle)
                     R.id.list_offer_fragment -> navController.navigate(R.id.offersListFragment)
                     R.id.add_works_fragment -> navController.navigate(R.id.addWorkFragment)
-                    R.id.signIn_fragment -> navController.navigate(R.id.profileFragment,bundle)
-                    R.id.settings_fragment -> navController.navigate(R.id.settingsFragment,bundle)
+                    R.id.signIn_fragment -> navController.navigate(R.id.profileFragment, bundle)
+                    R.id.settings_fragment -> navController.navigate(R.id.settingsFragment, bundle)
                 }
                 return@setOnItemSelectedListener true
             }

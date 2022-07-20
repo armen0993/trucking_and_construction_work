@@ -73,7 +73,6 @@ class SignInFragment() : BaseFragment<BaseViewModel, FragmentSignInBinding>() {
                     binding.email.text.toString(),
                     binding.password.text.toString()
                 )
-                // navigateFragment(SignInFragmentDirections.actionSignInFragmentToProfileFragment())
             }
             registerNow.setOnClickListener {
                 navigateFragment(SignInFragmentDirections.actionSignInFragmentToRegistrationFragment())

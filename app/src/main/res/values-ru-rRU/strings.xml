@@ -136,5 +136,17 @@
     <string name="confirm">Подтверждать</string>
     <string name="old_password">Старый пароль</string>
     <string name="new_password">Новый пароль</string>
+    <string name="pleace_sign_in">Пожалуйста, войдите в свою учетную запись</string>
+    <string name="my_special_equipments">"Мои  спецтехники "</string>
+    <string name="add_special_equipment">Добавить спецтехнику</string>
+    <string name="please_fill_in_the_indicated_fields">Пожалуйста, заполните указанные поля</string>
+    <string name="model">Модель</string>
+    <string name="weight_special_equipment">Вес спецтехники</string>
+    <string name="special_equipment_capacity">Грузоподъемность  спецтехники</string>
+    <string name="length_of_arrow">Длина стрелы</string>
+    <string name="production_year">Год производства</string>
+    <string name="see_all_sections">Посмотреть все разделы</string>
+    <string name="special_equipments">Спецтехника</string>
+    <string name="see_more">Подробнее</string>
 
 </resources>

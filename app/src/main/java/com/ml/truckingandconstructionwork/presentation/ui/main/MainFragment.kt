@@ -51,6 +51,9 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
             sections.setOnClickListener {
                 navigateFragment(MainFragmentDirections.actionMainFragmentToSectionsFragment())
             }
+            allSections.setOnClickListener {
+                navigateFragment(MainFragmentDirections.actionMainFragmentToSpecialEquipmentsListFragment())
+            }
         }
     }
 

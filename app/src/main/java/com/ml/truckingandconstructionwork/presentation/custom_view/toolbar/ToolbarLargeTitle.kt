@@ -32,7 +32,7 @@ class ToolbarLargeTitle @JvmOverloads constructor(
                 enableRightItem(customRightItemEnabled)
             }
 
-        //    setDrawableColorInt(rightItem, customRightItemColor.correctColor(context, R.color.black))
+            setDrawableColorInt(rightItem, customRightItemColor.correctColor(context, R.color.black))
 
             rightItem.setOnClickListener {
                 rightItemClick()

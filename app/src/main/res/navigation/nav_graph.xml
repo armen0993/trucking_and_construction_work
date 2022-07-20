@@ -218,6 +218,13 @@
             app:argType="string"
             android:defaultValue=""
             />
+        <action
+            android:id="@+id/action_profileFragment_to_addSpecialEquipmentFragment"
+            app:destination="@id/specialEquipmentsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -271,13 +278,20 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_specialEquipmentsListFragment"
+            app:destination="@id/specialEquipmentsListFragment" />
 
     </fragment>
     <fragment
         android:id="@+id/sectionsFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.main.sections.SectionsFragment"
         android:label="fragment_sections"
-        tools:layout="@layout/fragment_sections" />
+        tools:layout="@layout/fragment_sections" >
+        <action
+            android:id="@+id/action_sectionsFragment_to_specialEquipmentsListFragment"
+            app:destination="@id/specialEquipmentsListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.ml.truckingandconstructionwork.presentation.ui.settings.edit_profile.EditProfileFragment"
@@ -300,4 +314,38 @@
             android:defaultValue=""
             />
     </fragment>
+    <fragment
+        android:id="@+id/specialEquipmentsFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.profile.special_equipments.SpecialEquipmentsFragment"
+        android:label="fragment_special_equipments"
+        tools:layout="@layout/fragment_special_equipments" >
+        <argument
+            android:name="user_id"
+            app:argType="string"
+            android:defaultValue=""
+            />
+        <action
+            android:id="@+id/action_specialEquipmentsFragment_to_addSpecialEquipmentFragment"
+            app:destination="@id/addSpecialEquipmentFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/addSpecialEquipmentFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.profile.special_equipments.add_special_equipment.AddSpecialEquipmentFragment"
+        android:label="fragment_add_special_equipment"
+        tools:layout="@layout/fragment_add_special_equipment">
+        <argument
+            android:name="user_id"
+            app:argType="string"
+            android:defaultValue=""
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/specialEquipmentsListFragment"
+        android:name="com.ml.truckingandconstructionwork.presentation.ui.main.all_sections.SpecialEquipmentsListFragment"
+        android:label="fragment_special_equipments_list"
+        tools:layout="@layout/fragment_special_equipments_list" />
 </navigation>

@@ -40,7 +40,12 @@ class ChangePasswordFragment :
     override fun onViewClick() {
         with(binding) {
             btnConfirm.setOnClickListener {
-                setPassword()
+                if (args.userId.isNotEmpty()){
+                    setPassword()
+                }else{
+                    Toast.makeText(context,getString(R.string.pleace_sign_in),Toast.LENGTH_SHORT).show()
+                }
+
             }
         }
 

@@ -14,7 +14,6 @@ class SplashFragment() : BaseFragment<BaseViewModel,FragmentSplashBinding>() {
 
     override val binding: FragmentSplashBinding by viewBinding()
     override val viewModel: SplashViewModel by viewModel()
-
     private var userId=""
 
     override fun onView() {
@@ -26,18 +25,17 @@ class SplashFragment() : BaseFragment<BaseViewModel,FragmentSplashBinding>() {
             userId = it
         }
         onEach(viewModel.skipped){
-            skippedType(it)
+                skippedType(it)
         }
     }
 
     private fun skippedType(skipped:Boolean){
         lifecycleScope.launch {
-            if (skipped){
-                viewModel.getUserDetailWithSharedPref()
-                delay(3000)
+            viewModel.getUserDetailWithSharedPref()
+            delay(3000)
+            if (skipped || userId.isNotEmpty()){
                 navigateFragment(SplashFragmentDirections.actionSplashFragmentToMainFragment().setUserId(userId))
             }else{
-                delay(3000)
                 navigateFragment(SplashFragmentDirections.actionSplashFragmentToSignInFragment().setSignInType(SPLASH_TYPE))
             }
         }

@@ -24,7 +24,7 @@ class ToolbarStandard @JvmOverloads constructor(
 
             //*** title ***
             title.text = customTitle
-            setTextViewColorInt(title, customTitleColor.correctColor(context, R.color.black))
+            setTextViewColorInt(title, customTitleColor.correctColor(context, R.color.white))
 
             //*** subtitle ***
             subtitle.text = customSubTitle

@@ -207,6 +207,18 @@
     <string name="operation_completed_successfully">Operation completed successfully</string>
     <string name="old_password">Old password</string>
     <string name="new_password">New password</string>
+    <string name="pleace_sign_in">Please SignIn in your account</string>
+    <string name="my_special_equipments">My special equipments</string>
+    <string name="add_special_equipment">Add special equipment</string>
+    <string name="please_fill_in_the_indicated_fields">Please fill in the indicated fields</string>
+    <string name="model">Model</string>
+    <string name="weight_special_equipment">Weight special equipment</string>
+    <string name="special_equipment_capacity">Load capacity of special equipment</string>
+    <string name="length_of_arrow">Length of arrow</string>
+    <string name="production_year">Production year</string>
+    <string name="see_all_sections">See all sections</string>
+    <string name="special_equipments">Special equipment</string>
+    <string name="see_more">See more</string>
 
 
 </resources>

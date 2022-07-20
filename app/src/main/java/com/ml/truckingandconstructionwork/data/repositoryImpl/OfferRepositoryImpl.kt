@@ -11,6 +11,7 @@ import com.ml.truckingandconstructionwork.core.CallException
 import com.ml.truckingandconstructionwork.data.models.add_work.OfferModel
 import com.ml.truckingandconstructionwork.data.models.registration.UserDetailsModel
 import com.ml.truckingandconstructionwork.data.repositoryInterface.OfferRepository
+import com.ml.truckingandconstructionwork.data.utils.Constants.OFFERS
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
@@ -21,7 +22,7 @@ class OfferRepositoryImpl() : OfferRepository {
 
     override suspend fun setOffer(offer: OfferModel) {
         withContext(Dispatchers.IO) {
-            db.collection("offers")
+            db.collection(OFFERS)
                 .document("${offer.id}")
                 .set(offer)
 
@@ -31,10 +32,9 @@ class OfferRepositoryImpl() : OfferRepository {
     override suspend fun getOffers(): ActionResult<List<OfferModel>> {
         val offersMap = mutableMapOf<String, OfferModel>()
         val list = mutableListOf<OfferModel>()
-        var snapshotSuccess: ActionResult<List<OfferModel>>? = null
 
         return withContext(Dispatchers.IO) {
-            db.collection("offers")
+            db.collection(OFFERS)
                 .addSnapshotListener { snapshot, exception ->
                     if (exception != null) {
                         ActionResult.Error(
@@ -62,7 +62,7 @@ class OfferRepositoryImpl() : OfferRepository {
 
             withContext(Dispatchers.Default){
                 delay(1000)
-                return@withContext ActionResult.Success(list)
+                ActionResult.Success(list)
             }
 
 

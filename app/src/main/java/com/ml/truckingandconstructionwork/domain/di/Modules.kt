@@ -12,6 +12,9 @@ import com.ml.truckingandconstructionwork.domain.interactor.registration.GetUser
 import com.ml.truckingandconstructionwork.domain.interactor.registration.SaveDataInSharedInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.registration.SetUserDetailsInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.registration.SetUserLoginPasswordInteractor
+import com.ml.truckingandconstructionwork.domain.interactor.special_equipment.GetSpecialEquipmentInteractor
+import com.ml.truckingandconstructionwork.domain.interactor.special_equipment.GetUserSpecialEquipmentInteractor
+import com.ml.truckingandconstructionwork.domain.interactor.special_equipment.SetSpecialEquipmentInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.splash.GetSkippedTypeWithSharedPrefInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.splash.GetUserDetailWithSharedPrefInteractor
 import com.ml.truckingandconstructionwork.domain.use_case.ChangePasswordUseCase
@@ -26,6 +29,9 @@ import com.ml.truckingandconstructionwork.domain.use_case.registration.GetUserDe
 import com.ml.truckingandconstructionwork.domain.use_case.registration.SaveDataInSharedUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.registration.SetUserDetailsUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.registration.SetUserLoginPasswordUseCase
+import com.ml.truckingandconstructionwork.domain.use_case.special_equipment.GetSpecialEquipmentUseCase
+import com.ml.truckingandconstructionwork.domain.use_case.special_equipment.GetUserSpecialEquipmentUseCase
+import com.ml.truckingandconstructionwork.domain.use_case.special_equipment.SetSpecialEquipmentUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.splash.GetSkippedTypeWithSharedPrefUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.splash.GetUserDetailWithSharedPrefUseCase
 import org.koin.dsl.module
@@ -45,5 +51,8 @@ val interactorModule = module {
     factory<SetSkippedTypeInSharedInteractor> { SetSkippedTypeInSharedUseCase(get()) }
     factory<EditUserDetailsInteractor> { EditUserDetailsUseCase(get()) }
     factory<ChangePasswordInteractor> { ChangePasswordUseCase(get()) }
+    factory<SetSpecialEquipmentInteractor> { SetSpecialEquipmentUseCase(get()) }
+    factory<GetUserSpecialEquipmentInteractor> { GetUserSpecialEquipmentUseCase(get()) }
+    factory<GetSpecialEquipmentInteractor> { GetSpecialEquipmentUseCase(get()) }
 
 }

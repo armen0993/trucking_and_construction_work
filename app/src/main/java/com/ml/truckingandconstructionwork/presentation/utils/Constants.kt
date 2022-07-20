@@ -17,4 +17,7 @@ object Constants {
     const val SPLASH_TYPE = "splash"
     const val USER_DETAILS_COLLECTION = "user_details"
     const val USER_ID = "userid"
+
+    /** TAG */
+    const val TAG_DATE_PICKER = " Date_Picker"
 }

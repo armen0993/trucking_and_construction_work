@@ -1,10 +1,12 @@
 package com.ml.truckingandconstructionwork.presentation.ui.registration.personal_details
 
 import android.app.Activity
+import android.os.Build
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -19,14 +21,12 @@ import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 import com.ml.truckingandconstructionwork.domain.models.registration.UserDetails
 import com.ml.truckingandconstructionwork.presentation.extensions.mask
 import com.ml.truckingandconstructionwork.presentation.utils.Constants
-import com.ml.truckingandconstructionwork.presentation.utils.CustomDateDialogTools
 import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
 import com.ml.truckingandconstructionwork.databinding.AlertDialogEnterPinBinding
 import com.ml.truckingandconstructionwork.databinding.AlertDialogPinOrFingerprintBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentPersonalDetailsBinding
-import com.ml.truckingandconstructionwork.presentation.ui.registration.RegistrationFragmentDirections
+import com.ml.truckingandconstructionwork.presentation.utils.MaterialDateDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.util.concurrent.ThreadLocalRandom
 import java.util.concurrent.TimeUnit
 
 class PersonalDetailsFragment() :
@@ -76,6 +76,7 @@ class PersonalDetailsFragment() :
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewClick() {
         with(binding) {
             btnNext.setOnClickListener {
@@ -318,17 +319,12 @@ class PersonalDetailsFragment() :
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun birthOfData() {
         binding.dateOfBirth.setOnClickListener {
-            binding.dateOfBirth.also {
-                context?.let { it1 ->
-                    CustomDateDialogTools.createDateDialog(
-                        it1,
-                        Constants.FORMAT_DATE,
-                        it
-                    )
-                }
-            }
+            MaterialDateDialog.showDateValid18Year(
+                childFragmentManager, binding.dateOfBirth
+            )
         }
     }
 

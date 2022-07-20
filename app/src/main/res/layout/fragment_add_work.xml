@@ -18,16 +18,18 @@
         android:id="@+id/ic_job_offer"
         android:layout_width="@dimen/size_150"
         android:layout_height="@dimen/size_150"
+        android:layout_marginVertical="@dimen/size_30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:srcCompat="@drawable/ic_special_offer" />
+        app:srcCompat="@drawable/ic_offer" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title_add_offer"
         android:layout_width="@dimen/size_0"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/size_15"
+        android:layout_marginTop="@dimen/size_30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ic_job_offer"

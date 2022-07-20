@@ -14,16 +14,18 @@ class ProfileFragment : BaseFragment<BaseViewModel, FragmentProfileBinding>() {
 
     override val binding: FragmentProfileBinding by viewBinding()
     override val viewModel: ProfileViewModel by viewModel()
+    var userId = ""
+
     override fun onView() {
         getUser()
 
     }
 
     private fun getUser() {
-        val userId = arguments?.getString(USER_ID)
-        if (userId != null) {
-            viewModel.getUserDetails(userId)
-        }
+        userId = arguments?.getString(USER_ID).toString()
+
+        viewModel.getUserDetails(userId)
+
     }
 
 
@@ -33,6 +35,17 @@ class ProfileFragment : BaseFragment<BaseViewModel, FragmentProfileBinding>() {
         }
         onEach(viewModel.showProgressBar) {
             showProgress(it)
+        }
+    }
+
+    override fun onViewClick() {
+        with(binding) {
+            itemProfileStatement.specialEquipment.setOnClickListener {
+                navigateFragment(
+                    ProfileFragmentDirections.actionProfileFragmentToAddSpecialEquipmentFragment()
+                        .setUserId(userId)
+                )
+            }
         }
     }
 

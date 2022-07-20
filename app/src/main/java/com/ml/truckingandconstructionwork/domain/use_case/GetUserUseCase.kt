@@ -18,7 +18,7 @@ class GetUserUseCase(private val userDetailsRepository: UserDetailsRepository) :
                     }
                 }
                 is ActionResult.Error -> {
-                    ActionResult.Error(CallException(1001, "error"))
+                    ActionResult.Error(CallException(1001, "error use case"))
                 }
             }
         }

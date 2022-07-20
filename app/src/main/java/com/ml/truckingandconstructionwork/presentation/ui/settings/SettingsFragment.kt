@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.ml.truckingandconstructionwork.MainActivity
@@ -36,7 +37,7 @@ class SettingsFragment() : BaseFragment<BaseViewModel, FragmentSettingsBinding>(
 
     override fun onView() {
         binding.toolbar.enableLeftItem(true)
-       userId = arguments?.getString(Constants.USER_ID)!!
+        userId = arguments?.getString(Constants.USER_ID)?:""
     }
 
     override fun onViewClick() {
@@ -59,13 +60,23 @@ class SettingsFragment() : BaseFragment<BaseViewModel, FragmentSettingsBinding>(
 
             }
             itemExit.btnExit.setOnClickListener {
-                startAlertDialogExit()
+                if (userId.isNotEmpty()){
+                    startAlertDialogExit()
+                }else{
+                    Toast.makeText(context,getString(R.string.pleace_sign_in), Toast.LENGTH_SHORT).show()
+                }
             }
             itemProfileSettings.editProfile.setOnClickListener {
-                navigateFragment(SettingsFragmentDirections.actionSettingsFragmentToEditProfileFragment().setUserId(userId))
+                navigateFragment(
+                    SettingsFragmentDirections.actionSettingsFragmentToEditProfileFragment()
+                        .setUserId(userId)
+                )
             }
             itemProfileSettings.changePassword.setOnClickListener {
-                navigateFragment(SettingsFragmentDirections.actionSettingsFragmentToChangePasswordFragment().setUserId(userId))
+                navigateFragment(
+                    SettingsFragmentDirections.actionSettingsFragmentToChangePasswordFragment()
+                        .setUserId(userId)
+                )
             }
         }
     }
@@ -98,7 +109,7 @@ class SettingsFragment() : BaseFragment<BaseViewModel, FragmentSettingsBinding>(
                         LocaleHelper.setLocale(requireContext(), Constants.ENGLISH)
                 }
                 dialog.dismiss()
-                val intent = Intent(context,MainActivity::class.java)
+                val intent = Intent(context, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 delay(1000L)
                 binding.emptyView.hide()
@@ -132,8 +143,7 @@ class SettingsFragment() : BaseFragment<BaseViewModel, FragmentSettingsBinding>(
 
             dialog.dismiss()
             lifecycleScope.launch {
-
-               viewModel.signOut()
+                viewModel.signOut()
             }
 
         }

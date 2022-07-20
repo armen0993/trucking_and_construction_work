@@ -114,7 +114,7 @@
     <string name="not_now">Ոչ հիմա</string>
     <string name="my_profile">Իմ էջը</string>
     <string name="my_statements">Իմ հայտարարությունները</string>
-    <string name="preferred_announcements">Նախընտրելի հայտարարություններ</string>
+    <string name="preferred_announcements">Նախընտրած հայտարարություններ</string>
     <string name="contacts">Կոնտակտներ</string>
     <string name="wallet">Դրամապանակ</string>
     <string name="search">Որոնում</string>
@@ -136,5 +136,17 @@
     <string name="confirm">Հաստատել</string>
     <string name="old_password">Հին գաղտնաբառ</string>
     <string name="new_password">Նոր գաղտնաբառ</string>
+    <string name="pleace_sign_in">Խնդրում ենք մուտք գործել ձեր հաշիվ</string>
+    <string name="my_special_equipments">Իմ հատուկ տեխնիկաները</string>
+    <string name="add_special_equipment">Ավելացնել հատուկ տեխնիկա</string>
+    <string name="please_fill_in_the_indicated_fields">Խնդրում ենք լրացնել նշված դաշտերը</string>
+    <string name="model">Մոդել</string>
+    <string name="weight_special_equipment">Հատուկ տեխնիկաի քաշը</string>
+    <string name="special_equipment_capacity">Հատուկ սարքավորումների բեռնվածքի հզորությունը</string>
+    <string name="length_of_arrow">Սլաքի երկարությունը</string>
+    <string name="production_year">Արտադրության տարին</string>
+    <string name="see_all_sections">Տեսեք բոլոր բաժինները</string>
+    <string name="special_equipments">Հատուկ տեխնիկա</string>
+    <string name="see_more">Տեսնել ավելին</string>
 
 </resources>

@@ -31,6 +31,8 @@
             android:paddingEnd="60dp"
             android:text="@string/name_surname"
             android:textSize="@dimen/t_size_18"
+            android:singleLine="true"
+            android:ellipsize="end"
             app:layout_constraintStart_toEndOf="@id/img_user"
             app:layout_constraintTop_toTopOf="@id/img_user"
             app:layout_constraintBottom_toBottomOf="@id/img_user"/>
