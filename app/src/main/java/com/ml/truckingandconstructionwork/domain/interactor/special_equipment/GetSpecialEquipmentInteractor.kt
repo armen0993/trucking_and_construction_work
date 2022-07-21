@@ -4,5 +4,5 @@ import com.ml.truckingandconstructionwork.core.ActionResult
 import com.ml.truckingandconstructionwork.domain.models.special_equipment.SpecialEquipment
 
 interface GetSpecialEquipmentInteractor {
-    suspend operator fun invoke():ActionResult<List<SpecialEquipment>>
+    suspend operator fun invoke(type: String):ActionResult<List<SpecialEquipment>>
 }

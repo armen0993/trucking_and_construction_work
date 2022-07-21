@@ -30,7 +30,10 @@ class OffersListAdapter :
         override fun bind(item: Offer, context: Context) {
             with(binding){
                 equipmentType.text = item.equipmentType
+                startAddress.text = item.startAddress
+                endAddress.text = item.endAddress
                 description.text = item.description
+                price.text = item.suggestedPrice
             }
         }
 
@@ -38,4 +41,5 @@ class OffersListAdapter :
             orderClick.invoke(binding.orderButton)
         }
     }
+
 }

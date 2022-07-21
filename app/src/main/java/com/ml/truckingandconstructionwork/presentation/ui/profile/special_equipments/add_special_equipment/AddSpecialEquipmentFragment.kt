@@ -68,6 +68,7 @@ class AddSpecialEquipmentFragment :
                 GENERATE_ID,
                 args.userId,
                 binding.specialEquipmentType.text.toString(),
+                binding.brand.text.toString(),
                 binding.model.text.toString(),
                 binding.weight.text.toString(),
                 binding.capacity.text.toString(),

@@ -18,7 +18,7 @@ import com.ml.truckingandconstructionwork.presentation.ui.add_work.AddWorkFragme
 import com.ml.truckingandconstructionwork.presentation.ui.settings.SettingsFragment
 import com.ml.truckingandconstructionwork.databinding.ActivityMainBinding
 import com.ml.truckingandconstructionwork.presentation.extensions.getCurrentFragment
-import com.ml.truckingandconstructionwork.presentation.ui.LocaleHelper
+import com.ml.truckingandconstructionwork.presentation.utils.LocaleHelper
 import com.ml.truckingandconstructionwork.presentation.ui.main.MainFragment
 import com.ml.truckingandconstructionwork.presentation.ui.offers.OffersListFragment
 import com.ml.truckingandconstructionwork.presentation.ui.profile.ProfileFragment
@@ -49,8 +49,6 @@ class MainActivity : AppCompatActivity() {
 
         hideBottomBar()
 
-
-
         lifecycleScope.launch {
 
             delay(2000L)
@@ -66,7 +64,6 @@ class MainActivity : AppCompatActivity() {
                 userId = it
             }
         }
-
     }
 
     private fun hideBottomBar() {
@@ -107,8 +104,8 @@ class MainActivity : AppCompatActivity() {
             binding.bottomBar.setOnItemSelectedListener {
                 when (it.itemId) {
                     R.id.main_fragment -> navController.navigate(R.id.mainFragment, bundle)
-                    R.id.list_offer_fragment -> navController.navigate(R.id.offersListFragment)
-                    R.id.add_works_fragment -> navController.navigate(R.id.addWorkFragment)
+                    R.id.list_offer_fragment -> navController.navigate(R.id.offersListFragment,bundle)
+                    R.id.add_works_fragment -> navController.navigate(R.id.addWorkFragment,bundle)
                     R.id.signIn_fragment -> navController.navigate(R.id.profileFragment, bundle)
                     R.id.settings_fragment -> navController.navigate(R.id.settingsFragment, bundle)
                 }
@@ -148,7 +145,7 @@ class MainActivity : AppCompatActivity() {
             finish() // finish activity
         } else {
             exit = true
-            Handler().postDelayed({ exit = false }, 2 * 1000)
+            Handler().postDelayed({ exit = false }, 1 * 1000)
 
         }
     }

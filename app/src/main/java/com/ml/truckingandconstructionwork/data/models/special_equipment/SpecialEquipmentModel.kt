@@ -9,6 +9,8 @@ data class SpecialEquipmentModel(
    val userId: String? = null,
     @PropertyName("equipmentType")
    val equipmentType: String? = null,
+    @PropertyName("carBrand")
+    val carBrand:String?=null,
     @PropertyName("model")
     val model:String? = null,
     @PropertyName("weight")

@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/size_100"
+        android:layout_height="@dimen/size_70"
         android:background="@drawable/bg_list_offers_item_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -28,16 +28,24 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/equipment_type"
-            android:layout_width="@dimen/size_0"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/t_size_16"
             android:textStyle="bold"
             android:layout_marginHorizontal="@dimen/size_15"
-            app:layout_constraintBottom_toBottomOf="@id/icon_equipment"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/icon_equipment"
             app:layout_constraintTop_toTopOf="@id/icon_equipment"
             tools:text="@string/trucks"/>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/size_32"
+            android:layout_height="@dimen/size_32"
+            app:srcCompat="@drawable/ic_favorite_selector"
+            android:layout_marginEnd="@dimen/size_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -51,16 +59,58 @@
         app:layout_constraintTop_toBottomOf="@id/top_container">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/start_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/t_size_16"
+            android:layout_marginHorizontal="@dimen/size_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/size_15"
+            tools:text="@string/start_address"/>
+
+        <View
+            android:id="@+id/line_time"
+            android:layout_width="@dimen/size_5"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toEndOf="@id/start_address"
+            app:layout_constraintTop_toTopOf="@id/start_address"
+            app:layout_constraintBottom_toBottomOf="@id/start_address"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/end_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/t_size_16"
+            app:layout_constraintStart_toEndOf="@id/line_time"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/size_15"
+            tools:text="@string/end_address"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/description"
-            android:layout_width="@dimen/size_0"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="@dimen/t_size_16"
             android:layout_marginHorizontal="@dimen/size_15"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/start_address"
             android:layout_marginTop="@dimen/size_15"
-            tools:text="@string/trucks"/>
+            tools:text="@string/brief_job_description"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/t_size_16"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="@dimen/size_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            android:layout_marginTop="@dimen/size_25"
+            tools:text="5000"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/order_button"
@@ -69,8 +119,8 @@
             android:layout_marginEnd="@dimen/size_16"
             android:layout_marginBottom="@dimen/size_24"
             android:background="@drawable/bg_button_order"
-            android:text="@string/order_now"
-            android:layout_marginTop="@dimen/size_15"
+            android:text="@string/see_more"
+            android:layout_marginTop="@dimen/size_25"
             android:padding="@dimen/size_5"
             android:textAllCaps="false"
             android:textColor="@color/white"

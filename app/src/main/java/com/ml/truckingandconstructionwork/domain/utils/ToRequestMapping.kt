@@ -9,26 +9,15 @@ import com.ml.truckingandconstructionwork.domain.models.special_equipment.Specia
 
 fun UserDetails.toRequest() =
     UserDetailsModel(
-        id,
-        gender,
-        name,
-        surname,
-        dataOfBirth,
-        city,
-        phoneNumber,
-        email,
-        password,
-        clientType
+        id, gender, name, surname, dataOfBirth, city, email, phoneNumber, password, clientType
     )
 
 fun Offer.toRequest() =
     OfferModel(
-        id,
-        equipmentType,
-        description
+       id, userId, equipmentType, startAddress, endAddress, suggestedPrice, description
     )
 
 fun SpecialEquipment.toRequest()=
     SpecialEquipmentModel(
-        id, userId, model, weight, capacity, lengthArrow, productionYear
+     id, userId, equipmentType, carBrand, model, weight, capacity, lengthArrow, productionYear
     )

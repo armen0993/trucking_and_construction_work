@@ -10,12 +10,20 @@ import kotlinx.coroutines.withContext
 
 class GetSpecialEquipmentUseCase(private val specialEquipmentRepository: SpecialEquipmentRepository) :
     GetSpecialEquipmentInteractor {
-    override suspend fun invoke(): ActionResult<List<SpecialEquipment>> =
+    override suspend fun invoke(type: String): ActionResult<List<SpecialEquipment>> =
         withContext(Dispatchers.IO) {
+            val list = mutableListOf<SpecialEquipment>()
             when (val apiData = specialEquipmentRepository.getSpecialEquipment()) {
                 is ActionResult.Success -> {
-                    apiData.data.let {
-                        ActionResult.Success(it.map { SpecialEquipment.from(it) })
+                    apiData.data.let {listEquipment->
+                        listEquipment.forEach {
+                            if (type.lowercase()==it.equipmentType?.lowercase()){
+                                list.add(SpecialEquipment.from(it))
+                            }else if (type.isEmpty()){
+                                list.add(SpecialEquipment.from(it))
+                            }
+                        }
+                        ActionResult.Success(list)
                     }
                 }
                 is ActionResult.Error -> {

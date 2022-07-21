@@ -1,36 +1,33 @@
-package com.ml.truckingandconstructionwork.presentation.ui.main.all_sections
+package com.ml.truckingandconstructionwork.presentation.ui.profile.offers
 
 import androidx.lifecycle.viewModelScope
 import com.ml.truckingandconstructionwork.core.ActionResult
-import com.ml.truckingandconstructionwork.domain.interactor.special_equipment.GetSpecialEquipmentInteractor
-import com.ml.truckingandconstructionwork.domain.models.special_equipment.SpecialEquipment
+import com.ml.truckingandconstructionwork.domain.interactor.offer.GetUserOffersInteractor
+import com.ml.truckingandconstructionwork.domain.models.add_work.Offer
 import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
 import com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 
-class SpecialEquipmentsListViewModel(
-    private val getSpecialEquipmentInteractor: GetSpecialEquipmentInteractor
-) : BaseViewModel() {
+class UserOffersViewModel(private val getUserOffersInteractor: GetUserOffersInteractor):BaseViewModel() {
     private val _showProgressBar: MutableSharedFlow<EmptyView.State> by lazy { MutableSharedFlow() }
     val showProgressBar = _showProgressBar.asSharedFlow()
 
-    private val _listSpecialEquipment: MutableSharedFlow<List<SpecialEquipment>> by lazy { MutableSharedFlow() }
-    val listSpecialEquipment = _listSpecialEquipment.asSharedFlow()
+    private val _listOffer: MutableSharedFlow<List<Offer>> by lazy { MutableSharedFlow() }
+    val listOffer = _listOffer.asSharedFlow()
 
-    private var list = listOf<SpecialEquipment>()
+    private var list = listOf<Offer>()
 
-
-    fun getSpecialEquipmentList(type: String) {
+    fun getOffersList(userId:String) {
         viewModelScope.launch {
             _showProgressBar.emit(EmptyView.State.LOADING)
 
 
-            when (val result = getSpecialEquipmentInteractor(type)) {
+            when (val result = getUserOffersInteractor(userId)) {
                 is ActionResult.Success -> {
                     list = result.data
-                    _listSpecialEquipment.emit(list)
+                    _listOffer.emit(list)
                 }
             }
 
@@ -43,4 +40,5 @@ class SpecialEquipmentsListViewModel(
 
         }
     }
+
 }

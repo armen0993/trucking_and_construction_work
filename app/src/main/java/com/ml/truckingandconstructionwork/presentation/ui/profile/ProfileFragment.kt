@@ -14,6 +14,7 @@ class ProfileFragment : BaseFragment<BaseViewModel, FragmentProfileBinding>() {
 
     override val binding: FragmentProfileBinding by viewBinding()
     override val viewModel: ProfileViewModel by viewModel()
+    private val args:ProfileFragmentArgs by navArgs()
     var userId = ""
 
     override fun onView() {
@@ -22,19 +23,22 @@ class ProfileFragment : BaseFragment<BaseViewModel, FragmentProfileBinding>() {
     }
 
     private fun getUser() {
-        userId = arguments?.getString(USER_ID).toString()
+        userId = if (!arguments?.getString(USER_ID).isNullOrEmpty()){
+            arguments?.getString(USER_ID).toString()
+        }else{
+            args.userId
+        }
 
         viewModel.getUserDetails(userId)
-
     }
 
 
     override fun onEach() {
-        onEach(viewModel.userDetails) {
-            binding.itemProfileName.editProfile.text = "${it.name} ${it.surname}"
-        }
         onEach(viewModel.showProgressBar) {
             showProgress(it)
+        }
+        onEach(viewModel.userDetails) {
+            binding.itemProfileName.editProfile.text = "${it.name} ${it.surname}"
         }
     }
 
@@ -46,6 +50,9 @@ class ProfileFragment : BaseFragment<BaseViewModel, FragmentProfileBinding>() {
                         .setUserId(userId)
                 )
             }
+            itemProfileStatement.userOffers.setOnClickListener {
+                navigateFragment(ProfileFragmentDirections.actionProfileFragmentToUserOffersFragment().setUserId(userId))
+            }
         }
     }
 
@@ -55,8 +62,5 @@ class ProfileFragment : BaseFragment<BaseViewModel, FragmentProfileBinding>() {
             EmptyView.State.LOADING -> binding.emptyView.showLoader()
             else -> binding.emptyView.hide()
         }
-
     }
-
-
 }

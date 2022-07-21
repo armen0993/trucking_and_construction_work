@@ -93,16 +93,18 @@
     <string name="order_now">Заказать сейчас</string>
 
     <string-array name="special_equipment">
-        <item>Грузовые автомобили</item>
+        <item>Грузовой автомобиль</item>
         <item>Самосвал</item>
-        <item>Автокраны</item>
-        <item>Манипуляторы</item>
-        <item>Гусеничные экскаваторы</item>
-        <item>Колесные экскаваторы</item>
-        <item>Экскаваторы-погрузчики</item>
-        <item>Бетономешалки</item>
+        <item>Автокран</item>
+        <item>Манипулятор</item>
+        <item>Гусеничные экскаватор</item>
+        <item>Колесные экскаватор</item>
+        <item>Экскаваторы-погрузчик</item>
+        <item>Бетономешалка</item>
         <item>Бетононасос</item>
-        <item>Эвакуаторы</item>
+        <item>Эвакуатор</item>
+        <item>Погрузчик</item>
+        <item>Дорожный каток</item>
 
     </string-array>
     <string name="request_post">Мы рассмотрим ваш запрос и, если он соответствует критериям программы, ваш запрос будет размещен в разделе объявлений.</string>

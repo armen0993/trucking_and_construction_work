@@ -2,8 +2,6 @@ package com.ml.truckingandconstructionwork.presentation.ui.settings
 
 
 import android.content.Intent
-import android.os.Bundle
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
@@ -16,7 +14,7 @@ import com.ml.truckingandconstructionwork.databinding.FragmentSettingsBinding
 import com.ml.truckingandconstructionwork.presentation.utils.Constants
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
 import com.ml.truckingandconstructionwork.presentation.base.BaseViewModel
-import com.ml.truckingandconstructionwork.presentation.ui.LocaleHelper
+import com.ml.truckingandconstructionwork.presentation.utils.LocaleHelper
 import com.ml.truckingandconstructionwork.presentation.utils.viewBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

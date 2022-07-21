@@ -52,7 +52,7 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
                 navigateFragment(MainFragmentDirections.actionMainFragmentToSectionsFragment())
             }
             allSections.setOnClickListener {
-                navigateFragment(MainFragmentDirections.actionMainFragmentToSpecialEquipmentsListFragment())
+                navigateFragment(MainFragmentDirections.actionMainFragmentToSpecialEquipmentsListFragment(""))
             }
         }
     }

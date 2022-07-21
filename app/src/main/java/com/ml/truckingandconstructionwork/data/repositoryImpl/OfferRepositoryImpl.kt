@@ -1,15 +1,10 @@
 package com.ml.truckingandconstructionwork.data.repositoryImpl
 
-import android.util.Log
-import com.google.firebase.firestore.DocumentChange
-import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.ml.truckingandconstructionwork.core.ActionResult
 import com.ml.truckingandconstructionwork.core.CallException
 import com.ml.truckingandconstructionwork.data.models.add_work.OfferModel
-import com.ml.truckingandconstructionwork.data.models.registration.UserDetailsModel
 import com.ml.truckingandconstructionwork.data.repositoryInterface.OfferRepository
 import com.ml.truckingandconstructionwork.data.utils.Constants.OFFERS
 import kotlinx.coroutines.Dispatchers
@@ -20,12 +15,13 @@ class OfferRepositoryImpl() : OfferRepository {
     private val db = Firebase.firestore
 
 
-    override suspend fun setOffer(offer: OfferModel) {
-        withContext(Dispatchers.IO) {
+    override suspend fun setOffer(offer: OfferModel):ActionResult<Boolean> {
+        return withContext(Dispatchers.IO) {
             db.collection(OFFERS)
                 .document("${offer.id}")
                 .set(offer)
-
+            //temp
+            ActionResult.Success(true)
         }
     }
 

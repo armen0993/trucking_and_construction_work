@@ -18,6 +18,7 @@ import com.ml.truckingandconstructionwork.presentation.ui.main.MainViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.main.all_sections.SpecialEquipmentsListViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.main.sections.SectionsViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.offers.OffersListViewModel
+import com.ml.truckingandconstructionwork.presentation.ui.profile.offers.UserOffersViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.profile.special_equipments.SpecialEquipmentsFragment
 import com.ml.truckingandconstructionwork.presentation.ui.profile.special_equipments.SpecialEquipmentsViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.profile.special_equipments.add_special_equipment.AddSpecialEquipmentViewModel
@@ -52,4 +53,5 @@ val viewModelModule = module {
     viewModel { SpecialEquipmentsViewModel(get())  }
     viewModel { AddSpecialEquipmentViewModel(get())  }
     viewModel { SpecialEquipmentsListViewModel(get())  }
+    viewModel { UserOffersViewModel(get())  }
 }

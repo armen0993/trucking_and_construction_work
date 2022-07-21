@@ -17,7 +17,7 @@ class SignInViewModel(
     private val checkUserDetailsInteractor: CheckUserDetailsInteractor,
     private val saveDataInSharedInteractor: SaveDataInSharedInteractor,
     private val setSkippedTypeInSharedInteractor: SetSkippedTypeInSharedInteractor
-    ) :
+) :
     BaseViewModel() {
 
     private val _showProgressBar: MutableSharedFlow<EmptyView.State> by lazy { MutableSharedFlow() }
@@ -25,6 +25,9 @@ class SignInViewModel(
 
     private val _userId: MutableSharedFlow<String> by lazy { MutableSharedFlow() }
     val userId = _userId.asSharedFlow()
+
+    private val _signed: MutableSharedFlow<Pair<Boolean, String>> by lazy { MutableSharedFlow() }
+    val signed = _signed.asSharedFlow()
 
     fun checkUserDetail(email: String, password: String) {
         viewModelScope.launch {
@@ -39,7 +42,7 @@ class SignInViewModel(
         }
     }
 
-    fun saveUserDetailsInSharedPref(userId:String) {
+    fun saveUserDetailsInSharedPref(userId: String) {
         viewModelScope.launch {
             saveDataInSharedInteractor(userId)
         }
@@ -48,6 +51,12 @@ class SignInViewModel(
     fun saveSkippedTypeInSharedPref(boolean: Boolean) {
         viewModelScope.launch {
             setSkippedTypeInSharedInteractor(boolean)
+        }
+    }
+
+    fun signedIn(signed: Boolean, userId: String) {
+        viewModelScope.launch {
+            _signed.emit(Pair(signed, userId))
         }
     }
 }

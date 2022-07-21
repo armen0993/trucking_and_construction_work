@@ -8,6 +8,7 @@ import com.ml.truckingandconstructionwork.domain.interactor.add_work.SetOfferInt
 import com.ml.truckingandconstructionwork.domain.interactor.log_in.CheckUserDetailsInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.log_in.SetSkippedTypeInSharedInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.offer.GetOffersInteractor
+import com.ml.truckingandconstructionwork.domain.interactor.offer.GetUserOffersInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.registration.GetUserDetailsInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.registration.SaveDataInSharedInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.registration.SetUserDetailsInteractor
@@ -25,6 +26,7 @@ import com.ml.truckingandconstructionwork.domain.use_case.add_work.SetOfferUseCa
 import com.ml.truckingandconstructionwork.domain.use_case.log_in.CheckUserDetailsUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.log_in.SetSkippedTypeInSharedUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.offers.GetOffersUseCase
+import com.ml.truckingandconstructionwork.domain.use_case.offers.GetUserOffersUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.registration.GetUserDetailsUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.registration.SaveDataInSharedUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.registration.SetUserDetailsUseCase
@@ -54,5 +56,6 @@ val interactorModule = module {
     factory<SetSpecialEquipmentInteractor> { SetSpecialEquipmentUseCase(get()) }
     factory<GetUserSpecialEquipmentInteractor> { GetUserSpecialEquipmentUseCase(get()) }
     factory<GetSpecialEquipmentInteractor> { GetSpecialEquipmentUseCase(get()) }
+    factory<GetUserOffersInteractor> { GetUserOffersUseCase(get()) }
 
 }

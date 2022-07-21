@@ -1,4 +1,4 @@
-package com.ml.truckingandconstructionwork.presentation.ui
+package com.ml.truckingandconstructionwork.presentation.utils
 
 import android.content.Context
 import android.content.res.Configuration

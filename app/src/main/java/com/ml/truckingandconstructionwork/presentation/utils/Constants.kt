@@ -20,4 +20,18 @@ object Constants {
 
     /** TAG */
     const val TAG_DATE_PICKER = " Date_Picker"
+
+    /**equipment types*/
+    const val TRUCKS = "truck"
+    const val DUMP_TRUCK = "dumptruck"
+    const val TRUCK_CRANE = "truckcrane"
+    const val MANIPULATOR = "manipulator"
+    const val CRAWLER_EXCAVATOR = "crawlerexcavator"
+    const val WHEELED_EXCAVATOR = "wheeledexcavator"
+    const val EXCAVATOR_LOADER = "excavatorloader"
+    const val CONCRETE_MIXER = "concretemixer"
+    const val CONCRETE_PUMP = "concretepump"
+    const val TOW_TRUCK = "towtruck"
+    const val LOADER = "loader"
+    const val ROAD_ROLLER = "roadroller"
 }
