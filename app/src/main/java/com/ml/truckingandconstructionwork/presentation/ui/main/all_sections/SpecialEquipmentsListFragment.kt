@@ -1,18 +1,23 @@
 package com.ml.truckingandconstructionwork.presentation.ui.main.all_sections
 
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.ml.truckingandconstructionwork.R
-import com.ml.truckingandconstructionwork.databinding.AlertDialogSavePasswordBinding
 import com.ml.truckingandconstructionwork.databinding.AlertDialogSeeMoreBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentSpecialEquipmentsListBinding
+import com.ml.truckingandconstructionwork.domain.models.MessageModel
+import com.ml.truckingandconstructionwork.domain.models.SearchModel
+import com.ml.truckingandconstructionwork.domain.models.registration.UserDetails
 import com.ml.truckingandconstructionwork.domain.models.special_equipment.SpecialEquipment
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment
+import com.ml.truckingandconstructionwork.presentation.base.model.BaseModelAdapter
 import com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
+import com.ml.truckingandconstructionwork.presentation.ui.main.filter.BottomSheetFilterSpecialEquipmentFragment
 import com.ml.truckingandconstructionwork.presentation.ui.profile.special_equipments.adapter.SpecialEquipmentsAdapter
-import com.ml.truckingandconstructionwork.presentation.ui.sign_in.SignInFragmentDirections
 import com.ml.truckingandconstructionwork.presentation.utils.Constants.CONCRETE_MIXER
 import com.ml.truckingandconstructionwork.presentation.utils.Constants.CONCRETE_PUMP
 import com.ml.truckingandconstructionwork.presentation.utils.Constants.CRAWLER_EXCAVATOR
@@ -40,15 +45,31 @@ class SpecialEquipmentsListFragment :
             layoutInflater
         )
     }
+    private var userDetails = UserDetails()
+    private var searchString = ""
+    private var needToShow = false
+    private lateinit var listSpecialEquipments: List<BaseModelAdapter<String>>
+    private val bottomFilter = BottomSheetFilterSpecialEquipmentFragment()
 
     override fun onView() {
-        binding.toolbar.enableLeftItem(true)
+        with(binding.toolbar) {
+            enableLeftItem(true)
+            enableRightItem(true)
+        }
         initRecycler()
         if (args.equipmentType.isNotEmpty()) {
             viewModel.getSpecialEquipmentList(args.equipmentType)
+            binding.toolbar.setTitleText(args.equipmentType)
         } else {
             viewModel.getSpecialEquipmentList(equipmentType)
+            binding.toolbar.setTitleText(resources.getString(R.string.special_equipments))
         }
+
+        searchFocusChangeFunction()
+        searchTypingFunction()
+
+
+
 
     }
 
@@ -57,32 +78,84 @@ class SpecialEquipmentsListFragment :
             showProgress(it)
         }
 
+        onEach(viewModel.showProgressBarAlert) {
+            showProgressAlert(it)
+        }
+
         onEach(viewModel.listSpecialEquipment) {
-            setListInAdapter(it)
+            showList(it)
+        }
+        onEach(viewModel.userDetails) {
+            userDetails = it
+        }
+
+        onEach(viewModel.listFilterSpecialEquipment) {
+           showSearchResult(it)
         }
     }
 
     override fun onViewClick() {
         specialEquipmentsAdapter.seeMoreClick = {
-            setData(it)
+            viewModel.getUserDetails(it.userId)
+            setData(it, userDetails)
             startAlertDialogSeeMore()
-
         }
-        specialEquipmentsAdapter.favoriteClick={
-            if (it){
-
+        with(binding){
+            toolbar.setOnRightClickListener {
+                bottomFilter.show(parentFragmentManager,"")
             }
+        }
+
+    }
+
+    private fun showSearchResult(specialEquipment: List<BaseModelAdapter<String>>) {
+        specialEquipmentsAdapter.submitList(specialEquipment)
+    }
+
+    private fun searchFocusChangeFunction(){
+        specialEquipmentsAdapter.searchFocusChangeFunction = {
+            needToShow = it
+            if (it && searchString.isEmpty()) startWritingSearch()
+            if (!it && searchString.isEmpty()) setListInAdapter(listSpecialEquipments)
         }
     }
 
-    private fun setData(specialEquipment: SpecialEquipment) {
+    private fun searchTypingFunction(){
+        specialEquipmentsAdapter.searchTypingFunction = {
+            searchString = it
+            if (it.isNotEmpty()) viewModel.filterEquipmentType(it)
+            if (it.isEmpty())startWritingSearch()
+            if (it.isEmpty() && !needToShow) setListInAdapter(listSpecialEquipments)
+        }
+    }
+
+    private fun startWritingSearch() {
+        if (!needToShow) return
+        needToShow = false
+        val messageList = mutableListOf<BaseModelAdapter<String>>()
+        messageList.add(SearchModel("19264283723"))
+        val message = getString(R.string.faq_start_search)
+        messageList.add(MessageModel(message,"0"))
+        specialEquipmentsAdapter.submitList(messageList)
+    }
+
+    private fun setData(specialEquipment: SpecialEquipment, userDetails: UserDetails) {
         with(bindingAlertSeeMore) {
+
             brandText.text = specialEquipment.carBrand
             modelText.text = specialEquipment.model
             weightText.text = specialEquipment.weight
             capacityText.text = specialEquipment.capacity
-            lengthArrowText.text = specialEquipment.lengthArrow
+            if (specialEquipment.lengthArrow.isNotEmpty()) {
+                lengthArrowText.text = specialEquipment.lengthArrow
+            } else {
+                lengthArrow.visibility = GONE
+                lengthArrowText.visibility = GONE
+            }
             productionYearText.text = specialEquipment.productionYear
+            userNameText.text = userDetails.name
+            userSurnameText.text = userDetails.surname
+            phoneNumberText.text = userDetails.phoneNumber
         }
 
         when (specialEquipment.equipmentType.lowercase().replace("\\s".toRegex(), "")) {
@@ -98,12 +171,17 @@ class SpecialEquipmentsListFragment :
             TOW_TRUCK -> bindingAlertSeeMore.iconEquipment.setImageResource(R.drawable.ic_tow_truck)
             LOADER -> bindingAlertSeeMore.iconEquipment.setImageResource(R.drawable.ic_loader)
             ROAD_ROLLER -> bindingAlertSeeMore.iconEquipment.setImageResource(R.drawable.ic_road_roller)
-            else->bindingAlertSeeMore.iconEquipment.setImageResource(R.drawable.ic_empty)
+            else -> bindingAlertSeeMore.iconEquipment.setImageResource(R.drawable.ic_empty)
         }
 
     }
 
-    private fun setListInAdapter(listSpecialEquipment: List<SpecialEquipment>) {
+    private fun showList(listSpecialEquipment:  List<BaseModelAdapter<String>>) {
+        this.listSpecialEquipments = listSpecialEquipment
+        setListInAdapter(listSpecialEquipment)
+    }
+    private fun setListInAdapter(listSpecialEquipment:  List<BaseModelAdapter<String>>) {
+
         specialEquipmentsAdapter.submitList(listSpecialEquipment)
 
     }
@@ -113,6 +191,14 @@ class SpecialEquipmentsListFragment :
             EmptyView.State.LOADING -> binding.emptyView.showLoader()
             EmptyView.State.EMPTY -> binding.emptyView.showEmpty()
             else -> binding.emptyView.hide()
+        }
+    }
+
+    private fun showProgressAlert(show: EmptyView.State) {
+        when (show) {
+            EmptyView.State.LOADING -> bindingAlertSeeMore.emptyView.showLoader()
+            EmptyView.State.EMPTY -> bindingAlertSeeMore.emptyView.showEmpty()
+            else -> bindingAlertSeeMore.emptyView.hide()
         }
     }
 

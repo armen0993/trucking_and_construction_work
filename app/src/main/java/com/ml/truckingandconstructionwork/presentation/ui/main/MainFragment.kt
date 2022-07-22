@@ -1,16 +1,9 @@
 package com.ml.truckingandconstructionwork.presentation.ui.main
 
-import android.os.Bundle
 import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.View
-import android.view.View.VISIBLE
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.navArgs
 import com.ml.truckingandconstructionwork.R
-import com.ml.truckingandconstructionwork.databinding.AlertDialogAddJobBinding
 import com.ml.truckingandconstructionwork.databinding.FragmentMainBinding
 import com.ml.truckingandconstructionwork.databinding.MainHeaderBinding
 import com.ml.truckingandconstructionwork.presentation.base.BaseFragment

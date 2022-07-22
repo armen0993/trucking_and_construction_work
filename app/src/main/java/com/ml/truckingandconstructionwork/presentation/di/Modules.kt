@@ -17,6 +17,7 @@ import com.ml.truckingandconstructionwork.presentation.ui.add_work.add_offer.Add
 import com.ml.truckingandconstructionwork.presentation.ui.main.MainViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.main.all_sections.SpecialEquipmentsListViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.main.sections.SectionsViewModel
+import com.ml.truckingandconstructionwork.presentation.ui.map.MapViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.offers.OffersListViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.profile.offers.UserOffersViewModel
 import com.ml.truckingandconstructionwork.presentation.ui.profile.special_equipments.SpecialEquipmentsFragment
@@ -52,6 +53,7 @@ val viewModelModule = module {
     viewModel { ChangePasswordViewModel(get())  }
     viewModel { SpecialEquipmentsViewModel(get())  }
     viewModel { AddSpecialEquipmentViewModel(get())  }
-    viewModel { SpecialEquipmentsListViewModel(get())  }
+    viewModel { SpecialEquipmentsListViewModel(get(),get(),get ())  }
     viewModel { UserOffersViewModel(get())  }
+    viewModel { MapViewModel()  }
 }

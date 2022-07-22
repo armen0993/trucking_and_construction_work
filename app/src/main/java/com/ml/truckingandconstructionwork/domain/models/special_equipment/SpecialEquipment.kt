@@ -1,6 +1,7 @@
 package com.ml.truckingandconstructionwork.domain.models.special_equipment
 
 import com.ml.truckingandconstructionwork.data.models.special_equipment.SpecialEquipmentModel
+import com.ml.truckingandconstructionwork.presentation.base.model.BaseModelAdapter
 import com.ml.truckingandconstructionwork.presentation.base.model.DiffUtilModel
 
 data class SpecialEquipment(
@@ -13,7 +14,7 @@ data class SpecialEquipment(
     val capacity: String,
     val lengthArrow: String,
     val productionYear:String
-) : DiffUtilModel<String>() {
+) : BaseModelAdapter<String>() {
     companion object {
         fun from(data: SpecialEquipmentModel) =
             SpecialEquipment(

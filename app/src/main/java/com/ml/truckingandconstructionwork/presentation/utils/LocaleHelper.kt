@@ -1,9 +1,11 @@
 package com.ml.truckingandconstructionwork.presentation.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.preference.PreferenceManager
+import com.ml.truckingandconstructionwork.R
 import java.util.*
 
 object LocaleHelper {
@@ -51,5 +53,6 @@ object LocaleHelper {
         configuration.locale = locale
         resources.updateConfiguration(configuration, resources.displayMetrics)
     }
+
 
 }

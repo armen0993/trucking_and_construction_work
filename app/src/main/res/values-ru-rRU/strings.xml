@@ -85,7 +85,7 @@
     <string name="add_offer">Добавить предложение</string>
     <string name="please_enter_your_requirements">Пожалуйста, введите ваши требования</string>
     <string name="type_special_equipment">Тип спецтехники</string>
-    <string name="start_address">Начальный адрес</string>
+    <string name="start_address">Aдрес</string>
     <string name="end_address">Конечный адрес</string>
     <string name="proposed_price_of_the_work">Предлагаемая стоимость работ</string>
     <string name="brief_job_description">Краткое описание работы</string>
@@ -115,7 +115,7 @@
     <string name="accept">Принимать</string>
     <string name="not_now">Не сейчас</string>
     <string name="my_profile">Мой профиль</string>
-    <string name="my_statements">Мои заявления</string>
+    <string name="my_statements">Мои объявления</string>
     <string name="preferred_announcements">Предпочтительные объявления</string>
     <string name="contacts">Контакты</string>
     <string name="wallet">Кошелек</string>
@@ -150,5 +150,14 @@
     <string name="see_all_sections">Посмотреть все разделы</string>
     <string name="special_equipments">Спецтехника</string>
     <string name="see_more">Подробнее</string>
+    <string name="please_select_your_filters">Пожалуйста, выберите ваши фильтры</string>
+    <string name="brand">Марка</string>
+    <string name="road_roller">Дорожный каток</string>
+    <string name="load_capacity">Грузоподъемность</string>
+    <string name="weight_car">Вес автомобиля</string>
+    <string name="close">Закрывать</string>
+    <string name="faq_search_no_result">По запросу «%s» ничего не найдено</string>
+    <string name="faq_start_search">Ничего не найдено</string>
+
 
 </resources>

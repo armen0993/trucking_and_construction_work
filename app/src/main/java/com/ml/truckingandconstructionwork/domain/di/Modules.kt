@@ -13,6 +13,7 @@ import com.ml.truckingandconstructionwork.domain.interactor.registration.GetUser
 import com.ml.truckingandconstructionwork.domain.interactor.registration.SaveDataInSharedInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.registration.SetUserDetailsInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.registration.SetUserLoginPasswordInteractor
+import com.ml.truckingandconstructionwork.domain.interactor.special_equipment.FilterSpecialEquipmentInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.special_equipment.GetSpecialEquipmentInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.special_equipment.GetUserSpecialEquipmentInteractor
 import com.ml.truckingandconstructionwork.domain.interactor.special_equipment.SetSpecialEquipmentInteractor
@@ -31,6 +32,7 @@ import com.ml.truckingandconstructionwork.domain.use_case.registration.GetUserDe
 import com.ml.truckingandconstructionwork.domain.use_case.registration.SaveDataInSharedUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.registration.SetUserDetailsUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.registration.SetUserLoginPasswordUseCase
+import com.ml.truckingandconstructionwork.domain.use_case.special_equipment.FilterSpecialEquipmentUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.special_equipment.GetSpecialEquipmentUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.special_equipment.GetUserSpecialEquipmentUseCase
 import com.ml.truckingandconstructionwork.domain.use_case.special_equipment.SetSpecialEquipmentUseCase
@@ -57,5 +59,6 @@ val interactorModule = module {
     factory<GetUserSpecialEquipmentInteractor> { GetUserSpecialEquipmentUseCase(get()) }
     factory<GetSpecialEquipmentInteractor> { GetSpecialEquipmentUseCase(get()) }
     factory<GetUserOffersInteractor> { GetUserOffersUseCase(get()) }
+    factory<FilterSpecialEquipmentInteractor> { FilterSpecialEquipmentUseCase(get()) }
 
 }

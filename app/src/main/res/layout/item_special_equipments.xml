@@ -5,13 +5,14 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginHorizontal="@dimen/size_15"
-    android:layout_marginVertical="@dimen/size_5">
+   >
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_70"
+        android:layout_marginTop="@dimen/size_15"
         android:background="@drawable/bg_list_offers_item_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -81,14 +82,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top_container">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/weight"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:textSize="@dimen/t_size_16"
             android:layout_marginHorizontal="@dimen/size_15"
             android:text="@string/weight_car"
             android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="@dimen/size_15"
@@ -107,12 +118,15 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/capacity"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:textSize="@dimen/t_size_16"
             android:layout_marginHorizontal="@dimen/size_15"
             android:text="@string/load_capacity"
             android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/weight"
             android:layout_marginTop="@dimen/size_15"
@@ -131,12 +145,15 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/length_arrow"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:textSize="@dimen/t_size_16"
             android:layout_marginHorizontal="@dimen/size_15"
             android:text="@string/length_of_arrow"
             android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/capacity"
             android:layout_marginTop="@dimen/size_15"
@@ -155,12 +172,15 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/production_year"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:textSize="@dimen/t_size_16"
             android:layout_marginHorizontal="@dimen/size_15"
             android:text="@string/production_year"
             android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/length_arrow"
             android:layout_marginTop="@dimen/size_15"
@@ -184,15 +204,17 @@
             android:layout_marginEnd="@dimen/size_16"
             android:layout_marginBottom="@dimen/size_24"
             android:background="@drawable/bg_button_order"
-            android:text="@string/see_more"
-            android:paddingVertical="@dimen/size_5"
             android:paddingHorizontal="@dimen/size_10"
+            android:paddingVertical="@dimen/size_5"
+            android:text="@string/see_more"
             android:textAllCaps="false"
+            android:layout_marginTop="@dimen/size_5"
             android:textColor="@color/white"
             android:textSize="@dimen/t_size_16"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/production_year" />
+            app:layout_constraintTop_toBottomOf="@id/production_year"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

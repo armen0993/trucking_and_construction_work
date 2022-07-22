@@ -85,7 +85,7 @@
     <string name="add_offer">Ավելացնել առաջարկ</string>
     <string name="please_enter_your_requirements">Խնդրում ենք մուտքագրել ձեր պահանջները</string>
     <string name="type_special_equipment">Հատուկ սարքավորումների տեսակը</string>
-    <string name="start_address">Մեկնարկի հասցեն</string>
+    <string name="start_address">Հասցե</string>
     <string name="end_address">Վերջնական հասցե</string>
     <string name="proposed_price_of_the_work">Աշխատանքի առաջարկվող գինը</string>
     <string name="brief_job_description">Աշխատանքի համառոտ նկարագրությունը</string>
@@ -150,5 +150,14 @@
     <string name="see_all_sections">Տեսեք բոլոր բաժինները</string>
     <string name="special_equipments">Հատուկ տեխնիկա</string>
     <string name="see_more">Տեսնել ավելին</string>
+    <string name="please_select_your_filters">Խնդրում ենք ընտրել ձեր զտիչները</string>
+    <string name="brand">Մակնիշ</string>
+    <string name="road_roller">Ճանապարհային գլան</string>
+    <string name="load_capacity">Բեռնատարողություն</string>
+    <string name="weight_car">Մեքենայի քաշը</string>
+    <string name="close">Փակել</string>
+    <string name="faq_search_no_result">Որոնել «%s» բառը ոչինչ չի գտնվել</string>
+    <string name="faq_start_search">Ոչինչ չի գտնվել</string>
+
 
 </resources>

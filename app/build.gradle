@@ -80,5 +80,15 @@ dependencies {
     //Mask Edit Text
     implementation 'ru.tinkoff.decoro:decoro:1.1.1'
 
+    //Map yandex
+    // Облегченная библиотека, содержит только карту, слой пробок,
+    // LocationManager, UserLocationLayer и возможность скачивать офлайн-карты (только в платной версии).
+   // implementation 'com.yandex.android:maps.mobile:4.1.0-lite'
+
+    // Полная библиотека в дополнение к lite версии предоставляет автомобильную маршрутизацию,
+    // веломаршрутизацию, пешеходную маршрутизацию и маршрутизацию на общественном транспорте,
+    // поиск, suggest, геокодирование и отображение панорам.
+    implementation 'com.yandex.android:maps.mobile:4.1.0-full'
+
 
 }

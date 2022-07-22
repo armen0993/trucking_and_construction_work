@@ -12,11 +12,10 @@
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:leftItemEnabled="true"
-        app:leftItem="@drawable/ic_arrow_back_black"
         app:layout_constraintTop_toTopOf="parent"
+        app:leftItem="@drawable/ic_arrow_back_black"
+        app:leftItemEnabled="true"
         app:title="@string/add_job_offer" />
-
 
 
     <androidx.core.widget.NestedScrollView
@@ -94,6 +93,20 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_map_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/size_10"
+                android:paddingHorizontal="@dimen/size_8"
+                android:paddingVertical="@dimen/size_4"
+                android:src="@drawable/ic_map"
+                app:layout_constraintBottom_toBottomOf="@id/start_address_container"
+                app:layout_constraintEnd_toEndOf="@id/start_address_container"
+                app:layout_constraintTop_toTopOf="@id/start_address_container"
+                tools:ignore="ContentDescription" />
+
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/end_address_container"
                 android:layout_width="match_parent"
@@ -101,7 +114,6 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="14dp"
                 android:hint="@string/end_address"
-
                 app:endIconMode="custom"
                 app:layout_constraintTop_toBottomOf="@id/start_address_container">
 
@@ -111,10 +123,22 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_input_edit_text"
                     android:singleLine="true"
-                    android:textStyle="normal"
-                   />
+                    android:textStyle="normal" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_map_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/size_10"
+                android:paddingHorizontal="@dimen/size_8"
+                android:paddingVertical="@dimen/size_4"
+                android:src="@drawable/ic_map"
+                app:layout_constraintBottom_toBottomOf="@id/end_address_container"
+                app:layout_constraintEnd_toEndOf="@id/end_address_container"
+                app:layout_constraintTop_toTopOf="@id/end_address_container"
+                tools:ignore="ContentDescription" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -150,8 +174,7 @@
                     android:id="@+id/job_description"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_input_edit_text"
-                     />
+                    android:background="@drawable/bg_input_edit_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -175,6 +198,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
     <com.ml.truckingandconstructionwork.presentation.custom_view.EmptyView
         android:id="@+id/empty_view"
         android:layout_width="match_parent"

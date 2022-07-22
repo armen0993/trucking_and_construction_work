@@ -38,6 +38,12 @@ class AddJobOfferFragment : BaseFragment<AddJobOfferViewModel, FragmentAddJobOff
             btnNext.setOnClickListener {
                 setDetails()
             }
+            imgMapStart.setOnClickListener {
+                navigateFragment(AddJobOfferFragmentDirections.actionAddJobOfferFragmentToMapFragment())
+            }
+            imgMapEnd.setOnClickListener {
+                navigateFragment(AddJobOfferFragmentDirections.actionAddJobOfferFragmentToMapFragment())
+            }
         }
     }
 
